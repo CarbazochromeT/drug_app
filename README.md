@@ -1,24 +1,39 @@
-# README
+##『市販薬サーチ（仮）』
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サービス概要
+軽い体調不良の方に
+症状にあった市販用医薬品を購入するきっかけを与える診断サービスです
 
-Things you may want to cover:
+##  メインのターゲットユーザー
+※20代〜40代の健康的なあまり薬を飲む機会のない方
 
-* Ruby version
+（下記にあてはまる方の使用は安全を保証できないため、
+医療機関の受診もしくはかかりつけ医、薬剤師に相談するようお願いします）
 
-* System dependencies
+・65歳以上の方
+・15歳未満の子ども
+・基礎疾患のある方
+・定期で服用している薬のある方
+・医師もしくは歯科医師にかかり治療中の方
+・腎臓、肝臓が悪い方
+・妊娠、授乳中の方
+・薬剤アレルギーがある方
 
-* Configuration
+##  サービスコンセプト
 
-* Database creation
+突然の体調不良で市販薬が欲しくなる時は、急ぎでお薬が欲しい時です。
+けれど、ドラッグストアや通販サイトを訪れると、市販薬の数が多すぎてどれを買えばいいかわからなくなると思います。
+けれど、ドラッグストアの従業員は忙しそうでなかなか声をかけづらいし、通販の詳細ページを見ても他の市販薬の違いがわからない。
+市販薬サーチ（仮）では、そんな方に、少しでも市販薬に親しみを持ってもらい、手に取りやすくなるようなプラットフォームにしていきたいと考えています。
 
-* Database initialization
+### 実装予定の機能
 
-* How to run the test suite
+### MVP
 
-* Services (job queues, cache servers, search engines, etc.)
+* 市販薬絞り込み機
+* ユーザー登録機能
 
-* Deployment instructions
+## その後の機能
 
-* ...
+* 薬についてのQ&A
+* 質問掲示板

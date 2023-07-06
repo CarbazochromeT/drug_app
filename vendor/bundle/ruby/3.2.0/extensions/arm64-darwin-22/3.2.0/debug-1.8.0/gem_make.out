@@ -1,0 +1,19 @@
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+/Users/flare_home/.rbenv/versions/3.2.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-j6jzhl sitelibdir\=./.gem.20230706-23610-j6jzhl clean
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-j6jzhl sitelibdir\=./.gem.20230706-23610-j6jzhl
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-j6jzhl sitelibdir\=./.gem.20230706-23610-j6jzhl install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20230706-23610-j6jzhl/debug
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-j6jzhl sitelibdir\=./.gem.20230706-23610-j6jzhl clean

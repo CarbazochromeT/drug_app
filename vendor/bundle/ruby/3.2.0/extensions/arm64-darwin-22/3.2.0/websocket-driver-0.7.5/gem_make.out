@@ -1,0 +1,18 @@
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/flare_home/.rbenv/versions/3.2.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-933glc sitelibdir\=./.gem.20230706-23610-933glc clean
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-933glc sitelibdir\=./.gem.20230706-23610-933glc
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-933glc sitelibdir\=./.gem.20230706-23610-933glc install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20230706-23610-933glc
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230706-23610-933glc sitelibdir\=./.gem.20230706-23610-933glc clean

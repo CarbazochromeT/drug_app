@@ -3,6 +3,18 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.2.1",
-    "esbuild": "^0.18.11"
-  }
+    "@rails/ujs": "^7.0.6",
+    "@types/rails__ujs": "^6.0.1",
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "^5.3.0",
+    "esbuild": "^0.18.11",
+    "jquery": "^3.7.0",
+    "popper.js": "^1.16.1",
+    "sass": "^1.63.6"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:flare112/drug_app.git",
+  "author": "asano_haruka_39 <flare.marionette@gmail.com>",
+  "license": "UNLICENSED"
 }
