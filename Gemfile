@@ -61,7 +61,13 @@ group :development do
   # gem "spring"
 end
 
-
 gem "bootstrap", "~> 5.2"
-
 gem "sassc-rails", "~> 2.1"
+gem 'faker'
+gem "kaminari"
+
+gem 'better_errors'
+gem 'jquery-rails'
+
+
+gem "importmap-rails", "~> 1.2"
