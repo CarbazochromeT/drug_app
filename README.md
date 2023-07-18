@@ -44,3 +44,6 @@
 
 ## Figmaへのリンク
 https://www.figma.com/file/q9a2DRgQcXwZxvvG3RxYug/%E8%96%AC%E3%82%A2%E3%83%97%E3%83%AA?type=design&node-id=117%3A609&mode=design&t=0bEClaiQTIR1kt2j-1
+
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/664c04dbb4882ef7c0775f40f78a4a54.png)](https://gyazo.com/664c04dbb4882ef7c0775f40f78a4a54)
