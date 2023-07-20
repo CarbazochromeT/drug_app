@@ -15,60 +15,60 @@ skinparam linetype ortho
 entity "drugs" as e01 {
 + id
 --
-name
-maker_name
-formulation
-symptom
-ingredient
-text
-division
-size
-effect_text
-usage
-duration
-for_days
-caution
-document_url
-maker_url
-texation
+name: string
+maker_name: string
+formulation: integer (enum)
+symptom: string
+ingredient: string
+text: text
+division: integer (enum)
+size: integer
+effect_text: string
+usage: string
+for_days: integer
+caution: text
+document_url: string
+maker_url: string
+texation: text
 }
 
 entity "ingredient" as e02 {
 + id
 --
-# drug_id(FK1)
-name
-drive
-tobacco
+# drug_id (FK1)
+name: string
+drive: integer (enum)
+tobacco: integer (enum)
+alcohol: integer (enum)
 }
 
 entity "drug_ingredient" as e08 {
 + id
 --
-# drug_id(FK1)
-# ingredient_id(FK2)
+# drug_id (FK1)
+# ingredient_id (FK2)
 }
 
 entity "symptoms" as e03 {
 + id
 --
-# drug_id(FK1)
-body
+# drug_id (FK1)
+name: string
 }
 
 entity "drug_symptom" as e09 {
 + id
 --
-# drug_id(FK1)
-# symptom_id(FK2)
+# drug_id (FK1)
+# symptom_id (FK2)
 }
 
 
 entity "sizes" as e05 {
 + id
 --
-# drug_id(FK1)
-size
+# drug_id (FK1)
+size: integer
 }
 
 
@@ -76,17 +76,16 @@ size
 entity "users" as e06 {
 + id
 --
-user
-email
-crypted_password
-salt
+user: string
+email: string
+crypted_password: string
 }
 
 entity "bookmarks" as e07 {
 + id
 --
-# user_id(FK1)
-# drug_id(FK2)
+# user_id (FK1)
+# drug_id (FK2)
 }
 
 e01 ||--|{ e08
