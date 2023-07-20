@@ -1,0 +1,102 @@
+@startuml
+skinparam defaultFontName Monospaced
+skinparam defaultFontColor #d25b87
+skinparam backgroundColor #fde8f1
+skinparam Legend_BackgroundColor LavenderBlush
+skinparam ClassHeaderBackgroundColor #c6cbec
+skinparam EntityBackgroundColor #FDFDF1
+left to right direction
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+
+entity "drugs" as e01 {
++ id
+--
+name
+maker_name
+formulation
+symptom
+ingredient
+text
+division
+size
+effect_text
+usage
+duration
+for_days
+caution
+document_url
+maker_url
+texation
+}
+
+entity "ingredient" as e02 {
++ id
+--
+# drug_id(FK1)
+name
+drive
+tobacco
+}
+
+entity "drug_ingredient" as e08 {
++ id
+--
+# drug_id(FK1)
+# ingredient_id(FK2)
+}
+
+entity "symptoms" as e03 {
++ id
+--
+# drug_id(FK1)
+body
+}
+
+entity "drug_symptom" as e09 {
++ id
+--
+# drug_id(FK1)
+# symptom_id(FK2)
+}
+
+
+entity "sizes" as e05 {
++ id
+--
+# drug_id(FK1)
+size
+}
+
+
+
+entity "users" as e06 {
++ id
+--
+user
+email
+crypted_password
+salt
+}
+
+entity "bookmarks" as e07 {
++ id
+--
+# user_id(FK1)
+# drug_id(FK2)
+}
+
+e01 ||--|{ e08
+e02 }|--|{ e08
+e01 ||--|{ e09
+e03 }|--|{ e09
+e01 ||--|{ e05
+e06 ||--o{ e07
+e07 ||--o{ e01
+
+
+
+@enduml
