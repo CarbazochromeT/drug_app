@@ -22,7 +22,6 @@ symptom: string
 ingredient: string
 text: text
 division: integer (enum)
-size: integer
 effect_text: string
 usage: string
 for_days: integer
@@ -32,7 +31,7 @@ maker_url: string
 texation: text
 }
 
-entity "ingredient" as e02 {
+entity "ingredients" as e02 {
 + id
 --
 # drug_id (FK1)
@@ -42,7 +41,7 @@ tobacco: integer (enum)
 alcohol: integer (enum)
 }
 
-entity "drug_ingredient" as e08 {
+entity "drug_ingredients" as e08 {
 + id
 --
 # drug_id (FK1)
@@ -56,7 +55,7 @@ entity "symptoms" as e03 {
 name: string
 }
 
-entity "drug_symptom" as e09 {
+entity "drug_symptoms" as e09 {
 + id
 --
 # drug_id (FK1)
@@ -90,7 +89,7 @@ entity "bookmarks" as e07 {
 
 e01 ||--|{ e08
 e02 ||--|{ e08
-e01 }|--|| e09
+e01 ||--|{ e09
 e03 ||--|{ e09
 e01 ||--|{ e05
 e06 ||--o{ e07
