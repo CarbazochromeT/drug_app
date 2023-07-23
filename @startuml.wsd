@@ -61,14 +61,6 @@ entity "drug_symptoms" as e09 {
 }
 
 
-entity "sizes" as e05 {
-+ id
---
-# drug_id (FK1)
-size: integer
-}
-
-
 
 entity "users" as e06 {
 + id
@@ -89,7 +81,6 @@ e01 ||--|{ e08
 e02 ||--|{ e08
 e01 ||--|{ e09
 e03 ||--|{ e09
-e01 ||--|{ e05
 e06 ||--o{ e07
 e07 ||--o{ e01
 
