@@ -18,8 +18,6 @@ entity "drugs" as e01 {
 name: string
 maker_name: string
 formulation: integer (enum)
-symptom: string
-ingredient: string
 text: text
 division: integer (enum)
 effect_text: string
