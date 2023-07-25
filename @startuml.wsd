@@ -32,7 +32,6 @@ texation: text
 entity "ingredients" as e02 {
 + id
 --
-# drug_id (FK1)
 name: string
 drive: integer (enum)
 tobacco: integer (enum)
@@ -49,7 +48,6 @@ entity "drug_ingredients" as e08 {
 entity "symptoms" as e03 {
 + id
 --
-# drug_id (FK1)
 name: string
 }
 
@@ -68,6 +66,7 @@ entity "users" as e06 {
 user: string
 email: string
 crypted_password: string
+salt: string
 }
 
 entity "bookmarks" as e07 {
@@ -77,12 +76,20 @@ entity "bookmarks" as e07 {
 # drug_id (FK2)
 }
 
+entity "maker_names" as e04 {
++ id
+--
+# drug_id (FK1)
+name: string
+}
+
 e01 ||--|{ e08
 e02 ||--|{ e08
 e01 ||--|{ e09
 e03 ||--|{ e09
 e06 ||--o{ e07
-e07 ||--o{ e01
+e07 }o--|| e01
+e01 }|--|| e04
 
 
 
