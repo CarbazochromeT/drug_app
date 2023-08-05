@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@600&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
+
+
+li{
+  text-align:inherit;
+  display:inherit;
+}
+
+.wrapper {
+  max-width: 1140px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:root {
+  /* main colors */
+  --whitelight: #fbfff6;
+  --whiteblue: #fafffd;
+  --horizon: #dff8f2;
+  --black: #1f1915;
+  --pink: #eb96ab;
+  --salmon: #ffb1a0;
+  --lemon: #f3de1a;
+  --sea: #a6c4e8;
+  --indigo: #3a6a8d;
+  --lightgrey: #d9d9d9;
+  --grey: #cccccc;
+  --darkgrey: #5f6868;
+  --mint: #64ceb5;
+  --marine: #78c8c7;
+  --melon: #caf1a4;
+  --creemmelon: #f8fef2;
+}
+body {
+  background-color: var(--creemmelon);
+  line-height: 1.6em;
+}
+
+.top-wrapper {
+  /* トップページ背景 */
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Kiwi Maru;
+  font-size: 3em;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin: 0;
+}
+h2 {
+  color: var(--unnamed, #4f5974);
+  text-shadow: 0px 0px 6px 0px rgba(255, 255, 255, 0.5);
+  font-family: Zen Maru Gothic;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1em;
+}
+h3 {
+  font-family: Zen Kaku Gothic Antique;
+  font-size: 2.2em;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+  line-height: 0.5em;
+}
+h4 {
+  font-family: M PLUS 2;
+  font-size: 1.6em;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1em;
+}
+
+h5 {
+  font-family: M PLUS 1;
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1em;
+}
+
+.text-small {
+  /* Text_Small */
+  font-family: M PLUS 1;
+  font-size: 0.9em;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.menu {
+  font-family: Kaisei Opti;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 700;
+}
+text {
+  font-family: M PLUS 2;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}

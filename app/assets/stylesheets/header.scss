@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@600&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
+ul{
+  padding-left:0;
+}
+li {
+  display: list-item;
+  list-style: disc;
+}
+
+.header-logo {
+  left: 0px;
+}
+
+.site-header {
+  margin: 20px 30px 0 30px;
+  padding: 5px;
+  position: relative;
+  background-color: var(--mint);
+  border-radius: 9999px;
+}
+
+.site-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .site-header__wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* PC版メニューボタンのフォント */
+  .phone {
+    display: none;
+  }
+
+  .pc a {
+    position: relative;
+    transition: 0.3s;
+    font-family: Kaisei Opti;
+    font-size: 1.02em;
+    font-weight: 500;
+    line-height: 1.3em;
+    color: var(--whitelight);
+    text-align: center;
+    border-right: 1px solid var(--horizon);
+    width: 100px;
+    height: 40px;
+  }
+  .nav__item:first-child a {
+    border-left: 1px solid var(--horizon);
+    width: 140px;
+  }
+
+  .pc a:hover {
+    color: var(--pink);
+  }
+  .pc a::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    content: "";
+    width: 0;
+    height: 4px;
+    background-color: var(--pink);
+    transition: 0.3s;
+    transform: translateX(-50%);
+  }
+
+  .nav__item ul{
+    display: list-item;
+    list-style-type: none;
+  }
+  .nav__item a {
+    padding: 1.5rem 1rem;
+  }
+
+  .pc a:hover::after {
+    width: 100%;
+  }
+
+  .nav__wrapper {
+    display: flex;
+}
+
+@media (max-width: 799px) {
+  .site-header__end {
+    padding-right: 4rem;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  color: var(--whitelight);
+  }
+
+}
+/* ↓↓↓ここから下がハンバーガーメニュー ↓↓↓*/
+
+/**********************************　
+  以下、ハンバーガーメニューの設定　
+  ************************************/
+
+@media (max-width: 799px) {
+  .pc {
+    display: none;
+  }
+
+  .phone {
+    .nav__item{
+    display: none;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    left: 150px;
+    position: absolute; /*絶対配置　top　leftからの位置を絶対配置する*/
+    z-index: -1;
+    background-color: var(--mint);
+    width: 40%;
+    border-radius: 20px;
+  }
+  .phone a {
+    list-style-type: none;
+    display: list-item;
+    padding: 1.5rem 1rem;
+    transition: 0.3s;
+    padding: 0.5rem 0.5rem;
+    font-family: Kaisei Opti;
+    font-size: 1.02em;
+    font-weight: 500;
+    line-height: 1.3em;
+    color: var(--whitelight);
+    border-bottom: solid 1px var(--horizon);
+  }
+
+  .phone a:hover {
+    color: var(--pink);
+    background-color: var(--melon);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  #hamburger {
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+    height: 60px;
+    width: 60px;
+  }
+
+  .icon span {
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 4px;
+    background-color: var(--whitelight);
+    border-radius: 8px;
+    transition: ease 0.75s;
+  }
+
+  .icon span:nth-of-type(1) {
+    top: 16px;
+  }
+  .icon span:nth-of-type(2) {
+    top: 28px;
+  }
+  .icon span:nth-of-type(3) {
+    bottom: 16px;
+  }
+  ul {
+    flex-direction: column;
+  }
+  /*ハンバーガーの横線3本の動き*/
+  .close span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 28px;
+  }
+
+  .close span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .close span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    }
+  }
+}

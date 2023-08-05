@@ -2,6 +2,7 @@
 import jquery from "jquery"
 window.$ = jquery
 
-$(function() {
-  console.log("Hello Rails7!");
-})
+$('#hamburger').on('click', function(){
+  $('.icon').toggleClass('close');
+  $('.phone').slideToggle();
+  });
