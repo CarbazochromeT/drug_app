@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@600&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
 
+.site-header {
+  top:0px;
+  left:0px;
+  width: 95%;
+  z-index: 50;
+  margin: 20px 30px 0 30px;
+  padding: 5px;
+  position: fixed;
+  background-color: var(--marine);
+  border-radius: 9999px;
+}
+
+.site-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
 .header-logo {
   left: 50px;
   position: fixed;
@@ -18,22 +36,6 @@
   position: relative;
 }
 
-.site-header {
-  top:0px;
-  left:0px;
-  width: 95%;
-  z-index: 100;
-  margin: 20px 30px 0 30px;
-  padding: 5px;
-  position: absolute;
-  background-color: var(--marine);
-  border-radius: 9999px;}
-
-.site-header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
- }
 
 @media (min-width: 800px) {
 
@@ -42,7 +44,7 @@
       padding-bottom: 0; }
     .phone { display: none}
     .pc {
-        display: flex; } }
+        display: flex; }
 
     .pc a {
       position: relative;
@@ -83,6 +85,7 @@
     .pc a:hover::after {
       width: 100%;
     }
+  }
 
 @media (max-width: 799px) {
   .site-header__end {
@@ -107,24 +110,23 @@
   ************************************/
   
   @media (max-width: 799px) {
+    /*700px以下の小さい画面の場合 */
     .pc {
-      display: none}
-
-    .phone{display: none}
-
+      display: none;}
+      .phone{display: none}
     .phone{
+      display: flex;
       text-align: center;
       margin: 10px;
       padding: 20px;
       left: 150px;
       position: absolute; /*絶対配置　top　leftからの位置を絶対配置する*/
       z-index: -1;
-      background-color: var(--mint);
+      background-color: var(--marine);
       width: 40%;
       border-radius: 20px;
     }
     .phone a {
-        display: block;
         padding: 1.5rem 1rem;
         transition: .3s;
         padding: 0.5rem 0.5rem;
@@ -171,9 +173,7 @@
     .icon span:nth-of-type(3) {
       bottom: 16px;
     }
-  ul {
-    flex-direction: column;
-  }
+
 
   /*ハンバーガーの横線3本の動き*/
     .close span:nth-of-type(1) {
@@ -189,5 +189,8 @@
         transform: rotate(-45deg);
         top: 28px;
     }
-  
+    
+    ul {
+      flex-direction: column;
+    }
   }

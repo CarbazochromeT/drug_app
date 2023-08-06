@@ -2,6 +2,8 @@
 import jquery from "jquery"
 window.$ = jquery
 
+import "@fortawesome/fontawesome-free"
+
 $('#hamburger').on('click', function(){
   $('.icon').toggleClass('close');
   $('.phone').slideToggle();

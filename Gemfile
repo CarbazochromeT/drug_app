@@ -64,3 +64,5 @@ end
 
 gem "dartsass-rails", "~> 0.5.0"
 gem 'bootsnap'
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'

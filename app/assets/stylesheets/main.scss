@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@600&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@400;600;700&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
 
 .wrapper {
   max-width: 1140px;
@@ -26,6 +26,7 @@
   --marine: #78C8C7;
   --melon: #caf1a4;
   --creemmelon: #f8fef2;
+  --nezumi: #69919D;
 }
 body {
   background-color: var(--creemmelon);
@@ -81,25 +82,18 @@ h5 {
   line-height: 1em;
 }
 
-.text-small {
-  /* Text_Small */
-  font-family: M PLUS 1;
-  font-size: 0.9em;
-  font-style: normal;
-  font-weight: 400;
-}
-
 .menu {
   font-family: Kaisei Opti;
   font-size: 1.5em;
   font-style: normal;
   font-weight: 700;
 }
-text {
-  font-family: M PLUS 2;
-  font-size: 1em;
-  font-style: normal;
-  font-weight: 600;
+
+p {
+	font-size: 1em;
+	margin: 0;
+	color: var(--indigo);
+	font-family: 'M PLUS 1', sans-serif;
 }
 
 li {
@@ -107,4 +101,102 @@ li {
 }
 #footer{
   z-index: 50;
+}
+
+
+/* ミントのボタン */
+.btnmint a {
+  background: var(--mint);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 200px;
+  padding: 10px 25px;
+  color: var(--whitelight);
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  text-decoration: none;
+}
+.btnmint a:hover {
+  background: var(--melon);
+  color: var(--pink);
+}
+.btnmint a:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid var(--whitelight);
+  border-right: 3px solid var(--whitelight);
+  transform: rotate(45deg) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  border-radius: 1px;
+  transition: 0.3s ease-in-out;
+}
+.btnmint a:hover:after {
+  border-color: var(--pink);
+}
+
+/* checkbox */
+.CheckboxInput {
+  padding: 12px 0px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.CheckboxInput-Input {
+  margin: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.CheckboxInput-Input:checked + .CheckboxInput-DummyInput {
+  background: var(--mint);
+}
+.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 40%;
+  height: 4px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-135deg);
+  transform-origin: 2px 2px;
+  background: var(--whitelight);
+}
+.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 76%;
+  height: 4px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-45deg);
+  transform-origin: 2px 2px;
+  background: var(--whitelight);
+}
+.CheckboxInput-DummyInput {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: solid 2px transparent;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background: var(--horizon);
+}
+.CheckboxInput-LabelText {
+  margin-left: 12px;
+  display: block;
+  color: var(--black);
 }
