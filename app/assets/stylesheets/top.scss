@@ -79,11 +79,11 @@
 	left: 0;
 }
 .window {
-	padding:  30px;
+	padding:  20px;
 	width: 90vw;
 	max-width: 600px;
 	background-color: var(--whiteblue);
-	border-radius: 10px;
+	border-radius: 6px;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
@@ -100,7 +100,7 @@
 
 }
 
-.close {
+#top-wrapper .close {
 	cursor:pointer;
 	position: absolute;
 	top: 4px;
