@@ -1,0 +1,119 @@
+ja:
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    show: 詳細
+    delete: 削除
+    create: '作成'
+    post: '投稿'
+    message:
+      require_login: 'ログインしてください'
+      delete_confirm: '削除しますか？'
+      not_authorized: '管理者権限を持っていません'
+    search_word:  '検索ワード'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+      submit: 'ログイン'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  bookmarks:
+      title: 'ブックマーク一覧'
+      create:
+        success: 'ブックマークしました'
+      destroy:
+        success: 'ブックマークを外しました'
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '申請'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+      fail: 'パスワードリセット手順を送信できませんでした'
+    update:
+      success: 'パスワードを更新しました'
+      fail: 'パスワードが更新できませんでした'
+
+
+  activerecord:
+    models:
+      user: ユーザー
+      board: 掲示板
+    attributes:
+      user:
+        id: ID
+        username: ユーザー名
+        email: メールアドレス
+        file: プロフィール画像
+        password_confirmation: パスワード再確認
+        crypted_password: パスワード
+        avatar: アバター
+      user_session:
+        email: メールアドレス
+        crypted_password: パスワード
+    errors:
+      format: "%{attribute}%{message}"
+      messages:
+        accepted: を受諾してください
+        blank: を入力してください
+        confirmation: と%{attribute}の入力が一致しません
+        empty: を入力してください
+        equal_to: は%{count}にしてください
+        even: は偶数にしてください
+        exclusion: は予約されています
+        greater_than: は%{count}より大きい値にしてください
+        greater_than_or_equal_to: は%{count}以上の値にしてください
+        in: は%{count}の範囲に含めてください
+        inclusion: は一覧にありません
+        invalid: は不正な値です
+        less_than: は%{count}より小さい値にしてください
+        less_than_or_equal_to: は%{count}以下の値にしてください
+        model_invalid: 'バリデーションに失敗しました: %{errors}'
+        not_a_number: は数値で入力してください
+        not_an_integer: は整数で入力してください
+        odd: は奇数にしてください
+        other_than: は%{count}以外の値にしてください
+        present: は入力しないでください
+        required: を入力してください
+        taken: はすでに存在します
+        too_long: は%{count}文字以内で入力してください
+        too_short: は%{count}文字以上で入力してください
+        wrong_length: は%{count}文字で入力してください
+    template:
+      body: 次の項目を確認してください
+      header: "%{model}に%{count}個のエラーが発生しました"
+
+  # 全てのmodelで共通して使用するattributesを定義
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
+    time:
+    am: 午前
+    formats:
+        default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+        long: "%Y/%m/%d %H:%M"
+        short: "%m/%d %H:%M"
