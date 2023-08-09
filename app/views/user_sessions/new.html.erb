@@ -1,19 +1,26 @@
+<!-- =============================================
+
+ログインページ
+
+==================================================== -->
+<% content_for(:title, t('.title')) %>
 <div class="top-header"></div>
 <div class="container">
 
 <hgroup>
-  <h1>Sign in</h1><br>
+  <h1><%= t '.title' %></h1><br>
   <h3>アカウント作成は<%= link_to 'こちら', new_user_path %></h3>
 </hgroup>
   <%= form_with url: login_path, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
     <div class="group">
-      <%= f.label :email, class: 'label' %><br>
+      <%= f.label :email, User.human_attribute_name(:email) %><br>
       <%= f.text_field :email %><span class="highlight"></span><span class="bar"></span>
     </div>
     <div class="group">
-      <%= f.label :password, class: 'label' %><br>
+      <%= f.label :password, User.human_attribute_name(:password) %><br>
       <%= f.password_field :password %><span class="highlight"></span><span class="bar"></span>
     </div>
-      <%= f.submit nil, class: 'btnpink' %>
+      <%= f.submit (t 'defaults.login'), class: 'btnpink' %>
   <% end %>
 </div>

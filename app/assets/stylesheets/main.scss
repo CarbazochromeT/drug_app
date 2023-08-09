@@ -38,6 +38,7 @@ html {
 }
 
 .top-header {
+  z-index: 40;
 	overflow-x: hidden;
 	top: 0px;
 	left:0px;
@@ -50,7 +51,9 @@ html {
 	position:  relative;
 }
 
+
 .container {
+  z-index: 20;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -85,7 +88,30 @@ html {
 
 a {
   text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s;
+  color: var(--pink);
+  text-decoration: none;
 }
+a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 1px; /*下線の太さ*/
+  background-color: var(--salmon); /*下線の色*/
+  transition: 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+a:hover {
+  color: var(--salmon); /*ホバー時の文字色*/
+}
+
 
 h1 {
   font-family: Kiwi Maru;

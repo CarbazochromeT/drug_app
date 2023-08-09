@@ -16,6 +16,7 @@ ja:
       delete_confirm: '削除しますか？'
       not_authorized: '管理者権限を持っていません'
     search_word:  '検索ワード'
+
   users:
     new:
       title: 'ユーザー登録'
@@ -28,7 +29,6 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
-      submit: 'ログイン'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
@@ -65,14 +65,17 @@ ja:
       board: 掲示板
     attributes:
       user:
-        id: ID
+        title: ユーザー作成
         username: ユーザー名
         email: メールアドレス
         file: プロフィール画像
         password_confirmation: パスワード再確認
+        salt: パスワード再確認
         crypted_password: パスワード
+        password: パスワード
         avatar: アバター
       user_session:
+        title: ログイン
         email: メールアドレス
         crypted_password: パスワード
     errors:
@@ -103,6 +106,11 @@ ja:
         too_long: は%{count}文字以内で入力してください
         too_short: は%{count}文字以上で入力してください
         wrong_length: は%{count}文字で入力してください
+        not_saved:
+          #one: "1 error prohibited this %{resource} from being saved:"
+          one: "１つのエラーがあります。修正して再度送信して下さい。:"
+          #other: "%{count} errors prohibited this %{resource} from being saved:"
+          other: "%{count}のエラーがあります。修正して再度送信して下さい。"
     template:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"

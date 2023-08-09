@@ -2,7 +2,30 @@
 <div class="top-header"></div>
 <div class="container">
 <hgroup>
-  <h1>アカウント作成</h1><br>
+  <h1><%= t '.title' %></h1><br>
   <h3>サインインは<%= link_to 'こちら', login_path %></h3>
 </hgroup>
-<%= render "form", user: @user %>
+<%= form_with model: @user, local: true do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="group" >
+    <%= f.label :username %>
+    <%= f.text_field :username %><span class="highlight"></span><span class="bar"></span>
+  </div>
+
+  <div class="group" >
+    <%= f.label :email %>
+    <%= f.text_field :email %><span class="highlight"></span><span class="bar"></span>
+  </div>
+
+  <div class="group" >
+    <%= f.label :password %>
+    <%= f.password_field :password %><span class="highlight"></span><span class="bar"></span>
+  </div>
+
+  <div class="group" >
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %><span class="highlight"></span><span class="bar"></span>
+  </div>
+    <%= f.submit nil, class: 'btnpink' %>
+<% end %>
+</div>

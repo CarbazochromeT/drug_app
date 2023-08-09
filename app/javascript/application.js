@@ -14,3 +14,7 @@ $('#hamburger').on('click', function(){
   $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
     $(this).removeClass('is-active');
   });
+//アラートを消す
+  $(function(){
+    setTimeout("$('.flash').fadeOut('slow')", 2000);
+  });

@@ -1,0 +1,49 @@
+:root {
+  --success: #6ea792;
+  --subg:#e1f3e2;
+  --warning: #e2be2d;
+  --wabg:#f8f8c7;
+  --danger: #c15874;
+  --dabg:#f7e5e9;
+}
+
+.alert {
+    position: absolute;
+    padding: 5px 20px;
+    margin: 5px 20px;
+    z-index: 30;
+    top: 20%;
+    left: 10%;
+    width: 65%;
+    text-align: center;
+    font-family: M PLUS 1;
+    font-weight: 600;
+  }
+
+.alert-success {
+  color: var(--success);
+  background-image:repeating-linear-gradient(-45deg, var(--subg),  var(--subg) 4px, transparent 4px, transparent 8px);
+  border-bottom: 3px double var(--success);
+  border-top: 3px double var(--success);
+}
+
+.alert-warning {
+  color: var(--warning);
+  background-image:repeating-linear-gradient(-45deg, var(--wabg),  var(--wabg) 4px, transparent 4px, transparent 8px);
+  border-bottom: 3px double var(--warning);
+  border-top: 3px double var(--warning);
+}
+
+.alert-danger {
+  color: var(--danger);
+  background: repeating-linear-gradient(-45deg, var(--dabg),  var(--dabg) 3px, transparent 3px, transparent 6px);
+  border-bottom: 3px double var(--danger);
+  border-top: 3px double var(--danger);
+}
+
+.error-message {
+  font-size: 0.9em;
+  color: #c15874;
+  font-family: M PLUS 1;
+  font-weight: 600;
+}
