@@ -1,0 +1,191 @@
+* {-webkit-appearance: none;/*webkit系ブラウザのデフォルトスタイル*/}
+
+hgroup { 
+  text-align:center;
+  margin-top: 4em;
+}
+
+form {
+  width: 380px;
+  margin: 4em auto;
+  padding: 3em 2em 2em 2em;
+  background: var(--whiteblue);
+  border: 1px solid #ebebeb;
+  border-radius: 30px;
+}
+
+.group { 
+  position: relative;
+  margin-bottom: 45px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px 0 10px 5px;
+  -webkit-appearance: none;
+  background-color:var(--horizon);
+  display: block;
+  color: #636363;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus { outline: none;
+  background: var(--horizon);
+ }
+
+ input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+
+/* Label */
+
+.label {
+  color: #999; 
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus ~ .label, .input.used ~ .label {
+  top: -20px;
+  transform: scale(.75); left: -2px;
+  /* font-size: 14px; */
+  color: var(--pink);
+}
+
+
+/* Underline */
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: var(--pink); 
+  transition: all 0.2s ease;
+}
+
+.bar:before { left: 50%; }
+
+.bar:after { right: 50%; }
+
+
+/* active */
+
+input[type="text"]:focus input[type="password"]:focus ~ .bar:before, .input:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.highlight {
+  position: absolute;
+  height: 60%; 
+  width: 100px; 
+  top: 25%; 
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
+/* active */
+
+input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+  from { background: var(--pink); }
+  to  { width: 0; background: transparent; }
+}
+
+
+/* Ripples container */
+
+.ripples {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+
+/* Ripples circle */
+
+.ripplesCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+  animation: ripples .4s ease-in;
+}
+
+
+/* Ripples animation */
+
+@keyframes ripples {
+  0% { opacity: 0; }
+
+  25% { opacity: 1; }
+
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
+}
+
+
+input[type="submit"] {
+  color: var(--whitelight);
+  font-weight: 600;
+  font-family: M PLUS 1;
+  text-align: center;
+  background: var(--pink);
+  border-radius: 20px;
+  position: relative;
+  display: block;
+  height: 60px;
+  transition: 0.3s ease-in-out;
+  align-items: center;
+  padding: 10px 0;
+  justify-content: center;
+  border-bottom: none;
+}
+
+input[type="submit"]:hover {
+  background: var(--melon);
+  color: var(--pink);
+}

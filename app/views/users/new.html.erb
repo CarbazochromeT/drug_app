@@ -1,0 +1,8 @@
+<% content_for(:title, t('.title')) %>
+<div class="top-header"></div>
+<div class="container">
+<hgroup>
+  <h1>アカウント作成</h1><br>
+  <h3>サインインは<%= link_to 'こちら', login_path %></h3>
+</hgroup>
+<%= render "form", user: @user %>

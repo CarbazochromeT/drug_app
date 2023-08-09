@@ -1,0 +1,32 @@
+<%= form_with(model: user) do |f| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="group" >
+    <%= f.label :username, class: 'label' %>
+    <%= f.text_field :username %><span class="highlight"></span><span class="bar"></span>
+  </div>
+
+  <div class="group" >
+    <%= f.label :email,class: 'label' %>
+    <%= f.text_field :email %><span class="highlight"></span><span class="bar"></span>
+  </div>
+
+  <div class="group" >
+    <%= f.label :crypted_password, class: 'label'  %>
+    <%= f.text_field :crypted_password %><span class="highlight"></span><span class="bar"></span>
+  </div>
+
+  <div class="group" >
+    <%= f.label :salt, class: 'label'  %>
+    <%= f.text_field :salt %><span class="highlight"></span><span class="bar"></span>
+  </div>
+    <%= f.submit nil, class: 'btnpink' %>
+<% end %>

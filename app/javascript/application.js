@@ -4,7 +4,13 @@ window.$ = jquery
 
 import "@fortawesome/fontawesome-free"
 
+//ヘッダートグル
 $('#hamburger').on('click', function(){
   $('.icon').toggleClass('close');
   $('.phone').slideToggle();
+  });
+//ログイン画面
+
+  $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+    $(this).removeClass('is-active');
   });

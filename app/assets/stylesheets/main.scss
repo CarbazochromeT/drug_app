@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@400;600;700&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500&family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@400;600;700&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
 
 .wrapper {
   max-width: 1140px;
@@ -11,7 +11,7 @@
   --whitelight: #fbfff6;
   --whiteblue: #fafffd;
   --horizon: #dff8f2;
-  --black: #1f1915;
+  --black: #3f474e;
   --pink: #eb96ab;
   --salmon: #ffb1a0;
   --lemon: #f3de1a;
@@ -26,11 +26,62 @@
   --creemmelon: #f8fef2;
   --nezumi: #69919D;
 }
+
 body {
   background-color: var(--creemmelon);
   line-height: 1.6em;
   -webkit-text-size-adjust: 100%;
 }
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+.top-header {
+	overflow-x: hidden;
+	top: 0px;
+	left:0px;
+  width: 100%;
+  background-image: url("drug-top-header.jpg");
+	height: calc(20vh);
+  background-size: cover;
+  background-repeat: no-repeat;
+	background-position: top;
+	position:  relative;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+
 
 a {
   text-decoration: none;
@@ -38,7 +89,7 @@ a {
 
 h1 {
   font-family: Kiwi Maru;
-  font-size: 3em;
+  font-size: 2.5em;
   font-style: normal;
   font-weight: normal;
   letter-spacing: -1px;
@@ -56,7 +107,7 @@ h2 {
 }
 h3 {
   font-family: Zen Kaku Gothic Antique;
-  font-size: 2.2em;
+  font-size: 1.3em;
   font-style: normal;
   font-weight: 700;
   margin: 0;
@@ -64,7 +115,7 @@ h3 {
 }
 h4 {
   font-family: M PLUS 2;
-  font-size: 1.6em;
+  font-size: 1.2em;
   font-style: normal;
   font-weight: 700;
   margin: 0;
@@ -73,8 +124,7 @@ h4 {
 
 h5 {
   font-family: M PLUS 1;
-  font-size: 1.2em;
-  font-style: normal;
+  font-size: 1em;
   font-weight: 600;
   margin: 0;
   line-height: 1em;
@@ -90,18 +140,21 @@ h5 {
 p {
 	font-size: 1em;
 	margin: 0;
-	color: var(--indigo);
-	font-family: 'M PLUS 1', sans-serif;
+	color: var(--black);
+  font-family: 'IBM Plex Sans JP', sans-serif;
 }
 
 li {
   list-style: none;
 }
 
-
+.pink{
+  color: var(--pink)
+}
 
 /* ミントのボタン */
-.btnmint a {
+.btnmint a {  
+  font-family: M PLUS 1;
   background: var(--mint);
   border-radius: 15px;
   position: relative;
@@ -113,7 +166,7 @@ li {
   padding: 10px 25px;
   color: var(--whitelight);
   transition: 0.3s ease-in-out;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
 }
 .btnmint a:hover {
@@ -137,7 +190,30 @@ li {
   border-color: var(--pink);
 }
 
-/* checkbox */
+/* ピンクのボタン */
+.btnpink a{
+  color: var(--whitelight);
+  font-weight: 600;
+  font-family: M PLUS 1;
+  text-align: center;
+  background: var(--pink);
+  border-radius: 20px;
+  position: relative;
+  display: block;
+  height: 60px;
+  transition: 0.3s ease-in-out;
+  align-items: center;
+  padding: 10px 0;
+  justify-content: center;
+}
+.btnpink:hover {
+  background: var(--melon);
+  color: var(--pink);
+}
+
+
+
+/* チェックボックス */
 .CheckboxInput {
   padding: 12px 0px;
   display: flex;
