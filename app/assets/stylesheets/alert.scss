@@ -7,12 +7,12 @@
   --dabg:#f7e5e9;
 }
 
-.alert {
+.flash{
     position: absolute;
     padding: 5px 20px;
     margin: 5px 20px;
     z-index: 30;
-    top: 20%;
+    top: 100px;
     left: 10%;
     width: 65%;
     text-align: center;
@@ -20,23 +20,23 @@
     font-weight: 600;
   }
 
-.alert-success {
+.flash-success {
   color: var(--success);
-  background-image:repeating-linear-gradient(-45deg, var(--subg),  var(--subg) 4px, transparent 4px, transparent 8px);
+  background-image:repeating-linear-gradient(-45deg, var(--subg),  var(--subg) 3px, transparent 3px, transparent 6px);
   border-bottom: 3px double var(--success);
   border-top: 3px double var(--success);
 }
 
-.alert-warning {
+.flash-warning {
   color: var(--warning);
-  background-image:repeating-linear-gradient(-45deg, var(--wabg),  var(--wabg) 4px, transparent 4px, transparent 8px);
+  background-image:repeating-linear-gradient(-45deg, var(--wabg),  var(--wabg) 3px, transparent 3px, transparent 6px);
   border-bottom: 3px double var(--warning);
   border-top: 3px double var(--warning);
 }
 
-.alert-danger {
+.flash-danger {
   color: var(--danger);
-  background: repeating-linear-gradient(-45deg, var(--dabg),  var(--dabg) 3px, transparent 3px, transparent 6px);
+  background: repeating-linear-gradient(-45deg, var(--dabg),  var(--dabg) 3px,transparent 3px, transparent 6px);
   border-bottom: 3px double var(--danger);
   border-top: 3px double var(--danger);
 }

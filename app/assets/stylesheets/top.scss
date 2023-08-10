@@ -29,9 +29,12 @@
 }
 
 .top-btn {
-  top: 300px;
+  position: absolute;
+  top: 500px;
   left: 90px;
-  max-width: 200px;
+  cursor: pointer;
+  width: 200px;
+  margin: 50px 0;
 }
 
 /* ポップアップ */

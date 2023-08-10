@@ -1,21 +1,19 @@
 class UserSessionsController < ApplicationController
-  skip_before_action :require_login, only: %i[create new]
-
   def new
   end
 
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to search_path, success: t('.success')
+      redirect_back_or_to root_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
-      render action: 'new'
+      render :new
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, success: t('.success')
+    redirect_to root_path, status: :see_other, success: t('.success')
   end
 end

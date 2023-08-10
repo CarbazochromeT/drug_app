@@ -69,3 +69,5 @@ gem 'font-awesome-sass'
 gem 'font-awesome-rails'
 gem 'sorcery'
 gem 'rails-i18n'
+gem "turbo-rails"
+gem "stimulus-rails"

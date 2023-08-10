@@ -5,8 +5,7 @@
   <h1><%= t '.title' %></h1><br>
   <h3>サインインは<%= link_to 'こちら', login_path %></h3>
 </hgroup>
-<%= form_with model: user, local: true do |f| %>
-<%= render 'shared/error_messages', locals: { object: f.object } %>
+<%= form_with model: @user, local: true do |f| %>
   <div class="group" >
     <%= f.label :username %>
     <%= f.text_field :username %><span class="highlight"></span><span class="bar"></span>

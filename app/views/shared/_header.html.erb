@@ -28,7 +28,7 @@
         </nav>
       </div>
     <div class="site-header__end" >
-      <%= link_to 'ログアウト', logout_path　, method: :delete %>
+      <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete } %>
     </div>
   </div>
 </header>
