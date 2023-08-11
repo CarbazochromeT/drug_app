@@ -5,18 +5,9 @@ window.$ = jquery
 
 import "@fortawesome/fontawesome-free"
 import "@hotwired/turbo-rails"
-import "controllers"
 
-//ヘッダートグル
-$('#hamburger').on('click', function(){
-  $('.icon').toggleClass('close_h');
-  $('.phone').slideToggle();
+
+  $('.hamburger').on('click', function () {
+    $('.hamburger, .phone').toggleClass('show');
   });
   
-//ログイン画面
-
-$ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
-  $(this).removeClass('is-active');
-});
-
-

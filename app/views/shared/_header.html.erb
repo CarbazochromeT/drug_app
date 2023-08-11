@@ -1,17 +1,10 @@
 <header class="site-header">
-  <div class="wrapper site-header__wrapper">
-    <div class="site-header__start">
-      <%= link_to image_tag('drug-logo60.png', class:'header-logo'), "/" %>
-    </div>
-      <div class="site-header__middle" >
-          <!--▽▽メニュー▽▽-->
-          <div id="hamburger">
-            <div class="icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
+  <div class="site-header__start">
+    <%= link_to image_tag('drug-logo60.png', class:'header-logo'), "/" %>
+  </div>
+  <div class="site-header__wrapper">
+    <div class="site-header__middle" >
+      <div class="hamburger"><span></span><span>Menu</span><span></span></div>
         <nav class="pc">
           <ul>
             <li class="nav__item"><a href="#">市販のおくすりを<br>探す！</a></li>
@@ -28,9 +21,11 @@
         </nav>
       </div>
     <div class="site-header__end" >
-      <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete } %>
+        <ul>
+          <li class="nav__user"><i class="fa-solid fa-user"></i> <%= current_user.decorate.full_name %> 様</li>
+          <li class="nav__logout"><%= link_to logout_path, data: { turbo_method: :delete } do %><i class="fa-solid fa-right-from-bracket"></i>ログアウト<% end %></li>
+        </ul>
     </div>
   </div>
 </header>
-  <%= javascript_importmap_tags %>
 <%= yield(:js) %>

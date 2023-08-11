@@ -1,17 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Kiwi+Maru:wght@400;500&family=Libre+Bodoni:wght@600&family=M+PLUS+1:wght@600&family=M+PLUS+2:wght@700&family=Zen+Kaku+Gothic+Antique&family=Zen+Maru+Gothic:wght@400;500&display=swap");
-
 .site-header {
   top:0px;
   left:0px;
   width: 90%;
   z-index: 50;
   margin: 20px 30px 0 30px;
-  padding: 5px;
+  padding: 5px 20px 5px 5px;
   position: fixed;
   background-color: var(--marine);
   border-radius: 9999px;
   display: flex;
-  justify-content: end;
 }
 
 .header-logo {
@@ -23,15 +20,12 @@
 
 .site-header__wrapper {
   display: flex;
-  align-items: center;
+  align-items: center;  
+  align-items: flex-start
 }
 
 .site-header a {
   transition: .3s;
-  font-family: Kaisei Opti;
-  font-size: 1em;
-  font-weight: 500;
-  line-height: 1.3em;
   color: var(--whitelight);
   }
 
@@ -39,9 +33,53 @@
   color: var(--pink);
 }
 
+.site-header__middle a{
+  font-family: Kaisei Opti;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+
 nav {
   margin: 0 0 0 auto;
 }
+
+.site-header__end i{
+  margin-right: 0.5em;
+}
+
+.site-header__end {
+  display: flex;
+  margin-left: 0.5em;
+}
+
+.nav__user{
+  display: block;
+  font-size: 1em;
+  font-family: Zen Kaku Gothic Antique;
+  color: var(--whitelight);
+  text-align: left;
+}
+.nav__logout{
+  display: block;
+  font-size: 0.8em;
+  color: var(--whitelight);
+  font-family: Zen Kaku Gothic Antique;
+  text-align: right;
+}
+.nav__login{
+  display: block;
+  font-size: 0.8em;
+  font-family: Zen Kaku Gothic Antique;
+  color: var(--whitelight);
+  text-align: right;
+}
+
+.site-header__end li{
+  display: inline-block;
+  margin: 0.3em;
+}
+
 
 
   /**********************************　
@@ -50,23 +88,23 @@ nav {
 
 @media (min-width: 800px){
 
+  .site-header{
+    justify-content: space-between;
+  }
+
+  .hamburger{
+    display:none;
+  }
+
   .site-header__middle{
     display: flex;
     align-items: center;
   }
   
   .site-header__middle ul {
-    justify-content: space-between;
     display: flex;
     padding: 0;
     margin: 0;
-  }
-
-  .site-header__end {
-    position: relative;
-    display: block;
-    width: 200px;
-    text-align: right;
   }
   
   .nav__item a{
@@ -78,7 +116,7 @@ nav {
   }
   .nav__item:first-child a {
     width: 140px;
-    margin-left: 650px;
+    margin-left: 200px;
   }
 
   .nav__item a::after {
@@ -106,32 +144,26 @@ nav {
       }
 
 }
-  /* ↓↓↓ここから下がハンバーガーメニュー ↓↓↓*/
-
   /**********************************　
-  以下、ハンバーガーメニューの設定　
+  以下、スマホ版の設定　
   ************************************/
-  
-  @media (max-width: 799px) {
-    /*700px以下の小さい画面の場合 */
-    .pc { display: none;}
 
-    .site-header__middle{
+@media (max-width: 800px) {
+  .pc { display: none;}
+  .site-header{
+    flex-direction: column
+  }
+  .site-header__middle{
       display: flex;
       height: 60px;
     }
-    .site-header__end {
-      display: block;
-      width: 200px;
-      padding: 0 50px 0 150px;
-      margin-left: 450px;
-      text-align: right;
-    }
+
     .site-header__wrapper {
       display: flex;
       flex-direction: row-reverse;
       flex-wrap: nowrap;
-      align-items: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       }
 
     .header-logo {
@@ -139,60 +171,76 @@ nav {
       position: fixed;
       top: 25px;
     }
-    #hamburger {
-      background-color: transparent;
-      cursor: pointer;
-      height: 60px;
-      width: 60px;
-      position: relative;
-      margin-right: 0;
-      display: block;
-    }
 
-    .icon span {
-      position: absolute;
-      width: 30px;
-      height: 4px;
-      background-color: var(--whitelight);
-      border-radius: 8px;
-      transition: ease 0.75s;
-    }
-  
-    .icon span:nth-of-type(1) {
-      top: 16px;
-    }
-    .icon span:nth-of-type(2) {
-      top: 28px;
-    }
-    .icon span:nth-of-type(3) {
-      bottom: 16px;
-    }
+  .site-header__end{
+    margin-left: 200px;
+  }
+.hamburger {
+  background-color:transparent;
+  position: relative;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  z-index: 32;
+  display: block;
+}
 
-  /*ハンバーガーの横線3本の動き*/
-    .close_h span:nth-of-type(1) {
-      transform: rotate(45deg);
-      top: 28px;
-    }
-  
-    .close_h span:nth-of-type(2) {
-      opacity: 0;
-    }
-  
-    .close_h span:nth-of-type(3) {
-        transform: rotate(-45deg);
-        top: 28px;
-    }
-    .phone a{
+/*ボタン内側*/
+.hamburger span {
+  transition: all .4s;
+  position: absolute;
+  left: 25%;
+}
+
+.hamburger span:nth-of-type(1),
+.hamburger span:nth-of-type(3) {
+  background: var(--whitelight);
+  width: 36px;
+  height:2px;
+  border-radius: 4px;
+}
+
+
+.hamburger span:nth-of-type(1) {
+  top: 16px;
+}
+.hamburger span:nth-of-type(3) {
+  bottom: 16px;
+}
+
+
+.hamburger span:nth-of-type(2) {
+  top: 17px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--whitelight);
+  font-family: Noto Serif JP;
+}
+.hamburger.show span:nth-of-type(1) {
+  top: 28px;
+  transform: rotate(-45deg);
+  }
+  .hamburger.show span:nth-of-type(2) {
+  opacity: 0;
+  }
+
+  .hamburger.show span:nth-of-type(3) {
+  top: 28px;
+  transform:  rotate(45deg);
+  }
+
+  .phone.show a{
       text-align: center;
     }
 
 
-    .phone ul {
+    .phone.show ul {
       flex-direction: column;
     }
 
     /* メニュー項目の余白調整 */
-    .phone li {
+    .phone.show li {
     margin-bottom: 10px;}
 
 
@@ -206,9 +254,8 @@ nav {
       background-color: rgba(120,200,199,0.95);
       display: none;
       border-radius: 10px;}
-    .close_h {
-      .phone{
-        display: block; 
+  .phone.show {
+        display: block;
+        transition: .3s;
       }
   }
-}

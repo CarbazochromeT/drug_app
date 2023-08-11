@@ -71,3 +71,5 @@ gem 'sorcery'
 gem 'rails-i18n'
 gem "turbo-rails"
 gem "stimulus-rails"
+gem "jquery-rails"
+gem 'draper'
