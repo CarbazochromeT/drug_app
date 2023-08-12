@@ -1,7 +1,7 @@
 <% if object.errors.any? %>
 <div id="error_messages", class="flash flash-danger" >
   <ul class="error-message">
-    <% object.errors.full_messages.each do |message| %>
+    <% user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>

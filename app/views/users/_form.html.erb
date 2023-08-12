@@ -1,10 +1,13 @@
-<!-- =============================================
-
-新規登録フォーム
-
-==================================================== -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="turbo-visit-control" content="reload">
+  </head>
+  <body>
 <div class="container">
 <%= form_with model: @user, local: true do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
   <div class="group" >
     <%= f.label :username %>
     <%= f.text_field :username %><span class="highlight"></span><span class="bar"></span>
@@ -27,3 +30,4 @@
     <%= f.submit nil, class: 'btnpink' %>
 <% end %>
 </div>
+</body>
