@@ -76,3 +76,6 @@ gem 'draper'
 gem 'rakuten_web_service'
 gem 'dotenv-rails'
 gem 'ransack'
+gem 'rails_admin'
+gem "cssbundling-rails"
+gem 'cancancan'
