@@ -309,12 +309,12 @@ li {
 }
 
 dl{
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
 }
-dt{
-  float: left;
+dl dt {
+  width: 40%;
 }
-
-dt::after{
-  content: "："
+dl dd {
+  width: 60%;
 }
