@@ -90,13 +90,13 @@ a {
   text-decoration: none;
 }
 
-.textlink a{
+a{
   position: relative;
   transition: 0.3s;
   color: var(--pink);
   text-decoration: none;
 }
-.textlink a::after{
+a::after{
   position: absolute;
   bottom: 0;
   left: 0;
@@ -108,10 +108,10 @@ a {
   transition: 0.3s;
 }
 
-.textlink a:hover::after{
+a:hover::after{
   width: 100%;
 }
-.textlink a:hover{
+a:hover{
   color: var(--salmon); /*ホバー時の文字色*/
 }
 
@@ -202,6 +202,7 @@ li {
 }
 /* ミントのボタン */
 .btnmint {
+  color: var(--whitelight);
   font-family: M PLUS 1;
   background: var(--mint);
   border-radius: 15px;

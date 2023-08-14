@@ -4,9 +4,10 @@ import jquery from "jquery"
 window.$ = jquery
 
 import "@fortawesome/fontawesome-free"
-import { Turbo } from "@hotwired/turbo-rails"
-Turbo.session.drive = false
+import "@hotwired/turbo-rails"
 
+$(document).on('turbo:load', function(){
   $('.hamburger').on('click', function () {
     $('.hamburger, .phone').toggleClass('show');
   });
+});

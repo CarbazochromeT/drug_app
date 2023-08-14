@@ -31,7 +31,7 @@
     <div class="site-header__end" >
         <ul>
           <li class="nav__user"><i class="fa-solid fa-user"></i> <%= current_user.decorate.full_name %> 様</li>
-          <li class="nav__logout"><%= link_to logout_path, data: { turbo_method: "delete" } do %><i class="fa-solid fa-right-from-bracket"></i>ログアウト<% end %></li>
+          <li class="nav__logout"><%= link_to logout_path,  data: { turbo_method: "delete" } do %><i class="fa-solid fa-right-from-bracket"></i>ログアウト<% end %></li>
         </ul>
     </div>
   </div>
