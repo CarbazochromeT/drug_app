@@ -11,7 +11,7 @@
 <div class="container">
 <hgroup>
   <h1><%= t '.title' %></h1><br>
-  <h3>サインインは<%= link_to 'こちら', login_path %></h3>
+  サインインは<%= link_to 'こちら', login_path, class: 'textlink' %>
 </hgroup>
 <div class = 'user-form'>
 <%= form_with model: @user, local: true do |f| %>

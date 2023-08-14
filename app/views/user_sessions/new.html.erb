@@ -10,7 +10,7 @@
 
 <hgroup>
   <h1><%= t '.title' %></h1><br>
-  <h3>アカウント作成は<%= link_to 'こちら', new_user_path %></h3>
+  アカウント作成は<%= link_to 'こちら', new_user_path,  class: 'textlink' %>
 </hgroup>
 <div class = 'user-form'>
   <%= form_with model:@user, url: login_path, local: true do |f| %>

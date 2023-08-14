@@ -90,13 +90,13 @@ a {
   text-decoration: none;
 }
 
-.container a {
+.textlink a{
   position: relative;
   transition: 0.3s;
   color: var(--pink);
   text-decoration: none;
 }
-.container a::after {
+.textlink a::after{
   position: absolute;
   bottom: 0;
   left: 0;
@@ -108,10 +108,10 @@ a {
   transition: 0.3s;
 }
 
-.container a:hover::after {
+.textlink a:hover::after{
   width: 100%;
 }
-.container a:hover {
+.textlink a:hover{
   color: var(--salmon); /*ホバー時の文字色*/
 }
 
@@ -201,7 +201,7 @@ li {
 	appearance: none;
 }
 /* ミントのボタン */
-.btnmint {  
+.btnmint {
   font-family: M PLUS 1;
   background: var(--mint);
   border-radius: 15px;
@@ -261,108 +261,13 @@ li {
   color: var(--pink);
 }
 
-
-
-/* 🔽🔽🔽 チェックボックス 🔽🔽🔽 */
-.CheckboxInput {
-  padding: 12px 0px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.CheckboxInput-Input {
-  margin: 0;
-  width: 0;
-  opacity: 0;
-}
-
-.CheckboxInput-Input:checked + .CheckboxInput-DummyInput {
-  background: var(--mint);
-}
-.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 40%;
-  height: 4px;
-  border-radius: 2px;
-  transform: translate(-6px, 5px) rotateZ(-135deg);
-  transform-origin: 2px 2px;
-  background: var(--whitelight);
-}
-.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 76%;
-  height: 4px;
-  border-radius: 2px;
-  transform: translate(-6px, 5px) rotateZ(-45deg);
-  transform-origin: 2px 2px;
-  background: var(--whitelight);
-}
-.CheckboxInput-DummyInput {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 25px;
-  height: 25px;
-  border: solid 2px transparent;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  background: var(--horizon);
-}
-.CheckboxInput-LabelText {
-  margin-left: 12px;
-  display: block;
-  color: var(--black);
-}
-
-/* 🔼🔼🔼 チェックボックス 🔼🔼🔼  */
-
-/* yesnoボタン */
-.yesno input {
-  display: none;
-}
-.yesno label {
-  display: block;
-  float: left;
-  cursor: pointer;
-  width: 60px;
-  margin: 0;
-  padding: 10px;
-  background: var(--horizon);
-  color: var(--darkgrey);
-  text-align: center;
-  line-height: 1;
-  transition: 0.2s;
-}
-.yesno label:first-of-type {
-  border-radius: 3px 0 0 3px;
-}
-.yesno label:last-of-type {
-  border-radius: 0 3px 3px 0;
-}
-.yesno input[type="radio"]:checked + .switch-on {
-  background-color: var(--pink);
-  color: var(--whitelight);
-}
-.yesno input[type="radio"]:checked + .switch-off {
-  background-color: var(--sea);
-  color: var(--whitelight);
-}
 /* まるぽちボタン */
 
 .RadioInput {
   display: flex;
-  margin: 0.5em 0;
   align-items: center;
   cursor: pointer;
+  padding: 0 0.5em 0.5em 0;
 }
 .RadioInput-Input {
   opacity: 0;
@@ -385,8 +290,8 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: var(--whitelight);
 }
@@ -395,15 +300,112 @@ li {
   top: 0;
   left: 0;
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--horizon);
   border: dashed 2px transparent;
 }
 .RadioInput-LabelText {
-  margin-left: 12px;
+  margin-left: 10px;
   display: block;
+}
+
+/* 🔽🔽🔽 チェックボックス 🔽🔽🔽 */
+.CheckboxInput {
+  padding: 0 0.5em 0.5em 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.CheckboxInput-Input {
+  margin: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.CheckboxInput:hover > .CheckboxInput-DummyInput {
+  border: dashed 2px var(--mint);
+}
+
+.CheckboxInput-Input:checked + .CheckboxInput-DummyInput {
+  background: var(--mint);
+}
+.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  width: 50%;
+  height: 3px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-135deg);
+  transform-origin: 2px 2px;
+  background: var(--whitelight);
+}
+.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 65%;
+  width: 80%;
+  height: 3px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-45deg);
+  transform-origin: 2px 2px;
+  background: var(--whitelight);
+}
+.CheckboxInput-DummyInput {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: solid 2px transparent;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background: var(--horizon);
+}
+.CheckboxInput-LabelText {
+  margin-left: 10px;
+  display: block;
+  color: var(--black);
+}
+
+/* 🔼🔼🔼 チェックボックス 🔼🔼🔼  */
+
+/* yesnoボタン */
+.yesno input {
+  display: none;
+}
+.yesno label {
+  display: block;
+  float: left;
+  cursor: pointer;
+  width: 60px;
+  padding: 0.5em;
+  background: var(--horizon);
+  color: var(--darkgrey);
+  text-align: center;
+  line-height: 1;
+  transition: 0.2s;
+}
+.yesno label:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+.yesno label:last-of-type {
+  border-radius: 0 3px 3px 0;
+}
+.yesno input[type="radio"]:checked + .switch-on {
+  background-color: var(--pink);
+  color: var(--whitelight);
+}
+.yesno input[type="radio"]:checked + .switch-off {
+  background-color: var(--sea);
+  color: var(--whitelight);
 }
 
 
@@ -427,6 +429,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: left;
+  vertical-align: middle;
 }
 
 .drug-search dd{

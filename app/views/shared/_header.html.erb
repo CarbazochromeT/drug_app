@@ -22,16 +22,13 @@
         </nav>
         <nav class="phone">
           <ul>
-            <li class="nav__item2"><%= link_to search_path do %>市販のお薬を<br>探す！<% end %></li>
-            <li class="nav__item2"><%= link_to search_path do %>近隣の薬局を<br>探す！<% end %></li>
-            <li class="nav__item2"><%= link_to search_path do %>お薬<br>Q&A<% end %></li>
           </ul>
         </nav>
       </div>
     <div class="site-header__end" >
         <ul>
           <li class="nav__user"><i class="fa-solid fa-user"></i> <%= current_user.decorate.full_name %> 様</li>
-          <li class="nav__logout"><%= link_to logout_path, data: { turbo_method: :delete } do %><i class="fa-solid fa-right-from-bracket"></i>ログアウト<% end %></li>
+          <li class="nav__logout"><%= link_to logout_path, data: { turbo_method: "delete" } do %><i class="fa-solid fa-right-from-bracket"></i>ログアウト<% end %></li>
         </ul>
     </div>
   </div>

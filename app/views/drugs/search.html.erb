@@ -61,28 +61,28 @@
       </li>
       <li>
         <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
+          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
           <span class="CheckboxInput-DummyInput"></span>
           <span class="CheckboxInput-LabelText">せき</span>
         </label>
       </li>
       <li>
         <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
+          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
           <span class="CheckboxInput-DummyInput"></span>
           <span class="CheckboxInput-LabelText">たん</span>
         </label>
       </li>
       <li>
         <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
+          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
           <span class="CheckboxInput-DummyInput"></span>
           <span class="CheckboxInput-LabelText">鼻水</span>
         </label>
       </li>
       <li>
         <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
+          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
           <span class="CheckboxInput-DummyInput"></span>
           <span class="CheckboxInput-LabelText">鼻づまり</span>
         </label>
@@ -196,7 +196,13 @@
       </li>
     </ul>
   </dd>
+    <%= link_to search_path do %>
+  <div class="btn btnmint">
+    検索ページに進む
+  </div>
 </dl>
+
+  <% end %>
 <% end %>
   </div>
 </body>
