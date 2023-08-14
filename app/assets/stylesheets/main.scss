@@ -115,6 +115,7 @@ a {
 
 
 h1 {
+  /*Static-pageの大きい文字*/
   font-family: Kiwi Maru;
   font-size: 2.5em;
   font-style: normal;
@@ -122,7 +123,19 @@ h1 {
   letter-spacing: -1px;
   margin: 0;
 }
+
 h2 {
+  /*それぞれのページタイトル*/
+  font-family: Kiwi Maru;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0;
+  line-height: 0.5em;
+  color: var(--indigo);
+}
+
+h3 {
   color: var(--unnamed, #4f5974);
   text-shadow: 0px 0px 6px 0px rgba(255, 255, 255, 0.5);
   font-family: Zen Maru Gothic;
@@ -132,14 +145,7 @@ h2 {
   margin: 0;
   line-height: 1em;
 }
-h3 {
-  font-family: Zen Kaku Gothic Antique;
-  font-size: 1.3em;
-  font-style: normal;
-  font-weight: 700;
-  margin: 0;
-  line-height: 0.5em;
-}
+
 h4 {
   font-family: M PLUS 2;
   font-size: 1.2em;
@@ -300,4 +306,15 @@ li {
   margin-left: 12px;
   display: block;
   color: var(--black);
+}
+
+dl{
+  display: block;
+}
+dt{
+  float: left;
+}
+
+dt::after{
+  content: "："
 }

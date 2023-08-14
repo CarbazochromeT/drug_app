@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="turbo-visit-control" content="reload">
   </head>
   <body>
 <% content_for(:title, t('.title')) %>
@@ -14,7 +13,6 @@
   <h3>アカウント作成は<%= link_to 'こちら', new_user_path %></h3>
 </hgroup>
   <%= form_with model:@user, url: login_path, local: true do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
     <div class="group">
       <%= f.label :email, User.human_attribute_name(:email) %><br>
       <%= f.text_field :email %><span class="highlight"></span><span class="bar"></span>

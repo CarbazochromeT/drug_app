@@ -14,16 +14,16 @@
       <div class="hamburger"><span></span><span>Menu</span><span></span></div>
         <nav class="pc">
           <ul>
-            <li class="nav__item"><a href="#">市販のおくすりを<br>探す！</a></li>
-            <li class="nav__item"><a href="#">近隣の薬局を<br>探す！</a></li>
-            <li class="nav__item"><a href="#">お薬<br>Q & A</a></li>
+            <li class="nav__item"><%= link_to search_path do %>市販のお薬を<br>探す！<% end %></li>
+            <li class="nav__item"><%= link_to search_path do %>近隣の薬局を<br>探す！<% end %></li>
+            <li class="nav__item"><%= link_to search_path do %>お薬<br>Q&A<% end %></li>
           </ul>
         </nav>
         <nav class="phone">
           <ul>
-            <li class="nav__item2"><a href="#">市販のおくすりを探す！</a></li>
-            <li class="nav__item2"><a href="#">近隣の薬局を探す！</a></li>
-            <li class="nav__item2"><a href="#">お薬Q & A</a></li>
+            <li class="nav__item2"><%= link_to search_path do %>市販のお薬を<br>探す！<% end %></li>
+            <li class="nav__item2"><%= link_to search_path do %>近隣の薬局を<br>探す！<% end %></li>
+            <li class="nav__item2"><%= link_to search_path do %>お薬<br>Q&A<% end %></li>
           </ul>
         </nav>
       </div>

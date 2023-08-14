@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :static_pages
   resources :users, only: [:new, :create]
+  resources :drugs
+  get '/search', to: 'drugs#search'
 end

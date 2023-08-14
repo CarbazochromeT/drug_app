@@ -73,3 +73,6 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jquery-rails"
 gem 'draper'
+gem 'rakuten_web_service'
+gem 'dotenv-rails'
+gem 'ransack'

@@ -34,6 +34,13 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  drugs:
+    index:
+      title: 'インデックス'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    search:
+      title: '市販薬を検索する'
   bookmarks:
       title: 'ブックマーク一覧'
       create:

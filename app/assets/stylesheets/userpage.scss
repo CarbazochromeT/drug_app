@@ -167,6 +167,7 @@ input:focus ~ .highlight {
   }
 }
 
+/* 入力フォーム */
 
 input[type="submit"] {
   color: var(--whitelight);
@@ -188,4 +189,27 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background: var(--melon);
   color: var(--pink);
+}
+
+.searchform {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.searchform input {
+  width: 250px;
+  height: 35px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  box-sizing: border-box;
+  background-color: var(--horizon);
+  font-size: 1em;
+  outline: none;
+}
+
+.searchform input::placeholder {
+  color: var(--darkgrey);
 }
