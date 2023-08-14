@@ -18,15 +18,19 @@
 <%= form_with model:@drug, local: true, class: 'drug-search' do |f| %>
   <dt>成分名で検索</dt>
   <dd>
+  <div class = "textarea">
       <label>
         <input type="text" placeholder="成分名で検索">
       </label>
+    </div>
   </dd>
   <dt>商品名で検索</dt>
   <dd>
+    <div class = "textarea">
       <label>
-        <input type="text" placeholder="成分名で検索">
+        <input type="text" placeholder="商品名で検索">
       </label>
+    </div>
   </dd>
   <dt>どんな症状がありますか？</dt>
   <dd>
@@ -86,25 +90,32 @@
   <dd>
     <ul>
       <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">〜5日ぶん</span>
-        </label>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">こだわりなし</span>
+      </label>
+      </li>
+    <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">~5日分</span>
+      </label>
+      </li>
+    <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">~7日分</span>
+      </label>
       </li>
       <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">〜一週間ぶん</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">〜14日分</span>
-        </label>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">それ以上</span>
+      </label>
       </li>
     </ul>
   </dd>

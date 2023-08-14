@@ -187,6 +187,14 @@ li {
   color: var(--pink)
 }
 
+.btn{
+  background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
 /* ミントのボタン */
 .btnmint {  
   font-family: M PLUS 1;
@@ -242,7 +250,7 @@ li {
   align-items: center;
   padding: 10px 10px;
   justify-content: center;
-}   
+}
 .btnpink:hover {
   background: var(--melon);
   color: var(--pink);
@@ -343,6 +351,56 @@ li {
   background-color: var(--sea);
   color: var(--whitelight);
 }
+/* まるぽちボタン */
+
+.RadioInput {
+  display: flex;
+  margin: 0.5em 0;
+  align-items: center;
+  cursor: pointer;
+}
+.RadioInput-Input {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+}
+.RadioInput:hover > .RadioInput-DummyInput {
+  border: dashed 2px var(--pink);
+}
+.RadioInput-Input:focus + .RadioInput-DummyInput {
+  background: var(--whitelight);
+}
+.RadioInput-Input:checked + .RadioInput-DummyInput {
+  background: var(--pink);
+}
+.RadioInput-Input:checked + .RadioInput-DummyInput::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--whitelight);
+}
+.RadioInput-DummyInput {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--horizon);
+  border: dashed 2px transparent;
+}
+.RadioInput-LabelText {
+  margin-left: 12px;
+  display: block;
+}
+
 
 .drug-search{
   width: 700px;

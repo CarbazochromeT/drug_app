@@ -14,15 +14,15 @@
 </hgroup>
 <div class = 'user-form'>
   <%= form_with model:@user, url: login_path, local: true do |f| %>
-    <div class="group">
+    <div class="group textarea">
       <%= f.label :email, User.human_attribute_name(:email) %><br>
       <%= f.text_field :email %><span class="highlight"></span><span class="bar"></span>
     </div>
-    <div class="group">
+    <div class="group textarea">
       <%= f.label :password, User.human_attribute_name(:password) %><br>
       <%= f.password_field :password %><span class="highlight"></span><span class="bar"></span>
     </div>
-      <%= f.submit (t 'defaults.login'), class: 'btnpink' %>
+      <%= f.submit (t 'defaults.login'), class: 'btn btnpink' %>
   <% end %>
   </div>
 </div>

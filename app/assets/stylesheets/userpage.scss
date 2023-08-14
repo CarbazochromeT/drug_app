@@ -21,24 +21,51 @@ form {
   margin-bottom: 45px;
 }
 
-input {
-  font-size: 18px;
-  padding: 10px 0 10px 5px;
-  -webkit-appearance: none;
-  background-color:var(--horizon);
-  display: block;
-  color: #636363;
-  width: 100%;
+/* 入力フォーム */
+.textarea input {
+  height: 35px;
+  padding: 5px 0;
   border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #757575;
+  border-radius: 3px 0 0 3px;
+  box-sizing: border-box;
+  background-color: var(--horizon);
+  font-size: 1em;
+  outline: none;
+  width: 100%;
+
 }
 
-input:focus { outline: none;
+.textarea input::placeholder {
+  color: var(--darkgrey);
+}
+
+.textarea input[type="submit"] {
+  color: var(--whitelight);
+  font-weight: 600;
+  font-family: M PLUS 1;
+  text-align: center;
+  background: var(--pink);
+  border-radius: 20px;
+  position: relative;
+  display: block;
+  height: 60px;
+  transition: 0.3s ease-in-out;
+  align-items: center;
+  padding: 10px 0;
+  justify-content: center;
+  border-bottom: none;
+  width: 100%;
+}
+
+.textarea input[type="submit"]:hover {
+  background: var(--melon);
+  color: var(--pink);
+}
+.textarea input:focus { outline: none;
   background: var(--horizon);
  }
 
- input:-webkit-autofill {
+.textarea input:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s !important;
 }
 
@@ -59,7 +86,7 @@ input:focus { outline: none;
 
 /* active */
 
-input:focus ~ .label, .input.used ~ .label {
+input:focus ~ .label, input.used ~ .label {
   top: -20px;
   transform: scale(.75); left: -2px;
   /* font-size: 14px; */
@@ -67,7 +94,7 @@ input:focus ~ .label, .input.used ~ .label {
 }
 
 
-/* Underline */
+/* テキストエリアのアンダーライン */
 
 .bar {
   position: relative;
@@ -81,18 +108,18 @@ input:focus ~ .label, .input.used ~ .label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: var(--pink); 
+  background: var(--pink);
   transition: all 0.2s ease;
 }
 
 .bar:before { left: 50%; }
 
-.bar:after { right: 50%; }
+.bar:after { right: 50%;  }
 
 
 /* active */
 
-input[type="text"]:focus input[type="password"]:focus ~ .bar:before, .input:focus ~ .bar:after { width: 50%; }
+input:focus~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
 
 /* Highlight */
@@ -110,7 +137,7 @@ input[type="text"]:focus input[type="password"]:focus ~ .bar:before, .input:focu
 
 /* active */
 
-input:focus ~ .highlight {
+.textarea input:focus ~ .highlight {
   animation: inputHighlighter 0.3s ease;
 }
 
@@ -169,47 +196,9 @@ input:focus ~ .highlight {
   }
 }
 
-/* 入力フォーム */
-
-input[type="submit"] {
-  color: var(--whitelight);
-  font-weight: 600;
-  font-family: M PLUS 1;
-  text-align: center;
-  background: var(--pink);
-  border-radius: 20px;
-  position: relative;
-  display: block;
-  height: 60px;
-  transition: 0.3s ease-in-out;
-  align-items: center;
-  padding: 10px 0;
-  justify-content: center;
-  border-bottom: none;
-}
-
-input[type="submit"]:hover {
-  background: var(--melon);
-  color: var(--pink);
-}
-
 .user-form {
   width: 400px;
   align-items: center;
   margin: auto;
 }
 
-input {
-  height: 35px;
-  padding: 5px 15px;
-  border: none;
-  border-radius: 3px 0 0 3px;
-  box-sizing: border-box;
-  background-color: var(--horizon);
-  font-size: 1em;
-  outline: none;
-}
-
-input::placeholder {
-  color: var(--darkgrey);
-}

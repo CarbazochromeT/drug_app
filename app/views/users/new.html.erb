@@ -16,26 +16,26 @@
 <div class = 'user-form'>
 <%= form_with model: @user, local: true do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
-  <div class="group" >
+  <div class="group textarea" >
     <%= f.label :username %>
     <%= f.text_field :username %><span class="highlight"></span><span class="bar"></span>
   </div>
 
-  <div class="group" >
+  <div class="group textarea" >
     <%= f.label :email %>
     <%= f.text_field :email %><span class="highlight"></span><span class="bar"></span>
   </div>
 
-  <div class="group" >
+  <div class="group textarea" >
     <%= f.label :password %>
     <%= f.password_field :password %><span class="highlight"></span><span class="bar"></span>
   </div>
 
-  <div class="group" >
+  <div class="group textarea" >
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %><span class="highlight"></span><span class="bar"></span>
   </div>
-    <%= f.submit nil, class: 'btnpink' %>
+    <%= f.submit nil, class: 'btn btnpink' %>
 <% end %>
 </div>
 </div>
