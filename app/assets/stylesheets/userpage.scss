@@ -4,13 +4,15 @@ hgroup {
   text-align:center;
   margin-top: 4em;
 }
+.user-form{
+  width: 400px;
+}
 
 form {
-  width: 380px;
   margin: 4em auto;
   padding: 3em 2em 2em 2em;
   background: var(--whiteblue);
-  border: 1px solid #ebebeb;
+  border: 1px solid var(--horizon);
   border-radius: 30px;
 }
 
@@ -191,15 +193,13 @@ input[type="submit"]:hover {
   color: var(--pink);
 }
 
-.searchform {
-  display: flex;
+.user-form {
+  width: 400px;
   align-items: center;
-  overflow: hidden;
-  border-radius: 3px;
+  margin: auto;
 }
 
-.searchform input {
-  width: 250px;
+input {
   height: 35px;
   padding: 5px 15px;
   border: none;
@@ -210,6 +210,6 @@ input[type="submit"]:hover {
   outline: none;
 }
 
-.searchform input::placeholder {
+input::placeholder {
   color: var(--darkgrey);
 }

@@ -13,6 +13,7 @@
   <h1><%= t '.title' %></h1><br>
   <h3>サインインは<%= link_to 'こちら', login_path %></h3>
 </hgroup>
+<div class = 'user-form'>
 <%= form_with model: @user, local: true do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
   <div class="group" >
@@ -36,5 +37,6 @@
   </div>
     <%= f.submit nil, class: 'btnpink' %>
 <% end %>
+</div>
 </div>
 </body>

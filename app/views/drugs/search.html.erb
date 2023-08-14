@@ -12,47 +12,157 @@
 <hgroup>
   <h2><%= t '.title' %></h2><br>
 </hgroup>
+
 <dl>
+<div class =>
+<%= form_with model:@drug, local: true, class: 'drug-search' do |f| %>
   <dt>成分名で検索</dt>
   <dd>
-    <div class="searchform">
       <label>
         <input type="text" placeholder="成分名で検索">
       </label>
-    </div>
   </dd>
   <dt>商品名で検索</dt>
   <dd>
-      <div class="searchform">
       <label>
         <input type="text" placeholder="成分名で検索">
       </label>
-    </div>
   </dd>
   <dt>どんな症状がありますか？</dt>
   <dd>
     <ul>
-      <li></li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">頭痛</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">喉の痛み</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">熱</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">せき</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">たん</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">鼻水</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">鼻づまり</span>
+        </label>
+      </li>
     </ul>
   </dd>
   <dt>最低何回分ほしいですか？</dt>
   <dd>
     <ul>
-      <li></li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">〜5日ぶん</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">〜一週間ぶん</span>
+        </label>
+      </li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">〜14日分</span>
+        </label>
+      </li>
     </ul>
   </dd>
   <dt>剤型にこだわりはありますか？</dt>
   <dd>
     <ul>
-      <li></li>
+      <li>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">錠剤</span>
+        </label>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">カプセル</span>
+        </label>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">粉薬</span>
+        </label>
+        <label class="CheckboxInput">
+          <input class="CheckboxInput-Input" type="checkbox">
+          <span class="CheckboxInput-DummyInput"></span>
+          <span class="CheckboxInput-LabelText">点鼻</span>
+        </label>
+      </li>
     </ul>
   </dd>
   <dt>車の運転はしますか？</dt>
-  <dd></dd>
+  <dd>
+  <div class="yesno">
+    <input type="radio" name="drive" id="drive-on" value="d-on" checked="">
+    <label for="drive-on" class="switch-on">はい</label>
+    <input type="radio" name="drive" id="drive-off" value="d-off">
+    <label for="drive-off" class="switch-off">いいえ</label>
+  </div>
+  </dd>
   <dt>タバコは吸いますか？</dt>
-  <dd></dd>
+  <dd>
+  <div class="yesno">
+    <input type="radio" name="tobacco" id="tobacco-on" value="t-on" checked="">
+    <label for="tobacco-on" class="switch-on">はい</label>
+    <input type="radio" name="tobacco" id="tobacco-off" value="t-off">
+    <label for="tobacco-off" class="switch-off">いいえ</label>
+  </div>
+  </dd>
   <dt>お酒は飲みますか？</dt>
-  <dd></dd>
+  <dd>
+  <div class="yesno">
+    <input type="radio" name="alchol" id="alchol-on" value="a-on" checked="">
+    <label for="alchol-on" class="switch-on">はい</label>
+    <input type="radio" name="alchol" id="alchol-off" value="a-off">
+    <label for="alchol-off" class="switch-off">いいえ</label>
+  </div>
+  </dd>
 </dl>
+<% end %>
   </div>
 </body>

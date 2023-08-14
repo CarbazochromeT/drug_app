@@ -58,6 +58,8 @@ html {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 576px) {
@@ -248,7 +250,7 @@ li {
 
 
 
-/* チェックボックス */
+/* 🔽🔽🔽 チェックボックス 🔽🔽🔽 */
 .CheckboxInput {
   padding: 12px 0px;
   display: flex;
@@ -308,13 +310,64 @@ li {
   color: var(--black);
 }
 
-dl{
+/* 🔼🔼🔼 チェックボックス 🔼🔼🔼  */
+
+/* yesnoボタン */
+.yesno input {
+  display: none;
+}
+.yesno label {
+  display: block;
+  float: left;
+  cursor: pointer;
+  width: 60px;
+  margin: 0;
+  padding: 10px;
+  background: var(--horizon);
+  color: var(--darkgrey);
+  text-align: center;
+  line-height: 1;
+  transition: 0.2s;
+}
+.yesno label:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+.yesno label:last-of-type {
+  border-radius: 0 3px 3px 0;
+}
+.yesno input[type="radio"]:checked + .switch-on {
+  background-color: var(--pink);
+  color: var(--whitelight);
+}
+.yesno input[type="radio"]:checked + .switch-off {
+  background-color: var(--sea);
+  color: var(--whitelight);
+}
+
+.drug-search{
+  width: 700px;
+  align-content: stretch;
+}
+
+.drug-search dl{
   display: flex;
   flex-wrap: wrap;
+  margin: 20px;
 }
-dl dt {
-  width: 40%;
+
+.drug-search dt{
+  width: 7.5em;
+  float: left; 
+  padding: 10px;
+  background-color: transparent;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
-dl dd {
-  width: 60%;
+
+.drug-search dd{
+  padding: 10px;
+  background-color: transparent;
+  margin: 0 0 10px 0 !important;
 }

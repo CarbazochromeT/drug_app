@@ -12,6 +12,7 @@
   <h1><%= t '.title' %></h1><br>
   <h3>アカウント作成は<%= link_to 'こちら', new_user_path %></h3>
 </hgroup>
+<div class = 'user-form'>
   <%= form_with model:@user, url: login_path, local: true do |f| %>
     <div class="group">
       <%= f.label :email, User.human_attribute_name(:email) %><br>
@@ -23,5 +24,6 @@
     </div>
       <%= f.submit (t 'defaults.login'), class: 'btnpink' %>
   <% end %>
+  </div>
 </div>
 </body>
