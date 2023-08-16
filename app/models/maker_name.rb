@@ -1,2 +1,0 @@
-class MakerName < ApplicationRecord
-end
