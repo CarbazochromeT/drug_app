@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :drugs
+      resources :users
+
+      root to: "drugs#index"
+    end
   get 'login' => 'user_sessions#new'
   post 'login' => "user_sessions#create"
   delete 'logout' => 'user_sessions#destroy'

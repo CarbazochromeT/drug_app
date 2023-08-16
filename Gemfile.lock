@@ -72,12 +72,19 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
+    administrate (0.19.0)
+      actionpack (>= 5.0)
+      actionview (>= 5.0)
+      activerecord (>= 5.0)
+      jquery-rails (>= 4.0)
+      kaminari (>= 1.0)
+      sassc-rails (~> 2.1)
+      selectize-rails (~> 0.6)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -170,7 +177,6 @@ GEM
     minitest (5.18.1)
     msgpack (1.7.2)
     multi_xml (0.6.0)
-    nested_form (0.3.2)
     net-imap (0.3.6)
       date
       net-protocol
@@ -229,12 +235,6 @@ GEM
     rails-i18n (7.0.7)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
-    rails_admin (3.1.2)
-      activemodel-serializers-xml (>= 1.0)
-      kaminari (>= 0.14, < 2.0)
-      nested_form (~> 0.3)
-      rails (>= 6.0, < 8)
-      turbo-rails (~> 1.0)
     railties (7.0.6)
       actionpack (= 7.0.6)
       activesupport (= 7.0.6)
@@ -267,6 +267,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    selectize-rails (0.12.6)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -319,8 +320,8 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  administrate
   bootsnap
-  cancancan
   capybara
   cssbundling-rails
   dartsass-rails (~> 0.5.0)
@@ -336,7 +337,6 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.6)
   rails-i18n
-  rails_admin
   rakuten_web_service
   ransack
   sassc-rails

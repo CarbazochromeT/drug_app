@@ -77,3 +77,4 @@ gem 'rakuten_web_service'
 gem 'dotenv-rails'
 gem 'ransack'
 gem "cssbundling-rails"
+gem "administrate"
