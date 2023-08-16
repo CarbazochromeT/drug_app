@@ -71,6 +71,9 @@ ja:
       user: ユーザー
       board: 掲示板
       drug: 薬
+      symptom: 症状
+      ingredient: 薬品名
+      maker_name: 製薬企業名
     attributes:
       user:
         title: ユーザー作成
@@ -88,7 +91,28 @@ ja:
         crypted_password: パスワード
       drug:
         name: 商品名
-        text: 説明文
+        effect_text: 効能効果
+        usage: 用法用量
+        document_url: 添付文書URL
+        formulation: 剤型
+        division: リスク区分
+        taxation: 税制
+        for_days: 何日分
+        symptoms: 症状
+        ingredients: 成分
+        maker_name: 製薬企業名
+      ingredient:
+        drugs: 商品名
+        name: 成分名
+        drive: 運転
+        tobacco: タバコ
+        alcohol: 酒
+      maker_name:
+        drugs: 商品名
+        name: 製薬企業名
+      symptom:
+        drugs: 商品名
+        name: 症状
     errors:
       format: "%{attribute}%{message}"
       messages:

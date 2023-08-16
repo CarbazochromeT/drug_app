@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :drugs
       resources :users
-
+      resources :symptoms
+      resources :ingredients
+      resources :maker_names
       root to: "drugs#index"
     end
   get 'login' => 'user_sessions#new'

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class DrugDashboard < Administrate::BaseDashboard
+class SymptomDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,19 +9,9 @@ class DrugDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    division: Field::Number,
-    document_url: Field::String,
-    drug_ingredients: Field::HasMany,
     drug_symptoms: Field::HasMany,
-    effect_text: Field::String,
-    for_days: Field::Number,
-    formulation: Field::Number,
-    ingredients: Field::HasMany,
-    maker_name: Field::BelongsTo,
+    drugs: Field::HasMany,
     name: Field::String,
-    symptoms: Field::HasMany,
-    taxation: Field::Boolean,
-    usage: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -33,32 +23,18 @@ class DrugDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    drugs
     name
-    division
-    document_url
-    symptoms
-    ingredients
-    for_days
-    formulation
+    drug_symptoms
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    division
-    document_url
-    effect_text
-    for_days
-    formulation
-    ingredients
-    maker_name
-    name
-    symptoms
-    taxation
-    usage
-    drug_ingredients
     drug_symptoms
+    drugs
+    name
     created_at
     updated_at
   ].freeze
@@ -67,19 +43,9 @@ class DrugDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    division
-    document_url
-    drug_ingredients
     drug_symptoms
-    effect_text
-    for_days
-    formulation
-    ingredients
-    maker_name
+    drugs
     name
-    symptoms
-    taxation
-    usage
   ].freeze
 
   # COLLECTION_FILTERS
@@ -94,10 +60,10 @@ class DrugDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how drugs are displayed
+  # Overwrite this method to customize how symptoms are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(drug)
-  #   "Drug ##{drug.id}"
+  # def display_resource(symptom)
+  #   "Symptom ##{symptom.id}"
   # end
 end
