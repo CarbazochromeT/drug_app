@@ -17,7 +17,7 @@ class DrugDashboard < Administrate::BaseDashboard
     for_days: Field::Number,
     formulation: Field::Number,
     ingredients: Field::HasMany,
-    maker_name: Field::BelongsTo,
+    maker_name_id: Field::BelongsTo,
     name: Field::String,
     symptoms: Field::HasMany,
     taxation: Field::Boolean,
@@ -52,7 +52,7 @@ class DrugDashboard < Administrate::BaseDashboard
     for_days
     formulation
     ingredients
-    maker_name
+    maker_name_id
     name
     symptoms
     taxation
@@ -67,19 +67,19 @@ class DrugDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    division
-    document_url
-    drug_ingredients
-    drug_symptoms
-    effect_text
-    for_days
-    formulation
-    ingredients
-    maker_name
     name
     symptoms
-    taxation
+    effect_text
     usage
+    ingredients
+    maker_name_id
+    formulation
+    division
+    document_url
+    for_days
+    taxation
+    drug_ingredients
+    drug_symptoms
   ].freeze
 
   # COLLECTION_FILTERS

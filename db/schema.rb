@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_16_061703) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_16_071749) do
   create_table "drug_ingredients", force: :cascade do |t|
     t.integer "drug_id"
     t.integer "ingredient_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_16_061703) do
     t.integer "for_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "maker_name_id"
   end
 
   create_table "ingredients", force: :cascade do |t|

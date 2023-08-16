@@ -100,7 +100,7 @@ ja:
         for_days: 何日分
         symptoms: 症状
         ingredients: 成分
-        maker_name: 製薬企業名
+        maker_name_id: 製薬企業id
       ingredient:
         drugs: 商品名
         name: 成分名
@@ -108,7 +108,7 @@ ja:
         tobacco: タバコ
         alcohol: 酒
       maker_name:
-        drugs: 商品名
+        drug: 商品名
         name: 製薬企業名
       symptom:
         drugs: 商品名

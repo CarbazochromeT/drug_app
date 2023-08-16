@@ -43,9 +43,9 @@ class SymptomDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    drug_symptoms
     drugs
     name
+    drug_symptoms
   ].freeze
 
   # COLLECTION_FILTERS

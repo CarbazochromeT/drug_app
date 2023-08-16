@@ -47,11 +47,11 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    admin
-    crypted_password
-    email
-    salt
     username
+    email
+    crypted_password
+    salt
+    admin
   ].freeze
 
   # COLLECTION_FILTERS
