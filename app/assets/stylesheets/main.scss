@@ -111,6 +111,7 @@ p a::after{
 }
 p a:hover::after{
   width: 100%;
+}
 p a:hover{
   color: var(--salmon); /*ホバー時の文字色*/
 }
@@ -312,7 +313,6 @@ li {
 }
 
 /* 🔽🔽🔽 チェックボックス 🔽🔽🔽 */
-.checkbox {
   .CheckboxInput {
     padding: 0 0.5em 0.5em 0;
     display: flex;
@@ -375,7 +375,6 @@ li {
     display: block;
     color: var(--black);
   }
-}
 /* 🔼🔼🔼 チェックボックス 🔼🔼🔼  */
 
 /* yesnoボタン */

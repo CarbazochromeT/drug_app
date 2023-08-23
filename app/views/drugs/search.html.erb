@@ -38,53 +38,15 @@
   <dt>どんな症状がありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <li class= "checkbox">
         <%= collection_check_boxes(:drug, :symptom_ids, Symptom.all, :id, :name) do |b| %>
-        <%= b.label { b.check_box + b.text } %>
+          <li>
+          <label class="CheckboxInput">
+            <%= b.check_box(class: "CheckboxInput-Input") %>
+            <span class="CheckboxInput-DummyInput"></span>
+            <%= b.label(class: "CheckboxInput-LabelText") %>
+          </label>
+          </li>
         <% end %>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">喉の痛み</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">熱</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">せき</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">たん</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">鼻水</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox" name="symptom">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">鼻づまり</span>
-        </label>
-      </li>
     </ul>
   </dd>
   <dt>最低何回分ほしいですか？</dt>
