@@ -5,6 +5,8 @@ class DrugsController < ApplicationController
 
   def index
     @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_names).page(params[:page]).order("created_at desc")
+    @symptoms = Symptoms.all
+    @ingredients = @q.result(distinct: true)
   end
 
   def show
@@ -25,7 +27,8 @@ class DrugsController < ApplicationController
   end
 
   def drug_params
-    params.require(:drugs).permit(:id, :drug, :name, :effect_text, :usage, :document_url, :formulation, :division, :taxation, :for_days,  { :symptom_ids=> [] }, :ingredients, :maker_name_id)
+    params.require(:drugs).permit(:id, :drug, :name, :effect_text, :usage, :document_url, :formulation, :division, :taxation, :for_days,  { symptom_ids: [] }, :ingredients, :maker_name_id, :drive_eq)
   end
+
 
 end

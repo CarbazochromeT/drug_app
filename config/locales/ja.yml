@@ -65,6 +65,15 @@ ja:
       success: 'パスワードを更新しました'
       fail: 'パスワードが更新できませんでした'
 
+  enumerize:
+    defaults:
+      formulation:
+        tablet: '錠剤'
+        powder: '粉薬、顆粒'
+        capsule: 'カプセル'
+        liquid: '液剤'
+        nose: '点鼻'
+
 
   activerecord:
     models:

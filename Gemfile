@@ -81,3 +81,4 @@ gem "administrate"
 gem 'administrate_ransack'
 gem 'ransack'
 gem 'kaminari'
+gem 'enumerize'

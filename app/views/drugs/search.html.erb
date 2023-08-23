@@ -38,87 +38,43 @@
   <dt>どんな症状がありますか？</dt>
   <dd>
     <ul class= "search-list">
-        <%= collection_check_boxes(:drug, :symptom_ids, Symptom.all, :id, :name) do |b| %>
-          <li>
+      <%= collection_check_boxes :drug, :symptom_in, Symptom.all , :id, :name  do |b| %>
+        <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>
             <span class="CheckboxInput-DummyInput"></span>
             <%= b.label(class: "CheckboxInput-LabelText") %>
           </label>
-          </li>
-        <% end %>
+        </li>
+      <% end %>
     </ul>
   </dd>
-  <dt>最低何回分ほしいですか？</dt>
-  <dd>
-    <ul class= "search-list">
-      <li>
-      <label class="RadioInput">
-        <input class="RadioInput-Input" type="radio" name="days">
-        <span class="RadioInput-DummyInput"></span>
-        <span class="RadioInput-LabelText">こだわりなし</span>
-      </label>
-      </li>
-    <li>
-      <label class="RadioInput">
-        <input class="RadioInput-Input" type="radio" name="days">
-        <span class="RadioInput-DummyInput"></span>
-        <span class="RadioInput-LabelText">~5日分</span>
-      </label>
-      </li>
-    <li>
-      <label class="RadioInput">
-        <input class="RadioInput-Input" type="radio" name="days">
-        <span class="RadioInput-DummyInput"></span>
-        <span class="RadioInput-LabelText">~7日分</span>
-      </label>
-      </li>
-      <li>
-      <label class="RadioInput">
-        <input class="RadioInput-Input" type="radio" name="days">
-        <span class="RadioInput-DummyInput"></span>
-        <span class="RadioInput-LabelText">それ以上</span>
-      </label>
-      </li>
-    </ul>
+
   </dd>
   <dt>剤型にこだわりはありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
+      <% Drug.formulation.options.each do |name, value| %>
+        <li>
+          <label class="CheckboxInput">
+          <%= f.check_box :formulation, { id: "drug_formulation_#{value}", multiple: true, class: "CheckboxInput-Input" } %>
           <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">錠剤</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">カプセル</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">粉薬</span>
-        </label>
-      </li>
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">点鼻</span>
-        </label>
-      </li>
+          <%= f.label :formulation, name, value: value, class: "CheckboxInput-LabelText"  %>
+          </label>
+        <% end %>
+        </li>
     </ul>
   </dd>
   <dt>車の運転はしますか？</dt>
   <dd>
     <ul class= "search-list">
       <li>
+      <div class="yesno">
+      <%= f.radio_button :drive, true, id:'drive_ok', checked: true  %>
+      <%= f.label :drive_true ,"はい", for: 'drive_ok', class:"switch-on" %>
+      <%= f.radio_button :drive, false, id:'drive_ng' %>
+      <%= f.label :drive_false ,"いいえ",for: 'drive_ng', class:"switch-off" %>
+      </div>
     <div class="yesno">
       <input type="radio" name="drive" id="drive-on" value="d-on" checked="">
       <label for="drive-on" class="switch-on">はい</label>
@@ -156,6 +112,41 @@
       </li>
     </ul>
   </dd>
+<!--
+  <dt>最低何回分ほしいですか？</dt>
+  <dd>
+    <ul class= "search-list">
+      <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">こだわりなし</span>
+      </label>
+      </li>
+    <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">~5日分</span>
+      </label>
+      </li>
+    <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">~7日分</span>
+      </label>
+      </li>
+      <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">それ以上</span>
+      </label>
+      </li>
+    </ul>
+  </dd>
+    -->
     <%= link_to search_path do %>
   <div class="btn btnmint">
     検索ページに進む
