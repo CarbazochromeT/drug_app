@@ -4,4 +4,9 @@ class IngredientsController < ApplicationController
 
   def show
   end
+
+  def search_params
+    params.require(:drive).permit(:search,:search_radio)
+  end
+
 end
