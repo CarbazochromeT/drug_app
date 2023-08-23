@@ -78,3 +78,6 @@ gem 'dotenv-rails'
 gem 'ransack'
 gem "cssbundling-rails"
 gem "administrate"
+gem 'administrate_ransack'
+gem 'ransack'
+gem 'kaminari'

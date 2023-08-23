@@ -14,13 +14,13 @@
 </hgroup>
 
 <dl>
-<%= form_with model:@drug, local: true, class: 'drug-search' do |f| %>
+<%= search_form_for @q, url: search_path, class: 'drug-search' do |f| %>
   <dt>成分名で検索</dt>
   <dd>
     <ul class= "search-list">
       <li>
       <label class = "textarea">
-        <input type="text" placeholder="成分名で検索">
+      <%= f.text_field :ingredients_name_cont, placeholder: '成分名で検索' %>
       </label>
       </li>
     </ul>
@@ -30,7 +30,7 @@
     <ul class= "search-list">
       <li>
         <label class = "textarea">
-        <input type="text" placeholder="商品名で検索">
+        <%= f.text_field :name_cont, placeholder: '商品名で検索' %>
         </label>
       </li>
       </ul>
@@ -38,12 +38,10 @@
   <dt>どんな症状がありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <li>
-        <label class="CheckboxInput">
-          <input class="CheckboxInput-Input" type="checkbox">
-          <span class="CheckboxInput-DummyInput"></span>
-          <span class="CheckboxInput-LabelText">頭痛</span>
-        </label>
+      <li class= "checkbox">
+        <%= collection_check_boxes(:drug, :symptom_ids, Symptom.all, :id, :name) do |b| %>
+        <%= b.label { b.check_box + b.text } %>
+        <% end %>
       </li>
       <li>
         <label class="CheckboxInput">

@@ -80,6 +80,9 @@ GEM
       kaminari (>= 1.0)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate_ransack (0.4.1)
+      administrate (~> 0.14)
+      ransack (~> 2.3)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -245,9 +248,9 @@ GEM
     rake (13.0.6)
     rakuten_web_service (1.13.2)
       json (~> 2.3)
-    ransack (4.0.0)
-      activerecord (>= 6.1.5)
-      activesupport (>= 6.1.5)
+    ransack (2.6.0)
+      activerecord (>= 6.0.4)
+      activesupport (>= 6.0.4)
       i18n
     regexp_parser (2.8.1)
     reline (0.3.6)
@@ -321,6 +324,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate_ransack
   bootsnap
   capybara
   cssbundling-rails
@@ -333,6 +337,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jquery-rails
+  kaminari
   meta_request
   puma (~> 5.0)
   rails (~> 7.0.6)

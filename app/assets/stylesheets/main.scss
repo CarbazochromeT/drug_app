@@ -90,13 +90,15 @@ a {
   text-decoration: none;
 }
 
-a{
+p a{
   position: relative;
   transition: 0.3s;
   color: var(--pink);
   text-decoration: none;
 }
-a::after{
+
+
+p a::after{
   position: absolute;
   bottom: 0;
   left: 0;
@@ -107,13 +109,12 @@ a::after{
   background-color: var(--salmon); /*下線の色*/
   transition: 0.3s;
 }
-
-a:hover::after{
+p a:hover::after{
   width: 100%;
-}
-a:hover{
+p a:hover{
   color: var(--salmon); /*ホバー時の文字色*/
 }
+
 
 
 h1 {
@@ -238,8 +239,6 @@ li {
   position: absolute;
   top: 50%;
   right: 20px;
-  border-radius: 1px;
-  transition: 0.3s ease-in-out;
 }
 
 /* ピンクのボタン */
@@ -313,69 +312,70 @@ li {
 }
 
 /* 🔽🔽🔽 チェックボックス 🔽🔽🔽 */
-.CheckboxInput {
-  padding: 0 0.5em 0.5em 0;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.CheckboxInput-Input {
-  margin: 0;
-  width: 0;
-  opacity: 0;
-}
+.checkbox {
+  .CheckboxInput {
+    padding: 0 0.5em 0.5em 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .CheckboxInput-Input {
+    margin: 0;
+    width: 0;
+    opacity: 0;
+  }
 
-.CheckboxInput:hover > .CheckboxInput-DummyInput {
-  border: dashed 2px var(--mint);
-}
+  .CheckboxInput:hover > .CheckboxInput-DummyInput {
+    border: dashed 2px var(--mint);
+  }
 
-.CheckboxInput-Input:checked + .CheckboxInput-DummyInput {
-  background: var(--mint);
+  .CheckboxInput-Input:checked + .CheckboxInput-DummyInput {
+    background: var(--mint);
+  }
+  .CheckboxInput-Input:checked + .CheckboxInput-DummyInput::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    width: 50%;
+    height: 3px;
+    border-radius: 2px;
+    transform: translate(-6px, 5px) rotateZ(-135deg);
+    transform-origin: 2px 2px;
+    background: var(--whitelight);
+  }
+  .CheckboxInput-Input:checked + .CheckboxInput-DummyInput::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    width: 80%;
+    height: 3px;
+    border-radius: 2px;
+    transform: translate(-6px, 5px) rotateZ(-45deg);
+    transform-origin: 2px 2px;
+    background: var(--whitelight);
+  }
+  .CheckboxInput-DummyInput {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: solid 2px transparent;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background: var(--horizon);
+  }
+  .CheckboxInput-LabelText {
+    margin-left: 10px;
+    display: block;
+    color: var(--black);
+  }
 }
-.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 35%;
-  left: 60%;
-  width: 50%;
-  height: 3px;
-  border-radius: 2px;
-  transform: translate(-6px, 5px) rotateZ(-135deg);
-  transform-origin: 2px 2px;
-  background: var(--whitelight);
-}
-.CheckboxInput-Input:checked + .CheckboxInput-DummyInput::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 40%;
-  left: 65%;
-  width: 80%;
-  height: 3px;
-  border-radius: 2px;
-  transform: translate(-6px, 5px) rotateZ(-45deg);
-  transform-origin: 2px 2px;
-  background: var(--whitelight);
-}
-.CheckboxInput-DummyInput {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  border: solid 2px transparent;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  background: var(--horizon);
-}
-.CheckboxInput-LabelText {
-  margin-left: 10px;
-  display: block;
-  color: var(--black);
-}
-
 /* 🔼🔼🔼 チェックボックス 🔼🔼🔼  */
 
 /* yesnoボタン */
