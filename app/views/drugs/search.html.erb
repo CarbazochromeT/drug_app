@@ -38,7 +38,7 @@
   <dt>どんな症状がありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <%= collection_check_boxes :drug, :symptom_in, Symptom.all , :id, :name  do |b| %>
+      <%= f.collection_check_boxes :symptoms_name_in, Symptom.all , :id, :name, { multiple: true }  do |b| %>
         <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>
@@ -70,18 +70,11 @@
     <ul class= "search-list">
       <li>
       <div class="yesno">
-      <%= f.radio_button :drive, true, id:'drive_ok', checked: true  %>
+      <%= f.radio_button :ingredients_drive_eq, true, id:'drive_ok', checked: true  %>
       <%= f.label :drive_true ,"はい", for: 'drive_ok', class:"switch-on" %>
-      <%= f.radio_button :drive, false, id:'drive_ng' %>
+      <%= f.radio_button :ingredients_drive_eq, false, id:'drive_ng' %>
       <%= f.label :drive_false ,"いいえ",for: 'drive_ng', class:"switch-off" %>
       </div>
-
-    <div class="yesno">
-      <input type="radio" name="drive" id="drive-on" value="d-on" checked="">
-      <label for="drive-on" class="switch-on">はい</label>
-      <input type="radio" name="drive" id="drive-off" value="d-off">
-      <label for="drive-off" class="switch-off">いいえ</label>
-    </div>
       </li>
     </ul>
   </dd>
@@ -90,12 +83,12 @@
   <dd>
     <ul class= "search-list">
       <li>
-    <div class="yesno">
-      <input type="radio" name="tobacco" id="tobacco-on" value="t-on" checked="">
-      <label for="tobacco-on" class="switch-on">はい</label>
-      <input type="radio" name="tobacco" id="tobacco-off" value="t-off">
-      <label for="tobacco-off" class="switch-off">いいえ</label>
-    </div>
+      <div class="yesno">
+      <%= f.radio_button :ingredients_tobacco_eq, true, id:'tobacco_ok', checked: true  %>
+      <%= f.label :tobacco_true ,"はい", for: 'tobacco_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_tobacco_eq, false, id:'tobacco_ng' %>
+      <%= f.label :tobacco_false ,"いいえ",for: 'tobacco_ng', class:"switch-off" %>
+      </div>
       </li>
     </ul>
   </dd>
@@ -104,12 +97,12 @@
   <dd>
     <ul class= "search-list">
       <li>
-    <div class="yesno">
-      <input type="radio" name="alchol" id="alchol-on" value="a-on" checked="">
-      <label for="alchol-on" class="switch-on">はい</label>
-      <input type="radio" name="alchol" id="alchol-off" value="a-off">
-      <label for="alchol-off" class="switch-off">いいえ</label>
-    </div>
+      <div class="yesno">
+      <%= f.radio_button :ingredients_alcohol_eq, true, id:'alcohol_ok', checked: true  %>
+      <%= f.label :alcohol_true ,"はい", for: 'alcohol_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_alcohol_eq, false, id:'alcohol_ng' %>
+      <%= f.label :alcohol_false ,"いいえ",for: 'alcohol_ng', class:"switch-off" %>
+      </div>
       </li>
     </ul>
   </dd>
@@ -149,9 +142,9 @@
   </dd>
     -->
     <%= link_to search_path do %>
-  <div class="btn btnmint">
+    <%= f.submit '検索', class: 'btn btnmint' do %>
     検索ページに進む
-  </div>
+    <% end %>
 </dl>
 
   <% end %>
