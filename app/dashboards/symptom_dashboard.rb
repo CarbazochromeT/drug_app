@@ -23,7 +23,6 @@ class SymptomDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    drug_symptoms
     drugs
     name
   ].freeze

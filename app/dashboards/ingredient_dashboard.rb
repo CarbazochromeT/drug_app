@@ -16,7 +16,6 @@ class IngredientDashboard < Administrate::BaseDashboard
     name: Field::String,
     tobacco: Field::Enumerize,
     created_at: Field::DateTime,
-
     updated_at: Field::DateTime,
   }.freeze
 
@@ -26,9 +25,10 @@ class IngredientDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    id
-    alcohol
+    name
     drive
+    tobacco
+    alcohol
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
