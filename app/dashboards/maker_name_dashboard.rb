@@ -60,7 +60,7 @@ class MakerNameDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how maker names are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(maker_name)
-  #   "MakerName ##{maker_name.id}"
-  # end
+  def display_resource(resource)
+    resource.name
+  end
 end

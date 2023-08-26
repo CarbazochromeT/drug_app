@@ -9,17 +9,23 @@ class DrugDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    division: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
+    division: Field::Enumerize,
     document_url: Field::String,
     drug_ingredients: Field::HasMany,
     drug_symptoms: Field::HasMany,
     effect_text: Field::String,
     for_days: Field::Number,
-    formulation: Field::Number,
-    ingredients: Field::HasMany,
+    formulation: Field::Enumerize,
+    ingredients: Field::HasMany.with_options(
+      searchable: true,
+      searchable_fields: ['name'],
+      skip: :drug),
     maker_name: Field::BelongsTo,
     name: Field::String,
-    symptoms: Field::HasMany,
+    symptoms: Field::HasMany.with_options(
+      searchable: true,
+      searchable_fields: ['name'],
+      skip: :drug),
     taxation: Field::Boolean,
     usage: Field::String,
     created_at: Field::DateTime,
@@ -63,16 +69,14 @@ class DrugDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    name
     division
     document_url
-    drug_ingredients
-    drug_symptoms
     effect_text
     for_days
     formulation
     ingredients
     maker_name
-    name
     symptoms
     taxation
     usage
@@ -93,7 +97,7 @@ class DrugDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how drugs are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(drug)
-  #   "Drug ##{drug.id}"
-  # end
+  def display_resource(drug)
+    drug.name
+  end
 end

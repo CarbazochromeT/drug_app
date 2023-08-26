@@ -66,4 +66,7 @@ class SymptomDashboard < Administrate::BaseDashboard
   # def display_resource(symptom)
   #   "Symptom ##{symptom.id}"
   # end
+  def display_resource(resource)
+    resource.name
+  end
 end

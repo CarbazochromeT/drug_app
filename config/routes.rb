@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
       resources :drugs
-      resources :drug_ingredients
-      resources :drug_symptoms
       resources :ingredients
       resources :maker_names
       resources :symptoms

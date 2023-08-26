@@ -68,12 +68,12 @@ ja:
   enumerize:
     defaults:
       formulation:
-        tablet: '錠剤'
-        powder: '粉薬、顆粒'
-        capsule: 'カプセル'
-        liquid: '液剤'
-        nose: '点鼻'
-
+        "tablet": '錠剤'
+        "powder": '粉薬、顆粒'
+        "capsule": 'カプセル'
+        "liquid": '液剤'
+        "nose": '点鼻'
+    drug:
 
   activerecord:
     models:
@@ -169,6 +169,7 @@ ja:
         default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
         long: "%Y/%m/%d %H:%M"
         short: "%m/%d %H:%M"
+
 
 # rails_admin日本語化
   admin:
@@ -323,3 +324,27 @@ ja:
         default_col_sep: ","
         col_sep: "区切り文字"
         col_sep_help: "空白の場合は'%{value}'区切りです" # value is default_col_sep
+  enumerize:
+    ingredient:
+      drive:
+        "drive_ok": 運転OK
+        "drive_ng":  運転NG
+      tobacco:
+        "tobacco_ok": タバコOK
+        "tobacco_ng":  タバコNG
+      alcohol:
+        "alcohol_ok": 酒OK
+        "alcohol_ng":  酒NG
+    drug:
+      formulation:
+        "tablet": 錠剤
+        "powder": 散剤
+        "capsule": カプセル
+        "liquid": 液剤
+        "nose": "点鼻薬"
+      division:
+        "to_guide": '要指導医薬品'
+        "one_kind": '一類医薬品'
+        "two_kind": '二類医薬品'
+        "three_kind": '三類医薬品'
+        "two_designate": '指定二類医薬品'

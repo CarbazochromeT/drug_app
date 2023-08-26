@@ -9,13 +9,14 @@ class IngredientDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    alcohol: Field::Boolean,
-    drive: Field::Boolean,
+    alcohol: Field::Enumerize,
+    drive: Field::Enumerize,
     drug_ingredients: Field::HasMany,
     drugs: Field::HasMany,
     name: Field::String,
-    tobacco: Field::Boolean,
+    tobacco: Field::Enumerize,
     created_at: Field::DateTime,
+
     updated_at: Field::DateTime,
   }.freeze
 
@@ -28,7 +29,6 @@ class IngredientDashboard < Administrate::BaseDashboard
     id
     alcohol
     drive
-    drug_ingredients
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +37,6 @@ class IngredientDashboard < Administrate::BaseDashboard
     id
     alcohol
     drive
-    drug_ingredients
     drugs
     name
     tobacco
@@ -51,7 +50,6 @@ class IngredientDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     alcohol
     drive
-    drug_ingredients
     drugs
     name
     tobacco
@@ -75,4 +73,7 @@ class IngredientDashboard < Administrate::BaseDashboard
   # def display_resource(ingredient)
   #   "Ingredient ##{ingredient.id}"
   # end
+  def display_resource(resource)
+    resource.name
+  end
 end

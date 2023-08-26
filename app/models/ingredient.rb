@@ -5,9 +5,9 @@ class Ingredient < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
 
-  enumerize :drive, in: { drive_ok: true, drive_ng: false }
-  enumerize :tobacco, in: { tobacco_ok: true, tobacco_ng: false }
-  enumerize :alcohol, in: { alcohol_ok: true, alcohol_ng: false }
+  enumerize :drive, in: { drive_ok: true, drive_ng: false }, scope: true
+  enumerize :tobacco, in: { tobacco_ok: true, tobacco_ng: false }, scope: true
+  enumerize :alcohol, in: { alcohol_ok: true, alcohol_ng: false }, scope: true
 
   def self.search(search_params)
 		@drug = Drug.where( 'drive LIKE ?', "%#{search_params[:search_radio]}%" )
