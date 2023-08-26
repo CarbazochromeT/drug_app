@@ -9,7 +9,7 @@ class DrugDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    division: Field::Number,
+    division: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     document_url: Field::String,
     drug_ingredients: Field::HasMany,
     drug_symptoms: Field::HasMany,
@@ -17,7 +17,7 @@ class DrugDashboard < Administrate::BaseDashboard
     for_days: Field::Number,
     formulation: Field::Number,
     ingredients: Field::HasMany,
-    maker_name_id: Field::BelongsTo,
+    maker_name: Field::BelongsTo,
     name: Field::String,
     symptoms: Field::HasMany,
     taxation: Field::Boolean,
@@ -33,13 +33,9 @@ class DrugDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    name
     division
     document_url
-    symptoms
-    ingredients
-    for_days
-    formulation
+    drug_ingredients
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -48,17 +44,17 @@ class DrugDashboard < Administrate::BaseDashboard
     id
     division
     document_url
+    drug_ingredients
+    drug_symptoms
     effect_text
     for_days
     formulation
     ingredients
-    maker_name_id
+    maker_name
     name
     symptoms
     taxation
     usage
-    drug_ingredients
-    drug_symptoms
     created_at
     updated_at
   ].freeze
@@ -67,19 +63,19 @@ class DrugDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    name
-    symptoms
-    effect_text
-    usage
-    ingredients
-    maker_name_id
-    formulation
     division
     document_url
-    for_days
-    taxation
     drug_ingredients
     drug_symptoms
+    effect_text
+    for_days
+    formulation
+    ingredients
+    maker_name
+    name
+    symptoms
+    taxation
+    usage
   ].freeze
 
   # COLLECTION_FILTERS

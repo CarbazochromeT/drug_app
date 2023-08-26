@@ -12,7 +12,11 @@
 <hgroup>
   <h2><%= t '.title' %></h2><br>
 </hgroup>
-
-aaaaaaa
+      <% if @drugs.present? %>
+        <%= render @drugs %>
+      <% else %>
+        <p><%= t('.no_result') %></p>
+      <% end %>
+        <%= paginate @drugs %>
 </div>
 </body>

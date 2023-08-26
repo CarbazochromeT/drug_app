@@ -19,7 +19,7 @@
   <dd>
     <ul class= "search-list">
       <li>
-      <label class = "textarea">
+      <label class = "search-textarea">
       <%= f.text_field :ingredients_name_cont, placeholder: '成分名で検索' %>
       </label>
       </li>
@@ -29,7 +29,7 @@
   <dd>
     <ul class= "search-list">
       <li>
-        <label class = "textarea">
+        <label class = "search-textarea">
         <%= f.text_field :name_cont, placeholder: '商品名で検索' %>
         </label>
       </li>
@@ -141,13 +141,11 @@
     </ul>
   </dd>
     -->
-    <%= link_to search_path do %>
     <%= f.submit '検索', class: 'btn btnmint' do %>
     検索ページに進む
     <% end %>
 </dl>
 
   <% end %>
-<% end %>
   </div>
 </body>

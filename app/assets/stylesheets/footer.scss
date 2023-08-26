@@ -53,3 +53,24 @@
     flex-direction: column;
 }
 }
+
+footer a::after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 1px; /*下線の太さ*/
+  color: var(--pink);
+  background-color: var(--pink); /*下線の色*/
+  transition: 0.3s;
+}
+
+footer a:hover::after{
+  width: 0%;
+}
+
+footer a:hover{
+  transition: 0.3s ease-in-out;
+  color: var(--pink); /*ホバー時の文字色*/
+}

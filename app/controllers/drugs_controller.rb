@@ -3,6 +3,9 @@ class DrugsController < ApplicationController
   before_action :set_drug,only: [:show, :edit, :update, :destroy]
 
   def index
+    @q = Drug.ransack(params[:q])
+    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_names).page(params[:page]).order("created_at desc")
+    @results = @q.result
   end
 
   def show

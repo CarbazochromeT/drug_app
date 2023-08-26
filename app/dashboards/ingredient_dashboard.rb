@@ -26,7 +26,6 @@ class IngredientDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    drugs
     alcohol
     drive
     drug_ingredients
