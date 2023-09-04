@@ -15,15 +15,22 @@
       <% if @drugs.present? %>
         <%= render @drugs %>
       <% else %>
-        <p><%= t('.no_result') %></p>
+        <p><%= t('.no_result') %>(='X'=)</p>
       <% end %>
         <%= paginate @drugs %>
+
+    <%= render 'drug' %>
 <div class="search-result">
+<dl>
+<dt><span class="drug-icon"></span></dt>
+<dd><div class="drug-title" >ロキソニンSプレミアム 12錠入り</div></dd>
+<dd><span class="tag-division">一類医薬品</span><span class="tag-caution">not眠気注意</span></dd>
+</dl>
 <table class="ta1">
-<caption>ロキソニンSプレミアム 12錠入り</caption>
+<tbody>
 <tr>
 <th>成分</th>
-<td>ロキソプロフェンナトリウム水和物</td>
+<td><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></td>
 </tr>
 <tr>
 <th>効能効果</th>
@@ -40,8 +47,12 @@
 但し、再度症状が現れた場合には３回目を服用できます。
 服用間隔は４時間以上おいてください。
 １５歳未満：服用しないでください。</pre></td>
+
 </tr>
+</tbody>
 </table>
+  <a href="" class="btncirlemon">製薬企業</a>
+  <a href="" class="btncirmarine">添付文書</a>
 </div>
 </div>
 </div>

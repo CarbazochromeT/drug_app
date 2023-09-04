@@ -1,32 +1,27 @@
-<div id="board-id-<%= board.id %>">
-<%= link_to drug.name, drug_path(drug) %>
+<div class="search-result">
+<dl>
+<dt><span class="drug-icon"></span></dt>
+<dd><div class="drug-title" >ロキソニンSプレミアム 12錠入り</div></dd>
+<dd><span class="tag-division">一類医薬品</span><span class="tag-caution">not眠気注意</span></dd>
+</dl>
 <table class="ta1">
-<caption><%= link_to drug.name, drug_path(drug) %></caption>
+<tbody>
 <tr>
-<th>見出し</th>
-<td>ここに内容を入れます。サンプルテキスト。</td>
+<th>成分</th>
+<td><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></td>
 </tr>
 <tr>
-<th>見出し</th>
-<td>ここに内容を入れます。サンプルテキスト。</td>
+<th>効能効果</th>
+<td>頭痛・月経痛（生理痛）・歯痛・抜歯後の疼痛・咽喉痛・腰痛・関節痛・神経痛・筋肉痛・肩こり痛・耳痛・打撲痛・骨折痛・ねんざ痛・外傷痛の鎮痛。
+悪寒・発熱時の解熱。</td>
 </tr>
 <tr>
-<th>見出し</th>
-<td>ここに内容を入れます。サンプルテキスト。</td>
-</tr>
-<tr>
-<th>見出し</th>
-<td>ここに内容を入れます。サンプルテキスト。</td>
-</tr>
-<tr>
-<th>見出し</th>
-<td>ここに内容を入れます。サンプルテキスト。</td>
-</tr>
-<tr>
-<th>見出し</th>
-<td>ここに内容を入れます。サンプルテキスト。ここに内容を入れます。サンプルテキスト。ここに内容を入れます。サンプルテキスト。ここに内容を入れます。サンプルテキスト。ここに内容を入れます。サンプルテキスト。ここに内容を入れます。サンプルテキスト。ここに内容を入れます。サンプルテキスト。ここに内容を入れます。サンプルテキスト。</td>
-</tr>
+</tbody>
 </table>
+  <%= link_to search_path, class: "button-text" do%>
+  <div class="btn btnmint">
+    詳しい説明を見る！
+  </div>
+  <% end %>
 
-<p><%= drug.text %></p>
-</div>
+  </div>

@@ -9,8 +9,7 @@ gem "rails", "~> 7.0.6"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use mysql2 as the database for Active Record
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -87,3 +86,6 @@ gem 'administrate-field-belongs_to_search'
 gem 'administrate-field-enumerize'
 gem 'cocoon'
 gem 'enum_help'
+gem 'roo'
+gem 'administrate-field-csv', '~> 0.1.0'
+gem "mysql2"

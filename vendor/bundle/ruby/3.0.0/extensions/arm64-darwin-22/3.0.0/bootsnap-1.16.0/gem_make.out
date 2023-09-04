@@ -1,0 +1,15 @@
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.16.0/ext/bootsnap
+/Users/flare_home/.rbenv/versions/3.0.2/bin/ruby -I /Users/flare_home/.rbenv/versions/3.0.2/lib/ruby/3.0.0 -r ./siteconf20230902-15077-sk41u5.rb extconf.rb
+creating Makefile
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20230902-15077-5b88a4/bootsnap

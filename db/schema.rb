@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_23_043949) do
-  create_table "drug_ingredients", force: :cascade do |t|
-    t.integer "drug_id"
-    t.integer "ingredient_id"
+ActiveRecord::Schema[7.0].define(version: 2023_09_02_022029) do
+  create_table "drug_ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "drug_id"
+    t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["drug_id", "ingredient_id"], name: "index_drug_ingredients_on_drug_id_and_ingredient_id", unique: true
@@ -21,9 +21,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_043949) do
     t.index ["ingredient_id"], name: "index_drug_ingredients_on_ingredient_id"
   end
 
-  create_table "drug_symptoms", force: :cascade do |t|
-    t.integer "drug_id"
-    t.integer "symptom_id"
+  create_table "drug_symptoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "drug_id"
+    t.bigint "symptom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["drug_id", "symptom_id"], name: "index_drug_symptoms_on_drug_id_and_symptom_id", unique: true
@@ -31,21 +31,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_043949) do
     t.index ["symptom_id"], name: "index_drug_symptoms_on_symptom_id"
   end
 
-  create_table "drugs", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "effect_text"
-    t.string "usage"
-    t.string "document_url"
-    t.integer "formulation"
-    t.integer "division"
-    t.boolean "taxation", default: false, null: false
-    t.integer "for_days"
+  create_table "drugs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false, comment: "商品名"
+    t.string "effect_text", comment: " 効能効果"
+    t.string "usage", comment: "用法用量"
+    t.string "document_url", comment: "添付文書URL"
+    t.integer "formulation", comment: "剤型"
+    t.integer "division", comment: "リスク区分"
+    t.boolean "taxation", default: false, null: false, comment: "セルフメディケーション税制"
+    t.integer "for_days", comment: "何日ぶん"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "maker_name_id"
+    t.integer "maker_name_id", comment: "製薬企業id"
   end
 
-  create_table "ingredients", force: :cascade do |t|
+  create_table "ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "drive", default: false, null: false
     t.boolean "tobacco", default: false, null: false
@@ -54,19 +54,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_043949) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "maker_names", force: :cascade do |t|
+  create_table "maker_names", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "symptoms", force: :cascade do |t|
+  create_table "symptoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"

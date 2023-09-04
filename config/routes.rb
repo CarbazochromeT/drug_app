@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :drugs
-      resources :ingredients
+      resources :drugs do
+        collection { post :import }
+        collection do
+          get :upload, action: 'upload_form'
+          post :upload, action: 'upload_process'
+          get 'admin/drugs.csv' => 'submit#drugs_to_csv'
+        end
+      end
+
       resources :maker_names
       resources :symptoms
       resources :users

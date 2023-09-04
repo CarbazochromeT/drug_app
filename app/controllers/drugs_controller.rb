@@ -22,6 +22,10 @@ class DrugsController < ApplicationController
     @ingredients = @drug.ingredients.includes(:ingredient).all.order(created_at: :desc)
   end
 
+
+  end
+
+
   private
 
   def set_drug
