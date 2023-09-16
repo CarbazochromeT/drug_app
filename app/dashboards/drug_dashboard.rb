@@ -13,8 +13,7 @@ class DrugDashboard < Administrate::BaseDashboard
     document_url: Field::String,
     drug_ingredients: Field::HasMany,
     drug_symptoms: Field::HasMany,
-    effect_text: Field::String,
-    for_days: Field::Number,
+    effect_text: Field::Text,
     formulation: Field::Enumerize,
     ingredients: Field::HasMany.with_options(
       searchable: true,
@@ -27,9 +26,10 @@ class DrugDashboard < Administrate::BaseDashboard
       searchable_fields: ['name'],
       skip: :drug),
     taxation: Field::Boolean,
-    usage: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    usage: Field::Text,
+    otc_text: Field::Text,
+    caution: Field::Text,
+    formula: Field::Text,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,9 +39,21 @@ class DrugDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    name
+    symptoms
+    usage
+    formula
+    caution
+    otc_text
     division
     document_url
     drug_ingredients
+    drug_symptoms
+    effect_text
+    formulation
+    ingredients
+    maker_name
+    taxation
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -53,7 +65,6 @@ class DrugDashboard < Administrate::BaseDashboard
     drug_ingredients
     drug_symptoms
     effect_text
-    for_days
     formulation
     ingredients
     maker_name
@@ -61,8 +72,9 @@ class DrugDashboard < Administrate::BaseDashboard
     symptoms
     taxation
     usage
-    created_at
-    updated_at
+    otc_text
+    caution
+    formula
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -73,10 +85,12 @@ class DrugDashboard < Administrate::BaseDashboard
     division
     document_url
     effect_text
-    for_days
     formulation
     ingredients
     maker_name
+    otc_text
+    caution
+    formula
     symptoms
     taxation
     usage

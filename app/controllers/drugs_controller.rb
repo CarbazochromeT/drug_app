@@ -4,7 +4,7 @@ class DrugsController < ApplicationController
 
   def index
     @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_names).page(params[:page]).order("created_at desc")
+    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients).page(params[:page])
     @results = @q.result
   end
 
@@ -13,18 +13,13 @@ class DrugsController < ApplicationController
 
   def search
     @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_names).page(params[:page]).order("created_at desc")
+    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients).page(params[:page])
     @results = @q.result
   end
 
   def show
     @drug = Drug.find(params[:id])
-    @ingredients = @drug.ingredients.includes(:ingredient).all.order(created_at: :desc)
   end
-
-
-  end
-
 
   private
 
@@ -32,9 +27,7 @@ class DrugsController < ApplicationController
     @drug = Drug.find(params[:id])
   end
 
-
   def drug_params
-    params.require(:drugs).permit(:id, :drug, :name, :effect_text, :usage, :document_url, :formulation, :division, :taxation, :for_days,  { symptom_ids: [] }, :ingredients, :maker_name_id, :drive)
+    params.require(:drugs).permit(:id, :drug, :name, :effect_text, :usage, :document_url, :formulation, :division, :taxation, :for_days,  { symptom_ids: [] }, :ingredients, :drive, :maker_names)
   end
-
 end

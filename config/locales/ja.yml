@@ -110,6 +110,9 @@ ja:
         symptoms: 症状
         ingredients: 成分
         maker_name_id: 製薬企業id
+        otc_text: 製品の特徴
+        caution: 使用上の注意
+        formula: 成分分量
       ingredient:
         drugs: 商品名
         name: 成分名

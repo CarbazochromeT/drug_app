@@ -42,26 +42,9 @@ module Admin
 
     # See https://administrate-demo.herokuapp.com/customizing_controller_actions
     # for more information
-    def upload_form
-    end
-
-    def users_to_csv
-      @drugs = Drug.all
-    end
-
-    def upload_process
-      file = params[:drugs][:file]
-      data = CSV.parse(file.to_io, headers: true, encoding: 'utf8')
-  
-      # Start code to handle CSV data
-      ActiveRecord::Base.transaction do
-        data.each do |row|
-          Drug.create(row.to_h)
-        end
-      end
-      # End code to handle CSV data
-  
-      redirect_to admin_drugs_url
-    end
+  def import
+    Drug.import(params[:file])
+    redirect_to admin_drugs_url
   end
+end
 end

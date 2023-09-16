@@ -12,14 +12,14 @@
 <hgroup>
   <h2><%= t '.title' %></h2><br>
 </hgroup>
+
       <% if @drugs.present? %>
         <%= render @drugs %>
       <% else %>
         <p><%= t('.no_result') %>(='X'=)</p>
       <% end %>
         <%= paginate @drugs %>
-
-    <%= render 'drug' %>
+      <%= render 'search', q: @q, url: drugs_path %>
 <div class="search-result">
 <dl>
 <dt><span class="drug-icon"></span></dt>

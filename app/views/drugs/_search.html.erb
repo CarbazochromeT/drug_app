@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="turbo-visit-control" content="reload">
+  </head>
+  <body>
+
+<% content_for(:title, t('.title')) %>
+<div class="top-header"></div>
+  <div class="container">
+<hgroup>
+  <h2><%= t '.title' %></h2><br>
+</hgroup>
+
+<dl>
+<%= search_form_for @q, url: drugs_path, class: 'drug-search' do |f| %>
+  <dt>成分名で検索</dt>
+  <dd>
+    <ul class= "search-list">
+      <li>
+      <label class = "search-textarea">
+      <%= f.text_field :ingredients_name_cont, placeholder: '成分名で検索' %>
+      </label>
+      </li>
+    </ul>
+  </dd>
+  <dt>商品名で検索</dt>
+  <dd>
+    <ul class= "search-list">
+      <li>
+        <label class = "search-textarea">
+        <%= f.text_field :name_cont, placeholder: '商品名で検索' %>
+        </label>
+      </li>
+      </ul>
+  </dd>
+  <dt>どんな症状がありますか？</dt>
+  <dd>
+    <ul class= "search-list">
+      <%= f.collection_check_boxes :symptoms_name_in, Symptom.all , :id, :name, { multiple: true }  do |b| %>
+        <li>
+          <label class="CheckboxInput">
+            <%= b.check_box(class: "CheckboxInput-Input") %>
+            <span class="CheckboxInput-DummyInput"></span>
+            <%= b.label(class: "CheckboxInput-LabelText") %>
+          </label>
+        </li>
+      <% end %>
+    </ul>
+  </dd>
+  <dt>剤型にこだわりはありますか？</dt>
+  <dd>
+    <ul class= "search-list">
+      <% Drug.formulation.options.each do |name, value| %>
+        <li>
+          <label class="CheckboxInput">
+          <%= f.check_box :formulation, { id: "drug_formulation_#{value}", multiple: true, class: "CheckboxInput-Input" } %>
+          <span class="CheckboxInput-DummyInput"></span>
+          <%= f.label :formulation, name, value: value, class: "CheckboxInput-LabelText"  %>
+          </label>
+        <% end %>
+        </li>
+    </ul>
+  </dd>
+  <dt>車の運転はしますか？</dt>
+  <dd>
+    <ul class= "search-list">
+      <li>
+      <div class="yesno">
+      <%= f.radio_button :ingredients_drive_eq, true, id:'drive_ok', checked: true  %>
+      <%= f.label :drive_true ,"はい", for: 'drive_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_drive_eq, false, id:'drive_ng' %>
+      <%= f.label :drive_false ,"いいえ",for: 'drive_ng', class:"switch-off" %>
+      </div>
+      </li>
+    </ul>
+  </dd>
+  <p style="clear:both"></p>
+  <dt>タバコは吸いますか？</dt>
+  <dd>
+    <ul class= "search-list">
+      <li>
+      <div class="yesno">
+      <%= f.radio_button :ingredients_tobacco_eq, true, id:'tobacco_ok', checked: true  %>
+      <%= f.label :tobacco_true ,"はい", for: 'tobacco_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_tobacco_eq, false, id:'tobacco_ng' %>
+      <%= f.label :tobacco_false ,"いいえ",for: 'tobacco_ng', class:"switch-off" %>
+      </div>
+      </li>
+    </ul>
+  </dd>
+  <p style="clear:both"></p>
+  <dt>お酒は飲みますか？</dt>
+  <dd>
+    <ul class= "search-list">
+      <li>
+      <div class="yesno">
+      <%= f.radio_button :ingredients_alcohol_eq, true, id:'alcohol_ok', checked: true  %>
+      <%= f.label :alcohol_true ,"はい", for: 'alcohol_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_alcohol_eq, false, id:'alcohol_ng' %>
+      <%= f.label :alcohol_false ,"いいえ",for: 'alcohol_ng', class:"switch-off" %>
+      </div>
+      </li>
+    </ul>
+  </dd>
+<!--
+  <dt>最低何回分ほしいですか？</dt>
+  <dd>
+    <ul class= "search-list">
+      <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">こだわりなし</span>
+      </label>
+      </li>
+    <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">~5日分</span>
+      </label>
+      </li>
+    <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">~7日分</span>
+      </label>
+      </li>
+      <li>
+      <label class="RadioInput">
+        <input class="RadioInput-Input" type="radio" name="days">
+        <span class="RadioInput-DummyInput"></span>
+        <span class="RadioInput-LabelText">それ以上</span>
+      </label>
+      </li>
+    </ul>
+  </dd>
+    -->
+    <%= f.submit '検索', class: 'btn btnmint' do %>
+    検索ページに進む
+    <% end %>
+</dl>
+
+  <% end %>
+  </div>
+</body>

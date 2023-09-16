@@ -1,24 +1,21 @@
 <div class="search-result">
 <dl>
 <dt><span class="drug-icon"></span></dt>
-<dd><div class="drug-title" >ロキソニンSプレミアム 12錠入り</div></dd>
+<dd><div class="drug-title" ><%= drug.name %></div></dd>
 <dd><span class="tag-division">一類医薬品</span><span class="tag-caution">not眠気注意</span></dd>
+<dd><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></dd>
 </dl>
 <table class="ta1">
 <tbody>
 <tr>
-<th>成分</th>
-<td><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></td>
-</tr>
 <tr>
 <th>効能効果</th>
-<td>頭痛・月経痛（生理痛）・歯痛・抜歯後の疼痛・咽喉痛・腰痛・関節痛・神経痛・筋肉痛・肩こり痛・耳痛・打撲痛・骨折痛・ねんざ痛・外傷痛の鎮痛。
-悪寒・発熱時の解熱。</td>
+<td><%= simple_format(drug.effect_text) %></td>
 </tr>
 <tr>
 </tbody>
 </table>
-  <%= link_to search_path, class: "button-text" do%>
+  <%= link_to drug_path(drug), class: "button-text" do %>
   <div class="btn btnmint">
     詳しい説明を見る！
   </div>

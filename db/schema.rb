@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_02_022029) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_16_010422) do
   create_table "drug_ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "drug_id"
     t.bigint "ingredient_id"
@@ -32,17 +32,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_022029) do
   end
 
   create_table "drugs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false, comment: "商品名"
-    t.string "effect_text", comment: " 効能効果"
-    t.string "usage", comment: "用法用量"
-    t.string "document_url", comment: "添付文書URL"
-    t.integer "formulation", comment: "剤型"
-    t.integer "division", comment: "リスク区分"
-    t.boolean "taxation", default: false, null: false, comment: "セルフメディケーション税制"
-    t.integer "for_days", comment: "何日ぶん"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "maker_name_id", comment: "製薬企業id"
+    t.string "name", null: false, collation: "utf8mb3_general_ci", comment: "商品名"
+    t.text "effect_text", collation: "utf8mb3_general_ci", comment: " 効能効果"
+    t.text "usage", collation: "utf8mb3_general_ci", comment: "用法用量"
+    t.string "document_url", collation: "utf8mb3_general_ci", comment: "添付文書URL"
+    t.integer "formulation", comment: "剤型 -- tablet(錠剤): 0, powder(粉): 1, capsule(カプセル): 2, liquid(液剤): 3, nose(点鼻): 4", unsigned: true
+    t.integer "division", comment: "リスク区分 -- to_guide(要指導医薬品): 0, one_kind(一類医薬品): 1, two_kind(二類医薬品): 2, three_kind(三類医薬品): 3, two_designate(指定二類医薬品): 4"
+    t.integer "taxation", default: 0, null: false, comment: "セルフメディケーション税制"
+    t.text "formula", collation: "utf8mb3_general_ci", comment: "成分分量"
+    t.text "otc_text", collation: "utf8mb3_general_ci", comment: "製品の特徴"
+    t.text "caution", collation: "utf8mb3_general_ci", comment: "使用上の注意"
+    t.bigint "maker_name_id"
+    t.index ["maker_name_id"], name: "index_drugs_on_maker_name_id"
   end
 
   create_table "ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -81,4 +82,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_022029) do
   add_foreign_key "drug_ingredients", "ingredients"
   add_foreign_key "drug_symptoms", "drugs"
   add_foreign_key "drug_symptoms", "symptoms"
+  add_foreign_key "drugs", "maker_names"
 end
