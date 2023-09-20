@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     end
       resources :maker_names
       resources :symptoms
+      resources :ingredients
       resources :users
       root to: "drugs#index"
     end

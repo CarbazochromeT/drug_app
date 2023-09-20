@@ -17,34 +17,35 @@
 <dt><span class="drug-icon"></span></dt>
 <dd><div class="drug-title" >ロキソニンSプレミアム 12錠入り</div></dd>
 <dd><span class="tag-division">一類医薬品</span><span class="tag-caution">not眠気注意</span></dd>
+<dd><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></dd>
 </dl>
 <table class="ta1">
 <tbody>
 <tr>
-<th>成分</th>
-<td><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></td>
+<th>成分分量</th>
+<td><%= simple_format(@drug.formula) %></td>
 </tr>
 <tr>
 <th>効能効果</th>
-<td>頭痛・月経痛（生理痛）・歯痛・抜歯後の疼痛・咽喉痛・腰痛・関節痛・神経痛・筋肉痛・肩こり痛・耳痛・打撲痛・骨折痛・ねんざ痛・外傷痛の鎮痛。
-悪寒・発熱時の解熱。</td>
+<td><%= simple_format(@drug.effect_text) %></td>
 </tr>
 <tr>
 <th>用法用量</th>
-<td><pre>
-次の量を水又はお湯で服用してください。
-成人（１５歳以上）：１回１錠。
-１日２回服用まで。
-症状が現れた時、なるべく空腹時をさけて服用してください。
-但し、再度症状が現れた場合には３回目を服用できます。
-服用間隔は４時間以上おいてください。
-１５歳未満：服用しないでください。</pre></td>
-
+<td><%= simple_format(@drug.usage) %></td>
+</tr>
+<tr>
+<th>製品の特徴</th>
+<td><%= simple_format(@drug.otc_text) %></td>
+</tr>
+<tr>
+<th>使用上の注意</th></th>
+<td><%= simple_format(@drug.caution) %></td>
 </tr>
 </tbody>
 </table>
-  <a href="" class="btncirlemon">製薬企業</a>
-  <a href="" class="btncirmarine">添付文書</a>
+  <%= link_to @drug.document_url, class: "btncirlemon" do %>
+    添付文書URL
+  <% end %>
 </div>
 </div>
 </div>

@@ -9,10 +9,10 @@ class IngredientDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    drugs: Field::HasMany,
     alcohol: Field::Enumerize,
     drive: Field::Enumerize,
     drug_ingredients: Field::HasMany,
-    drugs: Field::HasMany,
     name: Field::String,
     tobacco: Field::Enumerize,
     created_at: Field::DateTime,
@@ -35,10 +35,10 @@ class IngredientDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    name
+    drugs
     alcohol
     drive
-    drugs
-    name
     tobacco
     created_at
     updated_at

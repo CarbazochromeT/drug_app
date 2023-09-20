@@ -9,6 +9,7 @@ class DrugDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    name: Field::String,
     division: Field::Enumerize,
     document_url: Field::String,
     drug_ingredients: Field::HasMany,
@@ -20,7 +21,6 @@ class DrugDashboard < Administrate::BaseDashboard
       searchable_fields: ['name'],
       skip: :drug),
     maker_name: Field::BelongsTo,
-    name: Field::String,
     symptoms: Field::HasMany.with_options(
       searchable: true,
       searchable_fields: ['name'],
@@ -41,14 +41,8 @@ class DrugDashboard < Administrate::BaseDashboard
     id
     name
     symptoms
-    usage
     formula
-    caution
-    otc_text
     division
-    document_url
-    drug_ingredients
-    drug_symptoms
     effect_text
     formulation
     ingredients

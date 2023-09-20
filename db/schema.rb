@@ -47,18 +47,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_010422) do
   end
 
   create_table "ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.boolean "drive", default: false, null: false
-    t.boolean "tobacco", default: false, null: false
-    t.boolean "alcohol", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "drive", limit: 1, default: 1, unsigned: true
+    t.integer "tobacco", limit: 1, default: 1, unsigned: true
+    t.integer "alcohol", limit: 1, default: 1, unsigned: true
   end
 
   create_table "maker_names", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "symptoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

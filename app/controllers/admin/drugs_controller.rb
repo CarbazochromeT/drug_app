@@ -1,5 +1,16 @@
 module Admin
   class DrugsController < Admin::ApplicationController
+    prepend AdministrateRansack::Searchable
+
+    def scoped_resource
+      @ransack_results = super.ransack(params[:q])
+      @ransack_results.result(distinct: true)
+    end
+
+    def ransack_options
+      # raises an exception on unknown parameters
+      { ignore_unknown_conditions: false }
+    end
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
@@ -42,9 +53,5 @@ module Admin
 
     # See https://administrate-demo.herokuapp.com/customizing_controller_actions
     # for more information
-  def import
-    Drug.import(params[:file])
-    redirect_to admin_drugs_url
-  end
 end
 end

@@ -88,7 +88,3 @@ gem 'cocoon'
 gem 'enum_help'
 gem 'roo'
 gem "mysql2"
-gem 'csb'
-gem 'administrate-field-csv'
-gem "activerecord-import"
-gem "composite_primary_keys"

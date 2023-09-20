@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="turbo-visit-control" content="reload">
-  </head>
-  <body>
-
-<% content_for(:title, t('.title')) %>
-<div class="top-header"></div>
-  <div class="container">
-<hgroup>
-  <h2><%= t '.title' %></h2><br>
-</hgroup>
-
 <dl>
 <%= search_form_for @q, url: drugs_path, class: 'drug-search' do |f| %>
   <dt>成分名で検索</dt>
@@ -143,7 +128,4 @@
     検索ページに進む
     <% end %>
 </dl>
-
-  <% end %>
-  </div>
-</body>
+<% end %>
