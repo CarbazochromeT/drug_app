@@ -19,7 +19,7 @@ class Drug < ApplicationRecord
     allow_destroy: true
   )
 
-  enumerize :formulation, in: { tablet: 0, powder: 1, capsule: 2, liquid: 3, nose: 4 }, scope: true
+  enumerize :formulation, in: { tablet: 0, powder: 1, capsule: 2, liquid: 3, nose: 4 },  multiple: true
   enumerize :division, in: { to_guide: 0, one_kind: 1, two_kind: 2, three_kind: 3, two_designate: 4 }, scope: true
 
 end

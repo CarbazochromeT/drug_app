@@ -4,9 +4,9 @@
   <dd>
     <ul class= "search-list">
       <li>
-      <label class = "search-textarea">
+      <div class = "search-textarea">
       <%= f.text_field :ingredients_name_cont, placeholder: '成分名で検索' %>
-      </label>
+      </div>
       </li>
     </ul>
   </dd>
@@ -14,9 +14,8 @@
   <dd>
     <ul class= "search-list">
       <li>
-        <label class = "search-textarea">
+        <div class = "search-textarea">
         <%= f.text_field :name_cont, placeholder: '商品名で検索' %>
-        </label>
       </li>
       </ul>
   </dd>
@@ -37,15 +36,15 @@
   <dt>剤型にこだわりはありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <% Drug.formulation.options.each do |name, value| %>
+      <%= f.collection_check_boxes :formulation, Drug.formulation.options, :last, :first  do |b| %>
         <li>
           <label class="CheckboxInput">
-          <%= f.check_box :formulation, { id: "drug_formulation_#{value}", multiple: true, class: "CheckboxInput-Input" } %>
-          <span class="CheckboxInput-DummyInput"></span>
-          <%= f.label :formulation, name, value: value, class: "CheckboxInput-LabelText"  %>
+            <%= b.check_box(class: "CheckboxInput-Input") %>
+            <span class="CheckboxInput-DummyInput"></span>
+            <%= b.label(class: "CheckboxInput-LabelText") %>
           </label>
-        <% end %>
         </li>
+        <% end %>
     </ul>
   </dd>
   <dt>車の運転はしますか？</dt>
