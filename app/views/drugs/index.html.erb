@@ -18,8 +18,9 @@
       <% else %>
         <p><%= t('.no_result') %>(='X'=)</p>
       <% end %>
+      <div class="pagination" >
         <%= paginate @drugs %>
-
+      </div>
 </div>
 </div>
 </body>

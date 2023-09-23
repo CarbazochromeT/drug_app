@@ -15,8 +15,6 @@ class IngredientDashboard < Administrate::BaseDashboard
     drug_ingredients: Field::HasMany,
     name: Field::String,
     tobacco: Field::Enumerize,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -40,8 +38,6 @@ class IngredientDashboard < Administrate::BaseDashboard
     alcohol
     drive
     tobacco
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

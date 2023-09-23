@@ -79,7 +79,6 @@ gem "cssbundling-rails"
 gem "administrate"
 gem 'administrate_ransack'
 gem 'ransack'
-gem 'kaminari'
 gem 'enumerize'
 gem 'administrate-field-nested_has_many'
 gem 'administrate-field-belongs_to_search'
@@ -88,3 +87,4 @@ gem 'cocoon'
 gem 'enum_help'
 gem 'roo'
 gem "mysql2"
+gem 'kaminari'

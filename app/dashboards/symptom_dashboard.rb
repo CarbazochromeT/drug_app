@@ -12,8 +12,6 @@ class SymptomDashboard < Administrate::BaseDashboard
     drug_symptoms: Field::HasMany,
     drugs: Field::HasMany,
     name: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -34,8 +32,6 @@ class SymptomDashboard < Administrate::BaseDashboard
     drug_symptoms
     drugs
     name
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

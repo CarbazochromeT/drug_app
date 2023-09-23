@@ -65,16 +65,6 @@ ja:
       success: 'パスワードを更新しました'
       fail: 'パスワードが更新できませんでした'
 
-  enumerize:
-    defaults:
-      formulation:
-        "tablet": '錠剤'
-        "powder": '粉薬、顆粒'
-        "capsule": 'カプセル'
-        "liquid": '液剤'
-        "nose": '点鼻'
-    drug:
-
   activerecord:
     models:
       user: ユーザー
@@ -113,6 +103,7 @@ ja:
         otc_text: 製品の特徴
         caution: 使用上の注意
         formula: 成分分量
+
       ingredient:
         drugs: 商品名
         name: 成分名
@@ -349,8 +340,15 @@ ja:
         "liquid": 液剤
         "nose": "点鼻薬"
       division:
-        "to_guide": '要指導医薬品'
-        "one_kind": '一類医薬品'
-        "two_kind": '二類医薬品'
-        "three_kind": '三類医薬品'
-        "two_designate": '指定二類医薬品'
+        "to_guide": 要指導医薬品
+        "one_kind": 一類医薬品
+        "two_kind": 二類医薬品
+        "three_kind": 三類医薬品
+        "two_designate": 指定二類医薬品
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."

@@ -11,8 +11,6 @@ class MakerNameDashboard < Administrate::BaseDashboard
     id: Field::Number,
     drugs: Field::HasMany,
     name: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,7 +22,6 @@ class MakerNameDashboard < Administrate::BaseDashboard
     id
     drugs
     name
-    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,8 +30,6 @@ class MakerNameDashboard < Administrate::BaseDashboard
     id
     drugs
     name
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

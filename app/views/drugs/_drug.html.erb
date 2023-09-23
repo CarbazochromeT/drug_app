@@ -2,8 +2,14 @@
 <dl>
 <dt><span class="drug-icon"></span></dt>
 <dd><div class="drug-title" ><%= drug.name %></div></dd>
-<dd><span class="tag-division">一類医薬品</span><span class="tag-caution">not眠気注意</span></dd>
-<dd><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></dd>
+<dd>
+<span class="tag-division"><%= drug.division_text %></span>
+<span class="tag-caution">not眠気注意</span></dd>
+<dd><span class="tag-ingredient">
+  <% drug.ingredients.each do |ingredient| %>
+    <span><%= ingredient.name %></span>
+<% end %>
+</span></dd>
 </dl>
 <table class="ta1">
 <tbody>

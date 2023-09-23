@@ -434,3 +434,51 @@ li {
   color: var(--whitelight);
 }
 
+
+/* ページネーションの装飾 */
+
+/* 自分で指定したdivタグ */
+.item__paginate{
+  width: 100%;
+  margin: auto;
+}
+
+/* ページネーション全体 */
+.pagination{
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 30px;
+  color: var(--darkgrey);
+}
+
+/* ページネーションのspan */
+.pagination span{
+  text-align: center;
+  width: 50px;
+}
+
+/* ページネーションのリンク文字（a） */
+.pagination a{
+  color: var(--darkgrey);
+  display: block;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+/* ページネーションの文字にカーソルを載せた時 */
+.pagination a:hover{
+  top:1px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--lemon);
+  color: #FFF;
+  border-radius: 100%;
+}
+
+/* 現在のページの数字についての表記 */
+.current{
+  color: var(--pink);
+  padding: 10px;
+}

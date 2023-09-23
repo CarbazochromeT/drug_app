@@ -11,8 +11,6 @@ class DrugSymptomDashboard < Administrate::BaseDashboard
     id: Field::Number,
     drug: Field::BelongsTo,
     symptom: Field::BelongsTo,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,7 +22,6 @@ class DrugSymptomDashboard < Administrate::BaseDashboard
     id
     drug
     symptom
-    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,8 +30,6 @@ class DrugSymptomDashboard < Administrate::BaseDashboard
     id
     drug
     symptom
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
