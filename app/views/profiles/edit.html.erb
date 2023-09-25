@@ -1,0 +1,22 @@
+<% content_for(:title, t('.title')) %>
+<div class="top-header"></div>
+<div class="container">
+<hgroup>
+  <h1><%= t '.title' %></h1><br>
+</hgroup>
+<div class = 'user-form'>
+<%= form_with model: @user, url: profile_path, local:true do |f|  %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="group textarea" >
+    <%= f.label :username %>
+    <%= f.text_field :username %><span class="highlight"></span><span class="bar"></span>
+  </div>
+
+  <div class="group textarea" >
+    <%= f.label :email %>
+    <%= f.text_field :email %><span class="highlight"></span><span class="bar"></span>
+  </div>
+    <%= f.submit nil, class: 'btn btnpink' %>
+<% end %>
+</div>
+</div>

@@ -1,0 +1,5 @@
+<%= link_to likes_path(drug_id: drug.id),
+            id: "like-button-for-drug-#{drug.id}",
+            data: { turbo_method: "post" } do %>
+  <%= icon 'far', 'star' %>
+<% end %>

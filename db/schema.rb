@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_23_060430) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_052739) do
   create_table "drug_ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "drug_id"
     t.bigint "ingredient_id"
@@ -37,8 +37,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_060430) do
     t.text "usage", collation: "utf8mb3_general_ci", comment: "用法用量"
     t.string "document_url", collation: "utf8mb3_general_ci", comment: "添付文書URL"
     t.string "formulation", comment: "剤型 -- tablet(錠剤): 0, powder(粉): 1, capsule(カプセル): 2, liquid(液剤): 3, nose(点鼻): 4"
-    t.integer "division", comment: "リスク区分 -- to_guide(要指導医薬品): 0, one_kind(一類医薬品): 1, two_kind(二類医薬品): 2, three_kind(三類医薬品): 3, two_designate(指定二類医薬品): 4"
-    t.integer "taxation", default: 0, null: false, comment: "セルフメディケーション税制"
+    t.string "division", comment: "リスク区分 -- to_guide(要指導医薬品): 0, one_kind(一類医薬品): 1, two_kind(二類医薬品): 2, three_kind(三類医薬品): 3, two_designate(指定二類医薬品): 4"
+    t.string "taxation", default: "0", null: false, comment: "セルフメディケーション税制"
     t.text "formula", collation: "utf8mb3_general_ci", comment: "成分分量"
     t.text "otc_text", collation: "utf8mb3_general_ci", comment: "製品の特徴"
     t.text "caution", collation: "utf8mb3_general_ci", comment: "使用上の注意"
@@ -48,9 +48,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_060430) do
 
   create_table "ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.integer "drive", limit: 1, default: 1, unsigned: true
-    t.integer "tobacco", limit: 1, default: 1, unsigned: true
-    t.integer "alcohol", limit: 1, default: 1, unsigned: true
+    t.string "drive", default: "0"
+    t.string "tobacco", default: "0"
+    t.string "alcohol", default: "0"
+  end
+
+  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "drug_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drug_id"], name: "index_likes_on_drug_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "maker_names", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -79,4 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_060430) do
   add_foreign_key "drug_symptoms", "drugs"
   add_foreign_key "drug_symptoms", "symptoms"
   add_foreign_key "drugs", "maker_names"
+  add_foreign_key "likes", "drugs"
+  add_foreign_key "likes", "users"
 end

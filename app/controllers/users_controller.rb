@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    likes = Like.where(user_id: current_user.id).pluck(:drug_id)  # ログイン中のユーザーのお気に入りのpost_idカラムを取得
+    @like_list = Like.find(likes)     # postsテーブルから、お気に入り登録済みのレコードを取得
+  end
+
   private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :username)

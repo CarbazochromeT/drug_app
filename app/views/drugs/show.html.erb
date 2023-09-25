@@ -13,9 +13,30 @@
   <h2><%= t '.title' %></h2><br>
 </hgroup>
 <div class="search-result">
+    <input id="click" type="checkbox"></input>
+      <label for="click">
+        <div class="favourite">
+          <div class="spinner">
+            <% (1..180).each do %>
+              <div class="spinner_part"></div>
+            <% end %>
+          </div>
+          <div class="favourite_heart">
+            <div class="favourite_heart__left"></div>
+            <div class="favourite_heart__right"></div>
+          </div>
+          <div class="favourite_text">
+            <span>Favourite this</span>
+          </div>
+        </div>
+      </label>
+
+  <div id="like_star">
+  <%= render 'like_button', drug: @drug  %>
+  </div>
 <dl>
 <dt><span class="drug-icon"></span></dt>
-<dd><div class="drug-title" >ロキソニンSプレミアム 12錠入り</div></dd>
+<dd><div class="drug-title" ><%= @drug.name %></div></dd>
 <dd><span class="tag-division">一類医薬品</span><span class="tag-caution">not眠気注意</span></dd>
 <dd><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></dd>
 </dl>
@@ -39,13 +60,23 @@
 </tr>
 <tr>
 <th>使用上の注意</th></th>
-<td><%= simple_format(@drug.caution) %></td>
+<td>
+  <div id="text-wrap">
+  <div class="hide-text">
+ 
+  <%= simple_format(@drug.caution) %>
+        </div>
+        <button class="readmore">READ MORE</button>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
   <%= link_to @drug.document_url, class: "btncirlemon" do %>
     添付文書URL
   <% end %>
+  </div>
+
 </div>
 </div>
 </div>

@@ -21,6 +21,12 @@ class DrugsController < ApplicationController
     @drug = Drug.find(params[:id])
   end
 
+  def likes
+    @q = current_user.like_drugs.ransack(params[:q])
+    @like_drugs = current_user.like_drugs.includes(:user).order(created_at: :desc)
+  end
+
+
   private
 
   def set_drug
@@ -29,14 +35,5 @@ class DrugsController < ApplicationController
 
   def drug_params
     params.require(:drugs).permit(:id, :drug, :name, :effect_text, :usage, :document_url, {formulation: []}, :division, :taxation,  { symptom_ids: [] },  { ingredient_ids: [] }, :drive,:tobacco, :alcohol, :maker_names)
-  end
-
-  def search_ingredient
-    #検索結果画面でもタグ一覧表示
-    @tag_list = WorkoutTag.all
-    　#検索されたタグを受け取る
-    @tag = WorkoutTag.find(params[:workout_tag_id])
-    　#検索されたタグに紐づく投稿を表示
-    @post_workouts = @tag.post_workouts
   end
 end

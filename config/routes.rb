@@ -13,15 +13,18 @@ Rails.application.routes.draw do
   get 'login' => 'user_sessions#new'
   post 'login' => "user_sessions#create"
   delete 'logout' => 'user_sessions#destroy'
+  get 'rakuten_search' => 'rakuten#search'
+  resource :profile, only: %i[show edit update]
 
   root to: 'static_pages#top'
 
   resources :static_pages
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] 
   resources :drugs do
     collection do
-      get :bookmarks
+      get :likes
     end
   end
   get '/search', to: 'drugs#search'
+  resources :likes, only: %i[create destroy]
 end

@@ -11,3 +11,12 @@ $(document).on('turbo:load', function(){
     $('.hamburger, .phone').toggleClass('show');
   });
 });
+
+$(function(){
+  $(".readmore").on("click", function() {
+      $(this).toggleClass("on-click");
+      $(".hide-text").slideToggle(1000);
+  });
+}); 
+
+

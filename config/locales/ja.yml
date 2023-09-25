@@ -24,6 +24,11 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+  profiles:
+    show:
+      title: プロフィール
+    edit:
+      title: プロフィール変更
   user_sessions:
     new:
       title: 'ログイン'

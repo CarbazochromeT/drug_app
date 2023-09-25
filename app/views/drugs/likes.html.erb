@@ -1,0 +1,9 @@
+<% content_for(:title, t('.title')) %>
+    <%= render 'search', q: @q, url: likes_drugs_path %>
+
+    <% if @bookmark_boards.present? %>
+        <%= render partial: "drug", collection: @like_drugs %>
+         <% else %>
+        <p>ブックマーク中の薬がありません</p>
+      <% end%>
+      <%= paginate @like_drugs %>

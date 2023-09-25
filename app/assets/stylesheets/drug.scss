@@ -164,13 +164,15 @@
 	background-color: transparent;
 	font-family: M PLUS 1;
 	font-weight: 600;
-	color: var(--indigo)
+	color: var(--indigo);
+	border-bottom: 1px solid var(--horizon); 
 }
 .ta1 td{
 	vertical-align: top;
 	margin: 0 0 10px 0 !important;
 	font-size: 0.92em;
-	line-height: 1.3em;
+	line-height: 1.4em;
+	border-bottom: 1px solid var(--horizon);
 }
 
 .tag-ingredient{
@@ -250,3 +252,58 @@ a.btncirmarine:hover {
 	color: var(--whitelight);
 	background: var(--marine);
   }
+
+ 
+#text-wrap {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+ 
+.hide-text {
+    display: none;
+}
+ 
+ 
+button.readmore {
+    position: relative;
+    height: 80px;
+    width: 100px;
+    margin: 40px auto;
+    display: block;
+    background-color: transparent;
+    color: #666;
+    padding-bottom: 40px;
+    border: none;
+    outline: 0;
+    transition: .5s;
+    -erbkit-transition: .5s;
+}
+ 
+button.readmore::after {
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: solid 3px #666;
+    border-right: solid 3px #666;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    right: 36px;
+    top: 25px;
+    transition: .5s;
+    -erbkit-transition: .5s;
+}
+ 
+button.readmore:hover::after {
+    top: 40px;
+}
+ 
+.on-click {
+    color: transparent!important;
+}
+ 
+.on-click {
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+}

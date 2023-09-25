@@ -1,0 +1,27 @@
+<% content_for(:title, t('.title')) %>
+<div class="top-header"></div>
+<div class="container">
+<hgroup>
+  <h2><%= t '.title' %></h2><br>
+</hgroup>
+<div class="search-result">
+<table class="ta1">
+<tbody>
+<tr>
+<th>ユーザー名</th>
+<td><%= current_user.username %></td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td><%= current_user.email %></td>
+</tr>
+</tbody>
+</table>
+  <%= link_to edit_profile_path, class: "btncirlemon" do %>
+編集
+  <% end %>
+
+</div>
+</div>
+</div>
+</body>

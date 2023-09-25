@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "like-button-for-board-#{@drug.id}" do %>
+  <%= render 'drugs/unlike', drug: @drug %>
+<% end %>
