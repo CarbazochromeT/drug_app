@@ -36,7 +36,7 @@
   <dt>剤型にこだわりはありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <%= f.collection_check_boxes :formulation, Drug.formulation.options, :last, :first  do |b| %>
+      <%= f.collection_check_boxes :formulation_in, Drug.formulation.values.map { |v| [v.text, v.value] }.to_h, :last, :first  do |b| %>
         <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>
@@ -52,9 +52,9 @@
     <ul class= "search-list">
       <li>
       <div class="yesno">
-      <%= f.radio_button :ingredients_drive_eq, true, id:'drive_ok', checked: true  %>
+      <%= f.radio_button :ingredients_drive_eq, false, id:'drive_ok' %>
       <%= f.label :drive_true ,"はい", for: 'drive_ok', class:"switch-on" %>
-      <%= f.radio_button :ingredients_drive_eq, false, id:'drive_ng', checked: true %>
+      <%= f.radio_button :ingredients_drive_eq, true, id:'drive_ng', checked: true %>
       <%= f.label :drive_false ,"いいえ",for: 'drive_ng', class:"switch-off" %>
       </div>
       </li>

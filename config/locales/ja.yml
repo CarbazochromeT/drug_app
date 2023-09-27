@@ -343,7 +343,7 @@ ja:
         "powder": 散剤
         "capsule": カプセル
         "liquid": 液剤
-        "nose": "点鼻薬"
+        "nose": 点鼻薬
       division:
         "to_guide": 要指導医薬品
         "one_kind": 一類医薬品

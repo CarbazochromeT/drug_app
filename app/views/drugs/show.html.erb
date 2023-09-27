@@ -13,25 +13,8 @@
   <h2><%= t '.title' %></h2><br>
 </hgroup>
 <div class="search-result">
-    <input id="click" type="checkbox"></input>
-      <label for="click">
-        <div class="favourite">
-          <div class="spinner">
-            <% (1..180).each do %>
-              <div class="spinner_part"></div>
-            <% end %>
-          </div>
-          <div class="favourite_heart">
-            <div class="favourite_heart__left"></div>
-            <div class="favourite_heart__right"></div>
-          </div>
-          <div class="favourite_text">
-            <span>Favourite this</span>
-          </div>
-        </div>
-      </label>
 
-  <div id="like_star">
+  <div class= "like_star">
   <%= render 'like_button', drug: @drug  %>
   </div>
 <dl>
@@ -72,9 +55,11 @@
 </tr>
 </tbody>
 </table>
+<div class= "show-center">
   <%= link_to @drug.document_url, class: "btncirlemon" do %>
     添付文書URL
   <% end %>
+</div>
   </div>
 
 </div>

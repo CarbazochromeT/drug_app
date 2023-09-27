@@ -19,4 +19,7 @@ $(function(){
   });
 }); 
 
+$(document).on('turbo:load', function(){
+  $('.like-star').trigger('click');
+});
 
