@@ -1,11 +1,11 @@
 <dl>
-<%= search_form_for @q, url: drugs_path, class: 'drug-search' do |f| %>
+<%= search_form_for @q, class: 'drug-search' do |f| %>
   <dt>成分名で検索</dt>
   <dd>
     <ul class= "search-list">
       <li>
       <div class = "search-textarea">
-      <%= f.text_field :ingredients_name_cont, placeholder: '成分名で検索' %>
+      <%= f.text_field :formula_cont, placeholder: '成分名で検索' %>
       </div>
       </li>
     </ul>
@@ -36,7 +36,7 @@
   <dt>剤型にこだわりはありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <%= f.collection_check_boxes :formulation_in, Drug.formulation.values.map { |v| [v.text, v.value] }.to_h, :last, :first  do |b| %>
+      <%= f.collection_check_boxes :formulation_eq_any, Drug.formulation.values.map { |v| [v.text, v.value] }.to_h, :last, :first  do |b| %>
         <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>
@@ -52,10 +52,10 @@
     <ul class= "search-list">
       <li>
       <div class="yesno">
-      <%= f.radio_button :ingredients_drive_eq, false, id:'drive_ok' %>
-      <%= f.label :drive_true ,"はい", for: 'drive_ok', class:"switch-on" %>
-      <%= f.radio_button :ingredients_drive_eq, true, id:'drive_ng', checked: true %>
-      <%= f.label :drive_false ,"いいえ",for: 'drive_ng', class:"switch-off" %>
+      <%= f.radio_button :ingredients_drive_not_true, false, id:'drive_ok' %>
+      <%= f.label :drive_ok ,"はい", for: 'drive_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_drive_not_true, [true:1, false:0], id:'drive_ng', checked: true %>
+      <%= f.label :drive_ng ,"いいえ",for: 'drive_ng', class:"switch-off" %>
       </div>
       </li>
     </ul>
@@ -66,10 +66,10 @@
     <ul class= "search-list">
       <li>
       <div class="yesno">
-      <%= f.radio_button :ingredients_tobacco_eq, false, id:'tobacco_ok'  %>
-      <%= f.label :tobacco_true ,"はい", for: 'tobacco_ok', class:"switch-on" %>
-      <%= f.radio_button :ingredients_tobacco_eq, true, id:'tobacco_ng', checked: true %>
-      <%= f.label :tobacco_false ,"いいえ",for: 'tobacco_ng', class:"switch-off" %>
+      <%= f.radio_button :ingredients_tobacco_not_true, false, id:'tobacco_ok'  %>
+      <%= f.label :tobacco_ok ,"はい", for: 'tobacco_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_tobacco_not_true, [true:1, false:0], id:'tobacco_ng', checked: true %>
+      <%= f.label :tobacco_ng ,"いいえ",for: 'tobacco_ng', class:"switch-off" %>
       </div>
       </li>
     </ul>
@@ -80,10 +80,10 @@
     <ul class= "search-list">
       <li>
       <div class="yesno">
-      <%= f.radio_button :ingredients_alcohol_eq, true, id:'alcohol_ok'  %>
-      <%= f.label :alcohol_true ,"はい", for: 'alcohol_ok', class:"switch-on" %>
-      <%= f.radio_button :ingredients_alcohol_eq, false, id:'alcohol_ng', checked: true %>
-      <%= f.label :alcohol_false ,"いいえ",for: 'alcohol_ng', class:"switch-off" %>
+      <%= f.radio_button :ingredients_alcohol_not_true, false, id:'alcohol_ok'  %>
+      <%= f.label :alcohol_ok ,"はい", for: 'alcohol_ok', class:"switch-on" %>
+      <%= f.radio_button :ingredients_alcohol_not_true, [true:1, false:0], id:'alcohol_ng', checked: true %>
+      <%= f.label :alcohol_ng ,"いいえ",for: 'alcohol_ng', class:"switch-off" %>
       </div>
       </li>
     </ul>

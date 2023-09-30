@@ -41,11 +41,11 @@ class DrugDashboard < Administrate::BaseDashboard
     id
     name
     symptoms
+    ingredients
     formula
     division
     effect_text
     formulation
-    ingredients
     maker_name
     taxation
   ].freeze
@@ -54,15 +54,13 @@ class DrugDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    name
+    formulation
     division
     document_url
-    drug_ingredients
-    drug_symptoms
     effect_text
-    formulation
     ingredients
     maker_name
-    name
     symptoms
     taxation
     usage
@@ -76,16 +74,16 @@ class DrugDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
+    ingredients
+    formulation
     division
     document_url
     effect_text
-    formulation
-    ingredients
+    symptoms
+    formula
     maker_name
     otc_text
     caution
-    formula
-    symptoms
     taxation
     usage
   ].freeze

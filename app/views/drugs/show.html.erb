@@ -13,15 +13,36 @@
   <h2><%= t '.title' %></h2><br>
 </hgroup>
 <div class="search-result">
-
+  <% if logged_in? %>
   <div class= "like_star">
   <%= render 'like_button', drug: @drug  %>
   </div>
+  <% end %>
 <dl>
 <dt><span class="drug-icon"></span></dt>
 <dd><div class="drug-title" ><%= @drug.name %></div></dd>
-<dd><span class="tag-division">一類医薬品</span><span class="tag-caution">not眠気注意</span></dd>
-<dd><span class="tag-ingredient">ロキソプロフェンナトリウム水和物</span></dd>
+<span class="tag-division">一類医薬品</span>
+<% @drug.ingredients.each do |ingredient| %>
+    <% if ingredient.drive_ng? %>
+    <span class="tag-caution">運転NG</span>
+    <% end %>
+  <% end %>
+</dd>
+<% @drug.ingredients.each do |ingredient| %>
+    <% if ingredient.alcohol_ng? %>
+    <span class="tag-caution">お酒NG</span>
+    <% end %>
+  <% end %>
+<% @drug.ingredients.each do |ingredient| %>
+    <% if ingredient.tobacco_ng? %>
+    <span class="tag-caution">タバコNG</span>
+    <% end %>
+  <% end %>
+  </dd>
+  <dd> <% @drug.ingredients.each do |ingredient| %>
+  <span class="tag-ingredient"><%= ingredient.name %></span>
+  <% end  %>
+  </dd>
 </dl>
 <table class="ta1">
 <tbody>

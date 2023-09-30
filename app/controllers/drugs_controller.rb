@@ -5,16 +5,6 @@ class DrugsController < ApplicationController
   def index
     @q = Drug.ransack(params[:q])
     @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients).page(params[:page]).per(10)
-    @results = @q.result
-  end
-
-  def show
-  end
-
-  def search
-    @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients).page(params[:page]).per(10)
-    @results = @q.result
   end
 
   def show
@@ -36,4 +26,9 @@ class DrugsController < ApplicationController
   def drug_params
     params.require(:drugs).permit(:id, :drug, :name, :effect_text, :usage, :document_url, {formulation: []}, :division, :taxation,  { symptom_ids: [] },  { ingredient_ids: [] }, :drive,:tobacco, :alcohol, :maker_names)
   end
+
+  def search_params
+    params[:q]&.permit(:id, :drug, :name, :effect_text, :usage, :document_url, {formulation: []}, :division, :taxation,  { symptom_ids: [] },  { ingredient_ids: [] }, :drive,:tobacco, :alcohol, :maker_names)
+  end
+
 end

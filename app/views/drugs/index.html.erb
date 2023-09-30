@@ -12,7 +12,7 @@
 <hgroup>
   <h2><%= t '.title' %></h2><br>
 </hgroup>
-      <%= render 'search', q: @q, url: drugs_path %>
+      <%= render 'search', q: @q %>
       <% if @drugs.present? %>
         <%= render @drugs %>
       <% else %>
