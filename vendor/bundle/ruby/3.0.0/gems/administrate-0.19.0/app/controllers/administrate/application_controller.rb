@@ -96,7 +96,7 @@ module Administrate
     end
 
     def after_resource_updated_path(requested_resource)
-      [namespace, requested_resource]
+      { action: :index }
     end
 
     helper_method :nav_link_state

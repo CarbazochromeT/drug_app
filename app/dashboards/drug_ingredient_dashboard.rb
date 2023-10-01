@@ -55,7 +55,7 @@ class DrugIngredientDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how drug ingredients are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(drug_ingredient)
-  #   "DrugIngredient ##{drug_ingredient.id}"
-  # end
+  def display_resource(drug_ingredient)
+    "DrugIngredient ##{drug_ingredient.id}"
+  end
 end

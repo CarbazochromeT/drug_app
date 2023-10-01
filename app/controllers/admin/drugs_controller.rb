@@ -2,48 +2,40 @@ module Admin
   class DrugsController < Admin::ApplicationController
     prepend AdministrateRansack::Searchable
 
-    def scoped_resource
-      @ransack_results = super.ransack(params[:q])
-      @ransack_results.result(distinct: true)
-    end
-
     def ransack_options
       # raises an exception on unknown parameters
       { ignore_unknown_conditions: false }
     end
-    # Overwrite any of the RESTful controller actions to implement custom behavior
-    # For example, you may want to send an email after a foo is updated.
+    #カスタム動作を実装するために、RESTFULコントローラーアクションのいずれかを上書きします
+    #たとえば、Fooが更新された後にメールを送信することができます。
     #
     # def update
     #   super
     #   send_foo_updated_email(requested_resource)
     # end
 
-    # Override this method to specify custom lookup behavior.
-    # This will be used to set the resource for the `show`, `edit`, and `update`
-    # actions.
+    #この方法をオーバーライドして、カスタムルックアップ動作を指定します。
+    #これは、「show」、「edit」、および `update`のリソースを設定するために使用されます
+    #行動。
     #
-    # def find_resource(param)
-    #   Foo.find_by!(slug: param)
-    # end
+  #  def find_resource(param)
+      #Drug.find_by!(slug: param)
+    #end
 
-    # The result of this lookup will be available as `requested_resource`
+    #このルックアップの結果は、「requested_resource」として利用可能になります
 
-    # Override this if you have certain roles that require a subset
-    # this will be used to set the records shown on the `index` action.
+    #ブセットを必要とする特定の役割がある場合、これをオーバーライドします
+    #これは、「インデックス」アクションに表示されるレコードを設定するために使用されます。
     #
-    # def scoped_resource
-    #   if current_user.super_admin?
-    #     resource_class
-    #   else
-    #     resource_class.with_less_stuff
-    #   end
-    # end
+    def scoped_resource
+      @ransack_results = super.ransack(params[:q])
+      @ransack_results.result(distinct: true)
+    end
 
-    # Override `resource_params` if you want to transform the submitted
-    # data before it's persisted. For example, the following would turn all
-    # empty values into nil values. It uses other APIs such as `resource_class`
-    # and `dashboard`:
+    #送信されたものを変換する場合は、 `resource_params`をオーバーライドします
+    #それが持続する前のデータ。 たとえば、以下はすべて変わります
+    #nil値への空の値。 `Resource_Class`などの他のAPIを使用します
+    #と「ダッシュボード」：
     #
     # def resource_params
     #   params.require(resource_class.model_name.param_key).

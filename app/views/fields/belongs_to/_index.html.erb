@@ -1,18 +1,16 @@
 <%#
-# BelongsTo Index Partial
+＃Belongsto Index Partial
 
-This partial renders a belongs_to relationship,
-to be displayed on a resource's index page.
+この部分的なレンダリングは、belonds_to関係をレンダリングします。
+リソースのインデックスページに表示されます。
 
-By default, the relationship is rendered as a link to the associated object.
+デフォルトでは、関係は関連するオブジェクトへのリンクとしてレンダリングされます。
 
-## Local variables:
+##ローカル変数：
 
-- `field`:
-  An instance of [Administrate::Field::BelongsTo][1].
-  A wrapper around the belongs_to relationship pulled from the database.
-
-[1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/BelongsTo
+ - 「フィールド」：
+   [administrate :: field :: belongsto] [1]のインスタンス。
+   データベースから引っ張られたbelonds_to関係の周りのラッパー。
 %>
 
 <% if field.data %>

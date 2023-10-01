@@ -343,7 +343,13 @@ ja:
         "powder": 散剤
         "capsule": カプセル
         "liquid": 液剤
-        "nose": 点鼻薬
+        "nose": 点鼻
+        "troche": トローチ
+        "candy" : 飴
+        "gargle" : うがい液
+        "ointment" : 軟膏
+        "suppository" : 坐薬
+        "spray" : のどスプレー
       division:
         "to_guide": 要指導医薬品
         "one_kind": 一類医薬品

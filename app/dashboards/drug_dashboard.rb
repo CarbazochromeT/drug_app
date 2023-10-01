@@ -43,11 +43,8 @@ class DrugDashboard < Administrate::BaseDashboard
     symptoms
     ingredients
     formula
-    division
     effect_text
     formulation
-    maker_name
-    taxation
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -88,17 +85,16 @@ class DrugDashboard < Administrate::BaseDashboard
     usage
   ].freeze
 
-  # COLLECTION_FILTERS
-  # a hash that defines filters that can be used while searching via the search
-  # field of the dashboard.
+  #collection_filters
+  #検索で検索中に使用できるフィルターを定義するハッシュ
+  #ダッシュボードのフィールド。
   #
-  # For example to add an option to search for open resources by typing "open:"
-  # in the search field:
+  #たとえば、「Open：」と入力して、オープンリソースを検索するオプションを追加するために
+  #検索フィールド：
   #
-  #   COLLECTION_FILTERS = {
-  #     open: ->(resources) { resources.where(open: true) }
-  #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+      open: ->(resources) { resources.where(open: true) }
+    }.freeze
 
   # Overwrite this method to customize how drugs are displayed
   # across all pages of the admin dashboard.

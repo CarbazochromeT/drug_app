@@ -5,7 +5,7 @@ require "administrate/order"
 module Administrate
   module Field
     class HasMany < Associative
-      DEFAULT_LIMIT = 5
+      DEFAULT_LIMIT = 10
 
       def self.permitted_attribute(attr, _options = {})
         # This may seem arbitrary, and improvable by using reflection.

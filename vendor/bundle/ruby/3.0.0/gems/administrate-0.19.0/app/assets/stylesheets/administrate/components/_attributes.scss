@@ -9,7 +9,7 @@
 }
 
 .preserve-whitespace {
-  white-space: pre-wrap;
+  white-space: normal;
   word-wrap: break-word;
 }
 
@@ -25,3 +25,4 @@
   border: $base-border;
   padding: $small-spacing;
 }
+

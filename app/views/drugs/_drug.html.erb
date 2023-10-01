@@ -36,6 +36,9 @@
 <td><%= simple_format(drug.effect_text) %></td>
 </tr>
 <tr>
+<th>用法・用量</th>
+<td><%= simple_format(drug.formula) %></td>
+</tr>
 </tbody>
 </table>
   <%= link_to drug_path(drug), class: "button-text" do %>

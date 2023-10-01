@@ -1,20 +1,19 @@
 <%#
-# Collection
+＃コレクション
 
-This partial is used on the `index` and `show` pages
-to display a collection of resources in an HTML table.
+この部分的なものは、「インデックス」と「ショー」ページで使用されます
+HTMLテーブルにリソースのコレクションを表示します。
 
-## Local variables:
+##ローカル変数：
 
-- `collection_presenter`:
-  An instance of [Administrate::Page::Collection][1].
-  The table presenter uses `ResourceDashboard::COLLECTION_ATTRIBUTES` to determine
-  the columns displayed in the table
-- `resources`:
-  An ActiveModel::Relation collection of resources to be displayed in the table.
-  By default, the number of resources is limited by pagination
-  or by a hard limit to prevent excessive page load times
-
+ -  `collection_presenter`：
+   [administrate :: page :: collection] [1]のインスタンス。
+   テーブルプレゼンターは「resourcedashboard :: collection_attributes」を使用して決定します
+   テーブルに表示される列
+ - 「リソース」：
+   テーブルに表示されるリソースのActiveModel ::関係コレクション。
+   デフォルトでは、リソースの数はページネーションによって制限されます
+   または過度のページの読み込み時間を防ぐためのハード制限によって
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
 %>
 
@@ -66,14 +65,14 @@ to display a collection of resources in an HTML table.
           <td class="cell-data cell-data--<%= attribute.html_class %>">
             <% if accessible_action?(resource, :show) -%>
               <a href="<%= polymorphic_path([namespace, resource]) -%>"
-                 tabindex="-1"
-                 class="action-show"
-                 >
+                tabindex="-1"
+                class="action-show"
+                >
                 <%= render_field attribute %>
               </a>
             <% else %>
               <%= render_field attribute %>
-            <% end -%>
+            <% end %>
           </td>
         <% end %>
 

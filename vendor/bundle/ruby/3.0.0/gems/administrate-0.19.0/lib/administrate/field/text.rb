@@ -4,7 +4,7 @@ module Administrate
   module Field
     class Text < Administrate::Field::Base
       def self.searchable?
-        false
+        true
       end
 
       def truncate
@@ -14,7 +14,7 @@ module Administrate
       private
 
       def truncation_length
-        options.fetch(:truncate, 50)
+        options.fetch(:truncate, 200)
       end
     end
   end
