@@ -31,7 +31,7 @@ It renders the `_table` partial to display details about the resources.
     show_search_bar: show_search_bar,
   )
 %>
-
+  <%= render("pagination", resources: resources) %>
 <section class="main-content__body main-content__body--flush">
   <%= render(
     "collection",

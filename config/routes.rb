@@ -25,6 +25,6 @@ Rails.application.routes.draw do
       get :likes
     end
   end
-  get 'drugs/search'
+  get 'drugs/search'=> "drugs#search"
   resources :likes, only: %i[create destroy]
 end

@@ -15,6 +15,9 @@ and renders all form fields for a resource's editable attributes.
 %>
 
 <%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
+  <div class="form-actions">
+    <%= f.submit %>
+  </div><br>
   <% if page.resource.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -39,7 +42,5 @@ and renders all form fields for a resource's editable attributes.
     </div>
   <% end -%>
 
-  <div class="form-actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

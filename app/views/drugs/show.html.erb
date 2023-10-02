@@ -21,7 +21,7 @@
 <dl>
 <dt><span class="drug-icon"></span></dt>
 <dd><div class="drug-title" ><%= @drug.name %></div></dd>
-<span class="tag-division"><%= drug.division_text %></span>
+<span class="tag-division"><%= @drug.division_text %></span>
 <% @drug.ingredients.each do |ingredient| %>
     <% if ingredient.drive_ng? %>
     <span class="tag-caution">運転NG</span>
@@ -76,10 +76,9 @@
 </tbody>
 </table>
 <div class= "show-center">
-  <%= link_to @drug.document_url, class: "btncirlemon" do %>
+<%= link_to @drug.document_url, class: "btncirlemon" do %>
     添付文書URL
   <% end %>
-</div>
   </div>
 
 </div>

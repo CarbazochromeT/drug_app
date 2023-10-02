@@ -1,5 +1,5 @@
 <dl>
-<%= search_form_for @q, class: 'drug-search' do |f| %>
+<%= search_form_for @q, url: drugs_path, class: 'drug-search' do |f| %>
   <dt>成分名で検索</dt>
   <dd>
     <ul class= "search-list">
@@ -22,7 +22,7 @@
   <dt>どんな症状がありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <%= f.collection_check_boxes :symptoms_name_in, Symptom.all , :id, :name, { multiple: true }  do |b| %>
+      <%= f.collection_check_boxes :symptoms_id_eq_all, Symptom.all , :id, :name, { multiple: true }  do |b| %>
         <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>

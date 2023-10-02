@@ -5,7 +5,9 @@ class DrugsController < ApplicationController
   def index
     @q = Drug.ransack(params[:q])
     @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients).page(params[:page]).per(10)
+    @result = params[:q]&.values&.reject(&:blank?)
   end
+
 
   def show
     @drug = Drug.find(params[:id])
