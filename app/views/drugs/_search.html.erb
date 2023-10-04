@@ -5,7 +5,7 @@
     <ul class= "search-list">
       <li>
       <div class = "search-textarea">
-      <%= f.text_field :formula_cont, placeholder: '成分名で検索', value: params[:formula_cont] %>
+      <%= f.text_field :formula_cont, params: :formula_cont, placeholder: '成分名で検索'%>
       </div>
       </li>
     </ul>
@@ -15,14 +15,14 @@
     <ul class= "search-list">
       <li>
         <div class = "search-textarea">
-        <%= f.text_field :name_cont, placeholder: '商品名で検索',value: params[:name_cont] %>
+        <%= f.text_field :name_cont, params: :name_cont,placeholder: '商品名で検索' %>
       </li>
       </ul>
   </dd>
   <dt>どんな症状がありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <%= f.collection_check_boxes :symptoms_id_in, Symptom.all , :id, :name, { multiple: true }  do |b| %>
+      <%= f.collection_check_boxes :symptoms_id_in, Symptom.all , :id, :name, { multiple: true } do |b| %>
         <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>
@@ -36,7 +36,7 @@
   <dt>剤型にこだわりはありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <%= f.collection_check_boxes :formulation_eq_any, Drug.formulation.values.map { |v| [v.text, v.value] }.to_h, :last, :first   do |b| %>
+      <%= f.collection_check_boxes :formulation_eq_any, Drug.formulation.values.map { |v| [v.text, v.value] }.to_h, :last, :first , { multiple: true }  do |b| %>
         <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>
@@ -52,9 +52,9 @@
     <ul class= "search-list">
       <li>
       <div class="yesno">
-      <%= f.radio_button :ingredients_drive_not_true, false, id:'drive_ok' %>
+      <%= f.radio_button :ingredients_drive_not_true, false, id:'drive_ok'%>
       <%= f.label :drive_ok ,"はい", for: 'drive_ok', class:"switch-on" %>
-      <%= f.radio_button :ingredients_drive_not_true, [true:1, false:0], id:'drive_ng', checked: true %>
+      <%= f.radio_button :ingredients_drive_not_true, [true:1, false:0], id:'drive_ng', checked: true  %>
       <%= f.label :drive_ng ,"いいえ",for: 'drive_ng', class:"switch-off" %>
       </div>
       </li>
@@ -82,7 +82,7 @@
       <div class="yesno">
       <%= f.radio_button :ingredients_alcohol_not_true, false, id:'alcohol_ok'  %>
       <%= f.label :alcohol_ok ,"はい", for: 'alcohol_ok', class:"switch-on" %>
-      <%= f.radio_button :ingredients_alcohol_not_true, [true:1, false:0], id:'alcohol_ng', checked: true %>
+      <%= f.radio_button :ingredients_alcohol_not_true,[true:1, false:0], id:'alcohol_ng', checked: true %>
       <%= f.label :alcohol_ng ,"いいえ",for: 'alcohol_ng', class:"switch-off" %>
       </div>
       </li>

@@ -9,7 +9,7 @@ class DrugsController < ApplicationController
     .group('drugs.id')
     .order('ingredients ASC')
     .page(params[:page]).per(10)
-    @result = params[:q]&.values&.reject(&:blank?)
+      render :index
   end
 
   def show
@@ -28,7 +28,7 @@ class DrugsController < ApplicationController
     @drug = Drug.find(params[:id])
   end
 
-  def drug_params
+  def drugs_params
     params.require(:drugs).permit(:id, :drug, :name, :effect_text, :usage, :document_url, {formulation: []}, :division, :taxation,  { symptom_ids: [] },  { ingredient_ids: [] }, :drive,:tobacco, :alcohol, :maker_names)
   end
 
