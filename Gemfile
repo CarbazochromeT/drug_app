@@ -72,7 +72,6 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jquery-rails"
 gem 'draper'
-gem 'rakuten_web_service'
 gem 'dotenv-rails'
 gem 'ransack'
 gem "cssbundling-rails"
@@ -88,3 +87,7 @@ gem 'enum_help'
 gem 'roo'
 gem "mysql2"
 gem 'kaminari'
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
+gem 'public_suffix'

@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "care-drug-searcher",
   "private": "true",
   "dependencies": {
     "@nathanvda/cocoon": "^1.2.14",
@@ -7,5 +7,24 @@
   },
   "scripts": {
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css"
-  }
+  },
+  "description": "## サービス概要 軽い体調不良の方に、<br> 症状にあった市販用医薬品を購入するきっかけを与える検索サービスです<br>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flare112/drug_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flare112/drug_app/issues"
+  },
+  "homepage": "https://github.com/flare112/drug_app#readme"
 }
