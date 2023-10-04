@@ -351,6 +351,7 @@ DEPENDENCIES
   administrate-field-enumerize
   administrate-field-nested_has_many
   administrate_ransack
+  bcrypt (~> 3.1.7)
   bootsnap
   capybara
   cocoon
@@ -367,6 +368,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   kaminari
+  matrix
   meta_request
   mysql2
   net-imap
