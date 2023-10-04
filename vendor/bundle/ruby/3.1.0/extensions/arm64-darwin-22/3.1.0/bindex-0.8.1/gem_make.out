@@ -1,0 +1,15 @@
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/flare_home/.rbenv/versions/3.1.4/bin/ruby -I /Users/flare_home/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20231004-31766-lae005 sitelibdir\=./.gem.20231004-31766-lae005 clean
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20231004-31766-lae005 sitelibdir\=./.gem.20231004-31766-lae005
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20231004-31766-lae005 sitelibdir\=./.gem.20231004-31766-lae005 install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20231004-31766-lae005/skiptrace/internal
