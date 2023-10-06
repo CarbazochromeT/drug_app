@@ -26,6 +26,7 @@
   --creemmelon: #f8fef2;
   --nezumi: #69919D;
   --skyblue:#8AAEE4;
+  --mintsquash:#b0e2dd;
 }
 
 body {
@@ -510,4 +511,8 @@ li {
 .like-star_unlike:hover{
   transform: scale(1.3,1.3);
   transition: 0.3s ease-in-out;
+}
+
+.drug_formula{
+  height: 100px;
 }

@@ -2,7 +2,11 @@
 .drug-search{
 	width: 700px;
 	align-content: stretch;
+	border: 1px solid var(--mintsquash);
   }
+.drug-search:hover{
+	box-shadow:   0 0 15px var(--horizon);
+}
   
   .drug-search dl{
 	display: flex;
@@ -95,11 +99,14 @@
 	margin: 4em auto;
 	padding: 3em 2em 2em 2em;
 	background: var(--whiteblue);
-	border: 1px solid var(--horizon);
+	border: 1px solid var(--mintsquash);
 	border-radius: 30px;
 	width: 600px;
 	float: left ;
   }
+.search-result:hover {
+	box-shadow:   0 0 15px var(--horizon);
+}
 /*テーブル１行目に入った見出し部分（※caption）*/
 
 .search-result dl{

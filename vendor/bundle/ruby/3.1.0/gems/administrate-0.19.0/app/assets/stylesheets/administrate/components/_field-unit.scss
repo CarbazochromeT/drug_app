@@ -19,11 +19,11 @@
   margin-left: 2rem;
   max-width: 50rem;
   width: 100%;
+}
 
   .optgroup-header {
     font-weight: $bold-font-weight;
   }
-}
 
 .field-unit--nested {
   border: $base-border;
@@ -46,4 +46,8 @@
     color: $red;
     content: " *";
   }
+}
+
+textarea#drug_formula{
+  height: 100px;
 }

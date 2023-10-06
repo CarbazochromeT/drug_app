@@ -17,6 +17,8 @@
   <div class= "like_star">
   <%= render 'like_button', drug: @drug  %>
   </div>
+  <% else %>
+  <p>ログインすることでお気に入り機能が使用できます！<p>
   <% end %>
 <dl>
 <dt><span class="drug-icon"></span></dt>

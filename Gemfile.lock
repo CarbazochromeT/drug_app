@@ -376,7 +376,7 @@ DEPENDENCIES
   net-smtp
   public_suffix
   puma (~> 5.0)
-  rails (~> 7.0.6)
+  rails (~> 7.0.8)
   rails-i18n
   ransack
   roo

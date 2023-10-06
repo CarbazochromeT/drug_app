@@ -14,7 +14,7 @@ module Administrate
       private
 
       def truncation_length
-        options.fetch(:truncate, 50)
+        options.fetch(:truncate, 200)
       end
 
       def character

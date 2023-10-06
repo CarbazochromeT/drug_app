@@ -48,9 +48,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_225253) do
 
   create_table "ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.string "drive", default: "0"
-    t.string "tobacco", default: "0"
-    t.string "alcohol", default: "0"
+    t.string "drive", default: "true"
+    t.string "tobacco", default: "true"
+    t.string "alcohol", default: "true"
   end
 
   create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
