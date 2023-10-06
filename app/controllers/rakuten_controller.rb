@@ -1,0 +1,3 @@
+class RakutenController < ApplicationController
+
+end

@@ -1,7 +1,7 @@
 class Drug < ApplicationRecord
   extend Enumerize
   scope :admin_scope, -> { where(published: true) }
-  has_many :drug_ingredients
+  has_many :drug_ingredients, dependent: :destroy
   has_many :ingredients,through: :drug_ingredients
   has_many :drug_symptoms
   has_many :symptoms, through: :drug_symptoms

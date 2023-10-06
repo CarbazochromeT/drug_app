@@ -93,6 +93,3 @@ gem 'net-smtp'
 gem 'public_suffix'
 gem 'matrix'
 gem 'rakuten_web_service'
-# Image Uploader
-gem 'carrierwave'
-gem 'rmagick', require: 'RMagick'

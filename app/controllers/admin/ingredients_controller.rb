@@ -1,6 +1,10 @@
 module Admin
   class IngredientsController < Admin::ApplicationController
     prepend AdministrateRansack::Searchable
+    def ransack_options
+      # raises an exception on unknown parameters
+      { ignore_unknown_conditions: false }
+    end
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #

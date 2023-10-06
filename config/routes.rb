@@ -22,10 +22,12 @@ Rails.application.routes.draw do
   resources :drugs do
     collection do
       get :likes
+      get :ingredients, only: %i[show index]
     end
   end
-  get 'drugs/rakuten_search'
+  get 'drugs/search' => 'drugs#search'
+  get 'drugs/rakuten_search' => 'drugs#rakuten_search'
   resources :likes, only: %i[create destroy]
-  resources :ingredients, only: %i[show index]
+  resources :ingredients,  on: :collection
 
 end

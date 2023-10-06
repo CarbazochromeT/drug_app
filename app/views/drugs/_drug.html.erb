@@ -1,51 +1,49 @@
 <div class="search-result">
-<dl>
-<dt><span class="drug-icon"></span></dt>
-<dd><div class="drug-title" ><%= drug.name %></div></dd>
-<dd>
-<span class="tag-division"><%= drug.division_text %></span>
+  <dl>
+    <dt><span class="drug-icon"></span></dt>
+      <dd><div class="drug-title" ><%= drug.name %></div></dd>
+      <dd>
+    <span class="tag-division"><%= drug.division_text %></span>
 
-<% drug.ingredients.each do |ingredient| %>
-    <% if ingredient.drive_ng? %>
-    <span class="tag-caution">運転NG</span>
+    <% drug.ingredients.each do |ingredient| %>
+      <% if ingredient.drive_ng? %>
+        <span class="tag-caution">運転NG</span>
+      <% end %>
     <% end %>
-  <% end %>
-<% drug.ingredients.each do |ingredient| %>
-    <% if ingredient.alcohol_ng? %>
-    <span class="tag-caution">お酒NG</span>
+    <% drug.ingredients.each do |ingredient| %>
+      <% if ingredient.alcohol_ng? %>
+        <span class="tag-caution">お酒NG</span>
+      <% end %>
     <% end %>
-  <% end %>
-<% drug.ingredients.each do |ingredient| %>
-    <% if ingredient.tobacco_ng? %>
-    <span class="tag-caution">タバコNG</span>
+    <% drug.ingredients.each do |ingredient| %>
+      <% if ingredient.tobacco_ng? %>
+        <span class="tag-caution">タバコNG</span>
+      <% end %>
     <% end %>
-  <% end %>
-</dd>
-
-<dd>
-  <% drug.ingredients.each do |ingredient| %>
-  <% link_to ingredient_path(ingredient) do %>
-  <span class="tag-ingredient"><%= drug.ingredient %></span>
-  <% end %>
-  <% end %>
-</dd>
-</dl>
+      </dd>
+    <dd>
+    <% drug.ingredients.each do |ingredient| %>
+    <%= link_to ingredient_path(ingredient) do %>
+      <span class="tag-ingredient"><%= ingredient.name %></span>
+      <% end %>
+    <% end %>
+    </dd>
+  </dl>
 <table class="ta1">
-<tbody>
-<tr>
-<tr>
-<th>効能効果</th>
-<td><%= simple_format(drug.effect_text) %></td>
-</tr>
-<tr>
-<th>用法・用量</th>
-<td><%= simple_format(drug.formula) %></td>
-</tr>
-</tbody>
+  <tbody>
+    <tr>
+      <th>効能効果</th>
+        <td><%= simple_format(drug.effect_text) %></td>
+    </tr>
+    <tr>
+      <th>用法・用量</th>
+        <td><%= simple_format(drug.formula) %></td>
+    </tr>
+  </tbody>
 </table>
   <%= link_to drug_path(drug), class: "button-text" do %>
-  <div class="btn btnmint">
-    詳しい説明を見る！
-  </div>
+    <div class="btn btnmint">
+      詳しい説明を見る！
+    </div>
   <% end %>
 </div>

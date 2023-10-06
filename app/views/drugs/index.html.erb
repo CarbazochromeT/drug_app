@@ -9,17 +9,17 @@
 <% content_for(:title, t('.title')) %>
 <div class="top-header"></div>
 <div class="container">
-<hgroup>
-  <h2><%= t '.title' %></h2><br>
-</hgroup>
-      <%= render 'search', q: @q %>
-      <% if @drugs.present? %>
-        <%= render @drugs %>
-      <% else %>
+    <hgroup>
+    <h2><%= t '.title' %></h2><br>
+    </hgroup>
+    <%= render 'search', q: @q %>
+    <% if @drugs.present? %>
+        <%= render @drugs, drug: @drug %>
+    <% else %>
         <p><%= t('.no_result') %>(='X'=)</p>
-      <% end %>
-      <div class="pagination" >
+    <% end %>
+    <div class="pagination" >
         <%= paginate @drugs %>
-      </div>
-</div>
+    </div>
+ </div>
 </body>
