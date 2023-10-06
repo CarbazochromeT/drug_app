@@ -1,12 +1,10 @@
 class IngredientsController < ApplicationController
+  skip_before_action :require_login
   def index
+    @ingredients = Ingredient.all
   end
 
   def show
+    @ingredient = Ingredient.find(params[:id])
   end
-
-  def search_params
-    params.require(:drive, :tobacco, :alcohol).permit(:search,:search_radio)
-  end
-
 end

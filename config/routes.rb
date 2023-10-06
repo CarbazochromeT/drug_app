@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :ingredients
       resources :users
       root to: "drugs#index"
-    end
+  end
 
   get 'login' => 'user_sessions#new'
   post 'login' => "user_sessions#create"
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
       get :likes
     end
   end
-  get 'drugs/search'=> "drugs#search"
+  get 'drugs/rakuten_search'
   resources :likes, only: %i[create destroy]
+  resources :ingredients, only: %i[show index]
+
 end

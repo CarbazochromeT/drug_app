@@ -4,7 +4,8 @@ class DrugsController < ApplicationController
 
   def index
     @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients).select('drugs.*', 'count(ingredients.id) AS ingredients')
+    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients)
+    .select('drugs.*', 'count(ingredients.id) AS ingredients')
     .left_joins(:ingredients)
     .group('drugs.id')
     .order('ingredients ASC')
@@ -13,6 +14,7 @@ class DrugsController < ApplicationController
   end
 
   def show
+    @items = RakutenWebService::Ichiba::Item.search(keyword: @drug.name)
     @drug = Drug.find(params[:id])
   end
 
@@ -20,7 +22,6 @@ class DrugsController < ApplicationController
     @q = current_user.like_drugs.ransack(params[:q])
     @like_drugs = current_user.like_drugs.includes(:user).order(created_at: :desc)
   end
-
 
   private
 
@@ -35,5 +36,4 @@ class DrugsController < ApplicationController
   def search_params
     params[:q]&.permit(:id, :drug, :name, :effect_text, :usage, :document_url, {formulation: []}, :division, :taxation,  { symptom_ids: [] },  { ingredient_ids: [] }, :drive,:tobacco, :alcohol, :maker_names)
   end
-
 end

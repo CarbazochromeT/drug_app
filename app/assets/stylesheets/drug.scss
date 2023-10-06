@@ -275,8 +275,8 @@ a.btncirmarine:hover {
     display: none;
 }
  
- 
 button.readmore {
+	cursor: pointer;
     position: relative;
     height: 80px;
     width: 100px;
@@ -292,6 +292,7 @@ button.readmore {
 }
  
 button.readmore::after {
+	cursor: pointer;
     content: " ";
     position: absolute;
     width: 20px;
@@ -317,4 +318,35 @@ button.readmore:hover::after {
 .on-click {
     transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
+}
+.ta2{
+	margin: 3px auto;    /* 上下3px 左右auto */
+}
+.ta2 .rakuten-title{
+	vertical-align: middle;
+	width: 250px;
+	font-size: 0.8em;
+	line-height: 1.4;
+}
+.ta2 .rakuten-title a{
+	color: var(--darkgrey);
+}
+.ta2 .rakuten-price{
+	vertical-align: middle;
+}
+.ta2 .rakuten-price a{
+	color: var(--indigo);
+	display: block; 
+}
+.ta2 th, .ta2 td {
+	padding: 10px 10px;		/*上下、左右へのボックス内の余白*。基本的に数行上の「.ta1 caption」のpaddingと揃えておけばOKです。*/
+	word-break: break-all;	/*英語などのテキストを改行で自動的に折り返す設定。これがないと、テーブルを突き抜けて表示される場合があります。*/
+}
+.ta2 tr:hover{ 
+	background-color: var(--horizon); 
+}
+.login-announce{
+	text-align: right;
+	font-size: 0.8em;
+	line-height: 1.4;
 }

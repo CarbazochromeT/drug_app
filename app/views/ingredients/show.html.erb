@@ -1,2 +1,23 @@
-<h1>Ingredients#show</h1>
-<p>Find me in app/views/ingredients/show.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="turbo-visit-control" content="reload">
+  </head>
+<body>
+
+<% content_for(:title, t('.title')) %>
+<div class="top-header"></div>
+<div class="container">
+<hgroup>
+  <h2><%= t '.title' %></h2><br>
+</hgroup>
+<%= @ingredient.name %>が含まれる市販医薬品一覧
+
+  <% @ingredient.drugs.each do |drug| %>
+      <%= link_to drug.name, drug_path(drug) %>
+    <% end %>
+  </div>
+</div>
+</div>
+</body>

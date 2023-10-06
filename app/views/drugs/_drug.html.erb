@@ -1,6 +1,5 @@
 <div class="search-result">
 <dl>
-  
 <dt><span class="drug-icon"></span></dt>
 <dd><div class="drug-title" ><%= drug.name %></div></dd>
 <dd>
@@ -11,7 +10,6 @@
     <span class="tag-caution">運転NG</span>
     <% end %>
   <% end %>
-</dd>
 <% drug.ingredients.each do |ingredient| %>
     <% if ingredient.alcohol_ng? %>
     <span class="tag-caution">お酒NG</span>
@@ -23,10 +21,14 @@
     <% end %>
   <% end %>
 </dd>
-<dd> <% drug.ingredients.each do |ingredient| %>
-  <span class="tag-ingredient"><%= ingredient.name %></span>
-  <% end  %>
-  </dd>
+
+<dd>
+  <% drug.ingredients.each do |ingredient| %>
+  <% link_to ingredient_path(ingredient) do %>
+  <span class="tag-ingredient"><%= drug.ingredient %></span>
+  <% end %>
+  <% end %>
+</dd>
 </dl>
 <table class="ta1">
 <tbody>
@@ -46,4 +48,4 @@
     詳しい説明を見る！
   </div>
   <% end %>
-  </div>
+</div>

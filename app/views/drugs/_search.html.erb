@@ -66,7 +66,7 @@
     <ul class= "search-list">
       <li>
       <div class="yesno">
-      <%= f.radio_button :ingredients_tobacco_not_true, false, id:'tobacco_ok'  %>
+      <%= f.radio_button :ingredients_tobacco_not_true, id:'tobacco_ok'  %>
       <%= f.label :tobacco_ok ,"はい", for: 'tobacco_ok', class:"switch-on" %>
       <%= f.radio_button :ingredients_tobacco_not_true, [true:1, false:0], id:'tobacco_ng', checked: true %>
       <%= f.label :tobacco_ng ,"いいえ",for: 'tobacco_ng', class:"switch-off" %>

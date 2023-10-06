@@ -11,14 +11,15 @@
 <div class="container">
 <hgroup>
   <h2><%= t '.title' %></h2><br>
+
 </hgroup>
 <div class="search-result">
-  <% if logged_in? %>
+    <% if logged_in? %>
   <div class= "like_star">
   <%= render 'like_button', drug: @drug  %>
   </div>
   <% else %>
-  <p>ログインすることでお気に入り機能が使用できます！<p>
+  <p class= "login-announce">ログインすることでお気に入り機能が使用できます！<p>
   <% end %>
 <dl>
 <dt><span class="drug-icon"></span></dt>
@@ -29,7 +30,6 @@
     <span class="tag-caution">運転NG</span>
     <% end %>
   <% end %>
-</dd>
 <% @drug.ingredients.each do |ingredient| %>
     <% if ingredient.alcohol_ng? %>
     <span class="tag-caution">お酒NG</span>
@@ -42,8 +42,10 @@
   <% end %>
   </dd>
   <dd> <% @drug.ingredients.each do |ingredient| %>
+    <% link_to ingredient_path(ingredient) do %>
   <span class="tag-ingredient"><%= ingredient.name %></span>
-  <% end  %>
+  <% end %>
+  <% end %>
   </dd>
 </dl>
 <table class="ta1">
@@ -72,16 +74,29 @@
   <%= simple_format(@drug.caution) %>
         </div>
         <button class="readmore">READ MORE</button>
-</div>
+  </div>
 </td>
 </tr>
 </tbody>
 </table>
 <div class= "show-center">
-<%= link_to @drug.document_url, class: "btncirlemon" do %>
+<%= link_to "https://www.info.pmda.go.jp/downfiles/otc/PDF/#{@drug.document_url}.pdf", class: "btncirlemon" do %>
     添付文書URL
+<% end %>
+</div>
+<div class= "show-center">
+  <% if @items.present? %>
+    <% @items.first(3).each do |item| %>
+  <table class="ta2">
+      <tr>
+        <td><%= link_to item.url do %><%= image_tag(item.small_image_urls[0]) %><% end %></td>
+        <td class= "rakuten-title"><%= link_to item.url do %><%= item.name %><% end %></td>
+        <td class= "rakuten-price"><%= link_to item.url do %><%= item.price %>円<% end %></td>
+      </tr>
+  </table>
+    <% end %>
   <% end %>
-  </div>
+</div>
 
 </div>
 </div>
