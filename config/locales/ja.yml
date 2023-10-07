@@ -41,12 +41,17 @@ ja:
       success: 'ログアウトしました'
   drugs:
     index:
-      title: 'インデックス'
+      title: '市販薬を検索する'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+    show:
+      title: 'おくすり説明書'
     search:
       title: '市販薬を検索する'
-  bookmarks:
+  ingredients:
+    index:
+    show: 'この薬効成分について'
+  likes:
       title: 'ブックマーク一覧'
       create:
         success: 'ブックマークしました'

@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="turbo-visit-control" content="reload">
   </head>
 <body>
 
@@ -14,7 +13,7 @@
     </hgroup>
     <%= render 'search', q: @q %>
     <% if @drugs.present? %>
-        <%= render @drugs, drug: @drug %>
+        <%= render @drugs %>
     <% else %>
         <p><%= t('.no_result') %>(='X'=)</p>
     <% end %>

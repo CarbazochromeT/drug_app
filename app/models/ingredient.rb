@@ -10,7 +10,5 @@ class Ingredient < ApplicationRecord
   enumerize :tobacco, in: { tobacco_ok: 'true', tobacco_ng: 'false' },  scope: true, predicates: true
   enumerize :alcohol, in: { alcohol_ok: 'true', alcohol_ng: 'false' },  scope: true, predicates: true
 
-  def self.search(search_params)
-		@drug = Drug.where( 'drive LIKE ?', "%#{search_params[:search_radio]}%" )
-  end
+
 end

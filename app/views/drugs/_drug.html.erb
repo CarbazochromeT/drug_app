@@ -1,25 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="turbo-visit-control" content="reload">
+  </head>
+<body>
 <div class="search-result">
+  <% if logged_in? %>
+    <div class= "like_star">
+        <%= render 'like_button', drug: drug, like: @like %>
+    </div>
+    <% else %>
+      <p class= "login-announce">ログインすることでお気に入り機能が使用できます！<p>
+    <% end %>
   <dl>
-    <dt><span class="drug-icon"></span></dt>
+    <dt>
+      <%= render 'formulation', drug: drug %>
+    </dt>
       <dd><div class="drug-title" ><%= drug.name %></div></dd>
       <dd>
     <span class="tag-division"><%= drug.division_text %></span>
 
+  <% unless drug.formulation == 'nose'%>
     <% drug.ingredients.each do |ingredient| %>
       <% if ingredient.drive_ng? %>
         <span class="tag-caution">運転NG</span>
       <% end %>
-    <% end %>
-    <% drug.ingredients.each do |ingredient| %>
       <% if ingredient.alcohol_ng? %>
         <span class="tag-caution">お酒NG</span>
+        <% %>
       <% end %>
-    <% end %>
-    <% drug.ingredients.each do |ingredient| %>
       <% if ingredient.tobacco_ng? %>
         <span class="tag-caution">タバコNG</span>
       <% end %>
     <% end %>
+  <% end %>
       </dd>
     <dd>
     <% drug.ingredients.each do |ingredient| %>
@@ -47,3 +62,4 @@
     </div>
   <% end %>
 </div>
+</body>

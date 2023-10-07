@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+<body>
+
 <% if current_user.like?(drug) %>
   <%= render 'unlike', { drug: drug } %>
 <% else %>
   <%= render 'like', { drug: drug } %>
 <% end %>
+
+</body>
