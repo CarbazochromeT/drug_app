@@ -1,0 +1,39 @@
+.ingredients_list{
+	margin: 4em auto;
+	padding: 3em 2em 2em 2em;
+	background: var(--whiteblue);
+	border: 1px solid var(--mintsquash);
+	border-radius: 30px;
+	width: 600px;
+	float: left ;
+}
+.ingredients_list:hover{
+	box-shadow:   0 0 15px var(--horizon);
+}
+
+.ingredients_list dt{
+	width: 22em;
+	float: left;
+	padding: 5px;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	vertical-align: middle;
+}
+
+.ingredients_list dd{
+	padding: 5px;
+	background-color: transparent;
+}
+
+.ingredients_list a{
+    color: var(--indigo);
+}
+
+.ingredients_list a:hover{
+    color: var(--pink);
+}
+.ingredients_list h3{
+    padding: 10px 10px 30px 10px;
+}

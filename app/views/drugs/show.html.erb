@@ -11,7 +11,7 @@
   <h2><%= t '.title' %></h2><br>
 </hgroup>
 
-<link_to >
+<%= link_to '前のページに戻る', :back %>
 <div class="search-result">
     <% if logged_in? %>
       <div class= "like_star">
@@ -92,6 +92,7 @@
 </div>
 <div class= "show-center">
   <% if @items.present? %>
+
 <% @items.first(3).each do |item| %>
   <table class="ta2">
       <tr>

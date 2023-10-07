@@ -12,10 +12,19 @@
 <hgroup>
   <h2><%= t '.title' %></h2><br>
 </hgroup>
-  <%= @ingredient.name %>が含まれる市販医薬品一覧
+  <div class = 'ingredients_list'>
+  <h3><%= @ingredient.name %> が含まれる市販医薬品一覧</h3>
 
     <% @ingredient.drugs.each do |drug| %>
+    <dl>
+      <dt>
       <%= link_to drug.name, drug_path(drug) %>
+      </dt>
+      <dd>
+        あああ
+      </dd>
+    </dl>
     <% end %>
+  </div>
   </div>
 </body>
