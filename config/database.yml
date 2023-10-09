@@ -1,13 +1,15 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: 5
   database: drug_app5_development
   username: root
-  password:
+  password: 42564256
   host: localhost
   socket: /tmp/mysql.sock
 
@@ -44,5 +46,5 @@ production:
   hostname: <%= ENV['DB_HOSTNAME'] %>
   username: <%= ENV['DB_USERNAME'] %>
   database: <%= ENV['DB_NAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  url: <%= ENV.fetch('JAWSDB_URL').sub(/^(mysql)[^\d]/, 'mysql2') %>
+  password: fh221ve3w4xgk9yp
+  url: <%= ENV['DATABASE_URL'] %>

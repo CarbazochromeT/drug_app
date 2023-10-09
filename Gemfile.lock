@@ -315,6 +315,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    squasher (0.7.2)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -388,6 +389,7 @@ DEPENDENCIES
   selenium-webdriver
   sorcery
   sprockets-rails
+  squasher
   stimulus-rails
   turbo-rails
   tzinfo-data
