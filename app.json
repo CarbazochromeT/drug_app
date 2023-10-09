@@ -1,0 +1,9 @@
+    "addons": [
+    {
+        "plan": "jawsdb:kitefin",
+        "as": "JAWSDB",
+        "options": {
+          "version": "8.1"
+        }
+    }
+]

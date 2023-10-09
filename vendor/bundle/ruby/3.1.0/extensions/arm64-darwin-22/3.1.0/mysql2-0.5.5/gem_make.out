@@ -1,5 +1,5 @@
 current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.5/ext/mysql2
-/Users/flare_home/.rbenv/versions/3.1.4/bin/ruby -I /Users/flare_home/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+/Users/flare_home/.rbenv/versions/3.1.4/bin/ruby extconf.rb
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_gc_mark_movable()... yes
@@ -34,10 +34,10 @@ Setting rpath to /opt/homebrew/Cellar/mysql/8.1.0/lib
 creating Makefile
 
 current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.5/ext/mysql2
-make DESTDIR\= sitearchdir\=./.gem.20231004-31766-i3f5ja sitelibdir\=./.gem.20231004-31766-i3f5ja clean
+make DESTDIR\= sitearchdir\=./.gem.20231009-68230-40t21v sitelibdir\=./.gem.20231009-68230-40t21v clean
 
 current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.5/ext/mysql2
-make DESTDIR\= sitearchdir\=./.gem.20231004-31766-i3f5ja sitelibdir\=./.gem.20231004-31766-i3f5ja
+make DESTDIR\= sitearchdir\=./.gem.20231009-68230-40t21v sitelibdir\=./.gem.20231009-68230-40t21v
 compiling client.c
 compiling infile.c
 compiling mysql2_ext.c
@@ -46,5 +46,8 @@ compiling statement.c
 linking shared-object mysql2/mysql2.bundle
 
 current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.5/ext/mysql2
-make DESTDIR\= sitearchdir\=./.gem.20231004-31766-i3f5ja sitelibdir\=./.gem.20231004-31766-i3f5ja install
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20231004-31766-i3f5ja/mysql2
+make DESTDIR\= sitearchdir\=./.gem.20231009-68230-40t21v sitelibdir\=./.gem.20231009-68230-40t21v install
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20231009-68230-40t21v/mysql2
+
+current directory: /Users/flare_home/workspace/runteq/応用編/drug_app5/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.5/ext/mysql2
+make DESTDIR\= sitearchdir\=./.gem.20231009-68230-40t21v sitelibdir\=./.gem.20231009-68230-40t21v clean
