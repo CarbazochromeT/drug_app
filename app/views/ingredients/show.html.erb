@@ -6,14 +6,15 @@
   </head>
 <body>
 
-<% content_for(:title, t('.title')) %>
+<% content_for(:title, @ingredient.name + 'に含まれる医薬品一覧' ) %>
 <div class="top-header"></div>
 <div class="container">
 <hgroup>
-  <h2><%= t '.title' %></h2><br>
+    <div class='midashi'><%= image_tag '眼鏡サーチ1.png', class: 'midashi_img'  %><%= 'おくすりの成分についての基礎知識' %></div><br>
 </hgroup>
   <div class = 'ingredients_list'>
-  <h3><%= @ingredient.name %> が含まれる市販医薬品一覧</h3>
+    <%= @ingredient.name %>
+  <%= @ingredient.name %> が含まれる市販医薬品一覧
 
     <% @ingredient.drugs.each do |drug| %>
     <dl>
@@ -21,7 +22,6 @@
       <%= link_to drug.name, drug_path(drug) %>
       </dt>
       <dd>
-        あああ
       </dd>
     </dl>
     <% end %>

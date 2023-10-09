@@ -9,13 +9,25 @@
   background-color: var(--marine);
   border-radius: 9999px;
   display: flex;
+  transition: background-color 1s; /* 背景色と高さをじんわり変更 */
 }
 
+/* ファーストビューを過ぎたあとのヘッダー */
+.site-header.transform {
+  margin: 0px 30px 0 30px;
+  background:rgba(120,200,199,0.9);
+  transition: background-color 5s; /* 背景色と高さをじんわり変更 */
+}
+
+.header-logo.transform {
+  top:5px;
+}
 .header-logo {
   top: 30px;
   left: 50px;
   position: fixed;
   z-index: 2; 
+  transition: margin .5s,; /* 背景色と高さをじんわり変更 */
 }
 
 .site-header__wrapper {

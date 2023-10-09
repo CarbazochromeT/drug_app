@@ -1,0 +1,123 @@
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1000px;
+    }
+    .search-textarea input {
+      width: 300px;
+    }
+    .drug-search dt {
+      width: 10em;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 900px;
+    }
+    .drug-search{
+      max-width: 100%;
+    }
+    .drug-search dt {
+      width: 6em;
+    }
+    .search-textarea input {
+      width: 250px;
+    }
+    .ta1 th{
+      width: 7em;
+    }
+  
+    .ta2 .rakuten-title {
+      width: 200px;
+    }
+  
+  }
+  
+  
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 740px;
+    }
+    .drug-search{
+      max-width: 85%;
+    }
+    .drug-search dt {
+      width: 6em;
+    }
+    .search-textarea input {
+      width: 250px;
+    }
+    .ta1 th{
+      width: 7em;
+    }
+  
+    .ta2 .rakuten-title {
+      width: 200px;
+    }
+  
+  }
+  
+  
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .ingredients_list{
+      max-width: 85%;
+    }
+    .midashi {
+      padding: 10px 10px 10px 20px;
+      font-size: 28px;
+      margin: 0 auto;
+      border-radius: 10px 10px 10px 10px;
+      max-width: 90%;
+    }
+    .drug-search{
+      max-width: 90%;
+    }
+    .drug-search dt {
+      width: 6em;
+    }
+    .search-textarea input {
+      width: 250px;
+    }
+    .ta1 th{
+      width: 7em;
+    }
+  
+    .ta2 .rakuten-title {
+      width: 200px;
+    }
+  
+  }
+  
+  @media (min-width: 480px) {
+    .container {
+      max-width: 100%;
+    }
+    .midashi {
+      font-size: 24px;
+      margin: 0 auto;
+      border-radius: 10px 10px 10px 10px;
+      max-width: 90%;
+      padding: 7px 7px 7px 20px;
+    }
+    .ingredients_list{
+      max-width: 85%;
+    }
+  
+    .search-textarea input {
+      width: 250px;
+    }
+    .drug-search{
+      max-width: 85%;
+    }
+  
+    .search-result{
+      max-width: 85%;
+    }
+  }
+  

@@ -41,4 +41,15 @@ $(document).on('turbo:load', function() {
   })
 });
 
-
+$(document).on('turbo:load',function () {
+  // スクロールを開始したら
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 0) {
+      // ページトップ以外の場合classを付与
+      $(".js-header").addClass("transform");
+    } else {
+      // ページトップの場合classを外す
+      $(".js-header").removeClass("transform");
+    }
+  });
+});

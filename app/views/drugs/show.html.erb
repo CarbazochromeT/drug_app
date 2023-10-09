@@ -8,10 +8,9 @@
   <div class="top-header"></div>
     <div class="container">
 <hgroup>
-  <h2><%= t '.title' %></h2><br>
+      <div class='midashi'><%= image_tag '眼鏡サーチ1.png', class: 'midashi_img'  %><%= t '.title' %></div>
 </hgroup>
-
-<%= link_to '前のページに戻る', :back %>
+<%= link_to '前のページに戻る', :back, class: 'pager' %>
 <div class="search-result">
     <% if logged_in? %>
       <div class= "like_star">

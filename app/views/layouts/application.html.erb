@@ -11,12 +11,14 @@
     <link rel="icon" href="data:image/x-icon;,">
   </head>
   <body>
+  <div class="mv js-mv">
   <% if logged_in? %>
     <%= render 'shared/header' %>
   <% else %>
     <%= render 'shared/before_login_header' %>
   <% end %>
       <%= render 'shared/flash_message' %>
+    </div>
     <%= yield %>
     <%= render 'shared/footer' %>
     <script src="https://deno.land/x/embed_pdf@v1.2.0/mod.js" type="module"></script>
