@@ -48,3 +48,4 @@ production:
   database: <%= ENV['DB_NAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
+  
