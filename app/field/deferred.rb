@@ -1,4 +1,3 @@
-
 module Administrate
   module Field
     class Deferred
