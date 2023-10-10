@@ -1,5 +1,4 @@
 require_relative "deferred"
-require "active_support/core_ext/string/inflections"
 
 module Administrate
   module Field

@@ -1,4 +1,4 @@
-require "administrate/field/base"
+require "base"
 require 'rails'
 
 class EnumerizeField < Administrate::Field::Base

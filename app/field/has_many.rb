@@ -1,6 +1,5 @@
 require_relative "associative"
 require "administrate/page/collection"
-require "administrate/order"
 
 module Administrate
   module Field
