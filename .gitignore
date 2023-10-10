@@ -41,3 +41,5 @@
 
 /ransack_demo/*
 node_modules
+
+/vender/*
