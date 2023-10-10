@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 module DrugApp5
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.autoloader = :classic 
     config.encoding = "utf-8"
 
     # Configuration for the application, engines, and railties goes here.
