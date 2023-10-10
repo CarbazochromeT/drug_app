@@ -1,7 +1,0 @@
-<%= form.label(label, class: 'filter-label') %>
-<% if model.ransackable_scopes.include?(field) %>
-  <%= form.datetime_field(field, value: form.object.send(field)) %>
-<% else %>
-  <%= form.datetime_field("#{field}_gteq") %>
-  <%= form.datetime_field("#{field}_lteq") %>
-<% end %>
