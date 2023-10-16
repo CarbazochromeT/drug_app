@@ -8,6 +8,5 @@ class ChangeDatatypecolumn5 < ActiveRecord::Migration[7.0]
     change_column_comment(:drugs, :division, from: nil, to: "リスク区分")
     change_column_comment(:drugs, :taxation, from: nil, to: "セルフメディケーション税制")
     change_column_comment(:drugs, :for_days,  from: nil, to: "何日ぶん" )
-    change_column_comment(:drugs, :maker_name_id, from: nil, to: "製薬企業id")
   end
 end
