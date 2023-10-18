@@ -42,6 +42,8 @@ test:
 
 production:
   <<: *default
+  database: drug_app5_production
   adapter: postgresql
   encoding: unicode
   pool: 5
+  url: <%= ENV["DATABASE_URL"] %>

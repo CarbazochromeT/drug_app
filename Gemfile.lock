@@ -297,6 +297,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    seed-fu (2.3.9)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     seed_dump (3.3.1)
       activerecord (>= 4)
       activesupport (>= 4)
@@ -391,6 +394,7 @@ DEPENDENCIES
   ransack
   roo
   sassc-rails
+  seed-fu
   seed_dump
   selenium-webdriver
   sorcery

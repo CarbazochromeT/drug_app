@@ -1,6 +1,6 @@
 class DrugsController < ApplicationController
   skip_before_action :require_login
-  before_action :set_drug,only: [:show, :edit]
+  before_action :set_drug, only: [:show, :edit]
 
   def index
     @q = Drug.ransack(params[:q])
@@ -17,7 +17,6 @@ class DrugsController < ApplicationController
   end
 
   def show
-    @drug = Drug.find(params[:id])
     @items = RakutenWebService::Ichiba::Item.search(keyword: @drug.name)
   end
 

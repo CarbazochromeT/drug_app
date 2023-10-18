@@ -83,11 +83,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_121512) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "drug_ingredients", "drugs"
-  add_foreign_key "drug_ingredients", "ingredients"
-  add_foreign_key "drug_symptoms", "drugs"
-  add_foreign_key "drug_symptoms", "symptoms"
-  add_foreign_key "drugs", "maker_names"
-  add_foreign_key "likes", "drugs"
-  add_foreign_key "likes", "users"
+  add_foreign_key "drug_ingredients", "drugs", deferrable: :deferred
+  add_foreign_key "drug_ingredients", "ingredients", deferrable: :deferred
+  add_foreign_key "drug_symptoms", "drugs", deferrable: :deferred
+  add_foreign_key "drug_symptoms", "symptoms", deferrable: :deferred
+  add_foreign_key "drugs", "maker_names", deferrable: :deferred
+  add_foreign_key "likes", "drugs", deferrable: :deferred
+  add_foreign_key "likes", "users", deferrable: :deferred
 end
