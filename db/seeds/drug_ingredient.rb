@@ -1,5 +1,5 @@
 ActiveRecord::Base.connection.execute(
-  "SELECT nextval('drug_ingredients_id_seq', #{DrugIngredient.maximum(:id)}, true)"
+  "SELECT setval('drug_ingredients_id_seq', #{DrugIngredient.maximum(:id)}, true)"
 )
 
 
