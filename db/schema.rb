@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_121512) do
     t.text "effect_text", collation: "utf8mb3_general_ci", comment: " 効能効果"
     t.text "usage", collation: "utf8mb3_general_ci", comment: "用法用量"
     t.string "document_url", collation: "utf8mb3_general_ci", comment: "添付文書URL"
-    t.string "formulation", comment: "剤型 -- tablet(錠剤): 0, powder(粉): 1, capsule(カプセル): 2, liquid(液剤): 3, nose(点鼻): 4"
+    t.integer "formulation", comment: "剤型 -- tablet(錠剤): 0, powder(粉): 1, capsule(カプセル): 2, liquid(液剤): 3, nose(点鼻): 4"
     t.string "division", comment: "リスク区分 -- to_guide(要指導医薬品): 0, one_kind(一類医薬品): 1, two_kind(二類医薬品): 2, three_kind(三類医薬品): 3, two_designate(指定二類医薬品): 4"
     t.string "taxation", default: "0", null: false, comment: "セルフメディケーション税制"
     t.text "formula", collation: "utf8mb3_general_ci", comment: "成分分量"
@@ -68,8 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_121512) do
 
   create_table "symptoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -83,11 +81,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_121512) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "drug_ingredients", "drugs", deferrable: :deferred
-  add_foreign_key "drug_ingredients", "ingredients", deferrable: :deferred
-  add_foreign_key "drug_symptoms", "drugs", deferrable: :deferred
-  add_foreign_key "drug_symptoms", "symptoms", deferrable: :deferred
-  add_foreign_key "drugs", "maker_names", deferrable: :deferred
-  add_foreign_key "likes", "drugs", deferrable: :deferred
-  add_foreign_key "likes", "users", deferrable: :deferred
+  add_foreign_key "drug_ingredients", "drugs"
+  add_foreign_key "drug_ingredients", "ingredients"
+  add_foreign_key "drug_symptoms", "drugs"
+  add_foreign_key "drug_symptoms", "symptoms"
+  add_foreign_key "drugs", "maker_names"
+  add_foreign_key "likes", "drugs"
+  add_foreign_key "likes", "users"
 end
