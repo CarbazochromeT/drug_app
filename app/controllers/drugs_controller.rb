@@ -4,13 +4,12 @@ class DrugsController < ApplicationController
 
   def index
     @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_name)
+    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_name).
     .select('drugs.*', 'count(ingredients.id) AS ingredients')
     .left_joins(:ingredients)
     .group('drugs.id')
     .order('ingredients ASC')
     .page(params[:page]).per(10)
-    @drugs.update(params(formulation_params))
     render :index
   end
 
@@ -47,7 +46,7 @@ class DrugsController < ApplicationController
   def formulation_params
     params.permit(:formulation)
   end
-  
+
   def params_int(formulation_params)
     formulation_params.each do |key, value|
       if integer_string?(value)
