@@ -4,7 +4,7 @@ class DrugsController < ApplicationController
 
   def index
     @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_name).
+    @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_name)
     .select('drugs.*', 'count(ingredients.id) AS ingredients')
     .left_joins(:ingredients)
     .group('drugs.id')
@@ -53,4 +53,5 @@ class DrugsController < ApplicationController
         formulation[key] = value.to_i
       end
     end
+  end
 end
