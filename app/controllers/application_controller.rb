@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
   def not_authenticated
     redirect_to login_path, danger: "ログインしてください"
   end
+
+  def integer_string?(str)
+    Integer(str)
+    true
+  rescue ArgumentError
+    false
+  end
 end
