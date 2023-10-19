@@ -3,7 +3,8 @@ class DrugsController < ApplicationController
   before_action :set_drug, only: [:show, :edit]
 
   def index
-    @q = Drug.ransack(params[:q]).update(params(formulation_params))
+    @q = Drug.ransack(params[:q])
+    @q.update(params(formulation_params))
     @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_name)
     .select('drugs.*', 'count(ingredients.id) AS ingredients')
     .left_joins(:ingredients)
@@ -44,7 +45,7 @@ class DrugsController < ApplicationController
   end
 
   def formulation_params
-    params.permit(:formulation)
+    params.permit({formulation: []})
   end
 
   def params_int(formulation_params)
