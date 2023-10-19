@@ -10,7 +10,7 @@ class DrugsController < ApplicationController
     .group('drugs.id')
     .order('ingredients ASC')
     .page(params[:page]).per(10)
-    if @q.result.present?
+    if @q.present?
       @drugs.update(params(formulation_params))
     end
     render :index
