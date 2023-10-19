@@ -10,6 +10,7 @@ class DrugsController < ApplicationController
     .group('drugs.id')
     .order('ingredients ASC')
     .page(params[:page]).per(10)
+    @drugs.update(params(formulation_params))
     render :index
   end
 
