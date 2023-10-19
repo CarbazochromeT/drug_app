@@ -4,13 +4,15 @@ class DrugsController < ApplicationController
 
   def index
     @q = Drug.ransack(params[:q])
-    @q.update(params(formulation_params))
     @drugs = @q.result(distinct: true).includes(:symptoms, :ingredients, :maker_name)
     .select('drugs.*', 'count(ingredients.id) AS ingredients')
     .left_joins(:ingredients)
     .group('drugs.id')
     .order('ingredients ASC')
     .page(params[:page]).per(10)
+    if @q.result.present?
+      @drugs.update(params(formulation_params))
+    end
     render :index
   end
 
