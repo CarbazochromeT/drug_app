@@ -10,7 +10,6 @@ class DrugsController < ApplicationController
     .group('drugs.id')
     .order('ingredients ASC')
     .page(params[:page]).per(10)
-    @drugs.update(params_int(formulation_params))
     render :index
   end
 
@@ -46,6 +45,7 @@ class DrugsController < ApplicationController
 
   def formulation_params
     params[:q]&.permit({formulation: []})
+    @drugs.update(params_int(formulation_params))
   end
 
   def params_int(formulation_params)
