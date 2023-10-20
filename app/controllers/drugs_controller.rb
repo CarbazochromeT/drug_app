@@ -11,6 +11,9 @@ class DrugsController < ApplicationController
     .order('ingredients ASC')
     .page(params[:page]).per(10)
     render :index
+    if @q.result.present?
+      formulation_params
+    end
   end
 
   def search
