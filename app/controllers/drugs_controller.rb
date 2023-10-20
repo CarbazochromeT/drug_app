@@ -45,7 +45,7 @@ class DrugsController < ApplicationController
   end
 
   def formulation_params
-    params.permit({formulation: []})
+    params[:q]&.permit({formulation: []})
   end
 
   def params_int(formulation_params)
