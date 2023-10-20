@@ -11,7 +11,7 @@ class DrugsController < ApplicationController
     .order('ingredients ASC')
     .page(params[:page]).per(10)
     if @q.result.present?
-      @drugs.update(params(formulation_params))
+      @drugs.update(params_int(formulation_params))
     end
     render :index
   end
