@@ -51,7 +51,7 @@ class DrugsController < ApplicationController
   def params_int(formulation_params)
     formulation_params.each do |key, value|
       if integer_string?(value)
-        formulation_params[key] = value.to_i
+        formulation[key] = value.to_i
       end
     end
   end
