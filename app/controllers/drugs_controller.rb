@@ -11,6 +11,7 @@ class DrugsController < ApplicationController
     .order('ingredients ASC')
     .page(params[:page]).per(10)
     render :index
+    integer_string?
     @drugs.update(params_int(formulation_params))
   end
 
