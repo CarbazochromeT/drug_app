@@ -11,8 +11,8 @@ class DrugsController < ApplicationController
     .order('ingredients ASC')
     .page(params[:page]).per(10)
     render :index
-    if @q.result.present?
-      formulation_params
+    if @q.present?
+      @drugs.update(params_int(formulation_params))
     end
   end
 
@@ -48,7 +48,6 @@ class DrugsController < ApplicationController
 
   def formulation_params
     params[:q]&.permit({formulation: []})
-    @drugs.update(params_int(formulation_params))
   end
 
   def params_int(formulation_params)
