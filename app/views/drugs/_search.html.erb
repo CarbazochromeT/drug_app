@@ -36,7 +36,7 @@
   <dt>剤型にこだわりはありますか？</dt>
   <dd>
     <ul class= "search-list">
-      <%= f.collection_check_boxes :formulation_eq_any, Drug.formulation.values.map { |v| [v.text, v.value }.to_h, :last, :first , { multiple: true }  do |b| %>
+      <%= f.collection_check_boxes :formulation_eq_any, Drug.formulation.values.map { |v| [v.text, v.value] }.to_h, :last, :first , { multiple: true }  do |b| %>
         <li>
           <label class="CheckboxInput">
             <%= b.check_box(class: "CheckboxInput-Input") %>
