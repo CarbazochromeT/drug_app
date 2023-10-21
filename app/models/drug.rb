@@ -26,7 +26,7 @@ class Drug < ApplicationRecord
   end
 
   enumerize :formulation, in: { :tablet => 0, :powder => 1, :capsule => 2, :liquid => 3, :nose => 4,
-    :troche => 5, :candy => 6, :gargle => 7, :ointment => 8, :suppository => 9, :spray => 10 },  multiple: true
+    :troche => 5, :candy => 6, :gargle => 7, :ointment => 8, :suppository => 9, :spray => 10 },  scope: true
   enumerize :division, in: { to_guide: 0, one_kind: 1, two_kind: 2, three_kind: 3, two_designate: 4 }, scope: true
 
 end

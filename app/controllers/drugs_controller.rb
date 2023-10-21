@@ -43,15 +43,4 @@ class DrugsController < ApplicationController
     params[:q]&.permit(:id, :drug, :name, :effect_text, :usage, :document_url, {formulation: []}, :division, :taxation,  { symptom_ids: [] },  { ingredient_ids: [] }, :drive,:tobacco, :alcohol, :maker_names)
   end
 
-  def formulation_params
-    params.permit({formulation: []})
-  end
-
-  def params_int(formulation_params)
-    formulation_params.each do |key, value|
-      if integer_string?(value)
-        formulation[key] = value.to_i
-      end
-    end
-  end
 end
