@@ -11,9 +11,6 @@ class DrugsController < ApplicationController
     .order('ingredients ASC')
     .page(params[:page]).per(10)
     render :index
-    if integer_string?(@drugs)
-      @drugs.update(params_int(formulation_params))
-    end
   end
 
   def search
